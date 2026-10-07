@@ -21,7 +21,7 @@ export default function Stats() {
           {siteData.stats.items.map((item, i) => (
             <div key={i} className="flex flex-col items-center text-center px-4">
               <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4">
-                <Image src={item.icon} alt={item.label} width={32} height={32} className="w-8 h-8 object-contain filter invert" />
+                <Image src={item.icon} alt={item.label} width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
               <h3 className="text-4xl font-bold text-white mb-2">{item.number}</h3>
               <p className="text-blue-200 text-sm font-medium">{item.label}</p>

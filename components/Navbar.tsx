@@ -125,7 +125,7 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <Link 
-              href="/contact-us" 
+              href="/get-a-quote" 
               className="bg-primary text-white hover:bg-blue-700 transition-colors py-2.5 px-6 rounded-md text-sm font-semibold flex items-center gap-2 shadow-sm"
             >
               Get a Quote <ArrowRight size={15} />
@@ -157,7 +157,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link 
-            href="/contact-us" 
+            href="/get-a-quote" 
             className="bg-primary text-white text-center py-3 rounded font-semibold text-sm mt-2 flex items-center justify-center gap-2" 
             onClick={() => setIsOpen(false)}
           >

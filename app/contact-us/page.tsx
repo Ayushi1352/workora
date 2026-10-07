@@ -1,28 +1,30 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import ContactBanner from "./ContactBanner";
+import ContactForm from "./ContactForm";
+import ContactMap from "./ContactMap";
+import ContactInfo from "./ContactInfo";
 
-export default function Page() {
+export const metadata = {
+  title: "Contact Us | Workora HR Consultancy",
+  description: "Get in touch with Workora HR Consultancy experts for tailored hiring and HR solutions.",
+};
+
+export default function ContactUsPage() {
   return (
     <div>
-      {/* Breadcrumb Banner */}
-      <section className="bg-dark text-white py-20 bg-[url('/stats-bg.webp')] bg-cover bg-center bg-blend-overlay bg-opacity-80">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold heading-font mb-4">Contact Us</h1>
-          <div className="flex items-center justify-center gap-2 text-sm font-medium text-gray-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <span className="text-white">Contact Us</span>
-          </div>
-        </div>
-      </section>
+      <ContactBanner />
 
-      {/* Content Area */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark heading-font mb-6">Contact Us Content</h2>
-          <p className="text-gray-600 max-w-2xl">
-            This is the contact us page. The structure is set up exactly as requested, with the page component and files scoped to this folder.
-          </p>
+      <section className="section-padding bg-white">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          {/* Left: Form */}
+          <div className="lg:col-span-6">
+            <ContactForm />
+          </div>
+
+          {/* Right: Map + Info Cards */}
+          <div className="lg:col-span-6 space-y-6">
+            <ContactMap />
+            <ContactInfo />
+          </div>
         </div>
       </section>
     </div>

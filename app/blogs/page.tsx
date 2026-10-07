@@ -1,30 +1,16 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import BlogsBanner from "./BlogsBanner";
+import BlogsGrid from "./BlogsGrid";
 
-export default function Page() {
+export const metadata = {
+  title: "Blogs | Workora HR Consultancy",
+  description: "Latest insights, employee engagement trends, and HR best practices by Workora experts.",
+};
+
+export default function BlogsPage() {
   return (
     <div>
-      {/* Breadcrumb Banner */}
-      <section className="bg-dark text-white py-20 bg-[url('/stats-bg.webp')] bg-cover bg-center bg-blend-overlay bg-opacity-80">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold heading-font mb-4">Blogs</h1>
-          <div className="flex items-center justify-center gap-2 text-sm font-medium text-gray-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <span className="text-white">Blogs</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Area */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-dark heading-font mb-6">Blogs Content</h2>
-          <p className="text-gray-600 max-w-2xl">
-            This is the blogs page. The structure is set up exactly as requested, with the page component and files scoped to this folder.
-          </p>
-        </div>
-      </section>
+      <BlogsBanner />
+      <BlogsGrid />
     </div>
   );
 }
