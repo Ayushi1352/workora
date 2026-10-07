@@ -1,0 +1,345 @@
+{
+  "company": {
+    "name": "Workora",
+    "logo": "/workora-logo.webp",
+    "helpLine": "+1 234 567 8900",
+    "openHours": "Mon - Fri 9:00 am - 6:00 pm",
+    "headerAddress": "123 Business Avenue, New York, NY 10001, USA",
+    "footerAddress": "123 Business Avenue, New Delhi, India 110001",
+    "phone": "+91 98765 43210",
+    "email": "info@workora.com",
+    "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
+    "workingHoursClosed": "Sunday: Closed",
+    "socials": {
+      "facebook": "#",
+      "linkedin": "#",
+      "instagram": "#",
+      "youtube": "#"
+    }
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "About Us", "href": "/about-us" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Our Team", "href": "/our-team" },
+    { "label": "Blogs", "href": "/blogs" },
+    { "label": "Contact Us", "href": "/contact-us" }
+  ],
+  "hero": {
+    "subtitle": "People Today, Stronger Business Tomorrow",
+    "title": "Strategic HR Solutions for Your Growing Business",
+    "description": "We help businesses attract, develop, and retain the right talent with tailored HR strategies that drive long-term success.",
+    "ctaText": "Get a Quote",
+    "ctaLink": "/contact-us",
+    "image": "/hero-main.webp",
+    "image1": "/hero-img-1.webp",
+    "image2": "/hero-img-2.webp",
+    "image3": "/hero-img-3.webp"
+  },
+  "about": {
+    "sectionSubtitle": "ABOUT US",
+    "title": "Empowering Careers Building Stronger Businesses",
+    "description": "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and empowers professionals to achieve their career goals.",
+    "features": [
+      {
+        "icon": "/icon-connecting.webp",
+        "title": "Connecting Talent with Opportunity",
+        "description": "We bridge the gap between highly skilled professionals and forward-thinking companies, creating the right fit for long-term success."
+      },
+      {
+        "icon": "/icon-partner.webp",
+        "title": "Your Partner in Workforce Success",
+        "description": "We provide strategic HR solutions that help businesses grow, manage workforce performance, and retain top talent."
+      }
+    ],
+    "ctaText": "More About Us",
+    "ctaLink": "/about-us"
+  },
+  "stats": {
+    "background": "/stats-bg.webp",
+    "title": "Creating Opportunities Building Brighter Futures",
+    "items": [
+      { "number": "500+", "label": "Happy Clients", "icon": "/icon-clients.webp" },
+      { "number": "12K+", "label": "Candidates Placed", "icon": "/icon-candidates.webp" },
+      { "number": "25+", "label": "Years Experience", "icon": "/icon-experience.webp" },
+      { "number": "98%", "label": "Client Retention", "icon": "/icon-retention.webp" }
+    ]
+  },
+  "services": {
+    "sectionSubtitle": "OUR SERVICES",
+    "title": "Comprehensive HR Solutions for a Stronger Tomorrow",
+    "description": "We provide tailored HR strategies to help businesses thrive, manage their workforce, and drive long-term growth and achieve their goals.",
+    "items": [
+      {
+        "title": "Talent Acquisition",
+        "description": "Helping businesses find the right talent with a strategic recruitment and hiring approach.",
+        "image": "/service-talent.webp",
+        "link": "/services/talent-acquisition"
+      },
+      {
+        "title": "Executive Search",
+        "description": "Identifying and placing top-tier leaders to drive business growth and long-term success.",
+        "image": "/service-executive.webp",
+        "link": "/services/executive-search"
+      },
+      {
+        "title": "Training & Development",
+        "description": "Building and elevating abilities through tailored training and development programs.",
+        "image": "/service-training.webp",
+        "link": "/services/training-development"
+      },
+      {
+        "title": "HR Consulting",
+        "description": "Strategic HR solutions to improve organizational performance and build stronger teams.",
+        "image": "/service-consulting.webp",
+        "link": "/services/hr-consulting"
+      },
+      {
+        "title": "Staffing Solutions",
+        "description": "Flexible staffing solutions to meet your business needs across various industries.",
+        "image": "/service-staffing.webp",
+        "link": "/services/staffing-solutions"
+      },
+      {
+        "title": "Career Guidance",
+        "description": "Personalized support to help professionals achieve growth and reach their career goals.",
+        "image": "/service-career.webp",
+        "link": "/services/career-guidance"
+      },
+      {
+        "title": "HR Outsourcing",
+        "description": "Streamlined HR operations so you can focus on what matters most — your core business.",
+        "image": "/service-outsourcing.webp",
+        "link": "/services/hr-outsourcing"
+      },
+      {
+        "title": "Recruitment Process Outsourcing",
+        "description": "End-to-end recruitment solutions for faster, smarter, and more efficient hiring.",
+        "image": "/service-rpo.webp",
+        "link": "/services/rpo"
+      }
+    ]
+  },
+  "team": {
+    "sectionSubtitle": "OUR TEAM",
+    "title": "Our People Make the Difference",
+    "description": "A passionate team dedicated to connecting talent with opportunity and driving success for individuals and businesses.",
+    "members": [
+      {
+        "name": "Ryan Carter",
+        "role": "HR Director",
+        "image": "/team-ryan.webp"
+      },
+      {
+        "name": "James Mitchell",
+        "role": "Plant Manager",
+        "image": "/team-james.webp"
+      },
+      {
+        "name": "Ethan Brooks",
+        "role": "Payroll Specialist",
+        "image": "/team-ethan.webp"
+      },
+      {
+        "name": "Daniel Foster",
+        "role": "Compliance Officer",
+        "image": "/team-daniel.webp"
+      }
+    ]
+  },
+  "testimonials": {
+    "sectionSubtitle": "TESTIMONIALS",
+    "title": "Success Stories from Our Clients and Candidates",
+    "background": "/testimonials-bg.webp",
+    "items": [
+      {
+        "quote": "Workora helped us find the right talent quickly and efficiently. Their professional approach understanding of our core values made the process smooth and easy.",
+        "name": "Tyler Blake",
+        "role": "HR Director, Tech Solutions",
+        "image": "/testim-tyler.webp",
+        "rating": 5
+      },
+      {
+        "quote": "The recruitment process was seamless and efficient. They provided us with top talent that perfectly matched our company culture and requirements.",
+        "name": "Lilya Rose",
+        "role": "CEO, Global Tech",
+        "image": "/testim-lilya.webp",
+        "rating": 5
+      },
+      {
+        "quote": "Workora has been a great partner for our staffing needs. They understand our requirements and consistently provide high-quality candidates.",
+        "name": "Steve Johnson",
+        "role": "Operations Manager",
+        "image": "/testim-steve.webp",
+        "rating": 5
+      }
+    ]
+  },
+  "blogs": {
+    "sectionSubtitle": "OUR BLOGS",
+    "title": "Latest Insights & HR Trends",
+    "description": "Explore expert insights, practical tips, and the latest trends to help you build stronger teams and dynamic workplaces.",
+    "items": [
+      {
+        "date": "12 April 2024",
+        "title": "The Future of Employee Engagement - What's Next?",
+        "description": "Discover how evolving workplace trends, technology, and people-first strategies are shaping the future of employee engagement.",
+        "image": "/blog-1.webp",
+        "link": "/blogs/future-of-employee-engagement"
+      },
+      {
+        "date": "08 April 2024",
+        "title": "How to Handle Employee Conflict Effectively",
+        "description": "Learn practical strategies to identify, address, and resolve workplace conflicts for a more positive and productive team.",
+        "image": "/blog-2.webp",
+        "link": "/blogs/handle-employee-conflict"
+      },
+      {
+        "date": "04 April 2024",
+        "title": "Adapting to Remote Work Best Practices for HR",
+        "description": "Explore the latest tools, tools, and strategies for managing a remote workforce and keep your team more connected.",
+        "image": "/blog-3.webp",
+        "link": "/blogs/remote-work-best-practices"
+      }
+    ]
+  },
+  "aboutPage": {
+    "banner": {
+      "title": "About Us",
+      "breadcrumb": "About Us",
+      "image": "/page-banner.webp"
+    },
+    "overview": {
+      "sectionSubtitle": "ABOUT US",
+      "title": "Empowering Careers Building Stronger Businesses",
+      "paragraphs": [
+        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
+        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
+        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
+        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals."
+      ]
+    },
+    "whyChooseUs": {
+      "sectionSubtitle": "WHY CHOOSE US",
+      "title": "The Foundation of Our Excellence",
+      "description": "Our success is built on experience, people, and a commitment to connecting the right talent with the right opportunities. We deliver personalized hiring solutions, industry expertise, and long-term partnerships that drive real results.",
+      "since": {
+        "badge": "SINCE IN",
+        "year": "2015",
+        "text": "Delivering trusted HR and recruitment solutions since 2015, empowering businesses and professionals worldwide."
+      },
+      "quote": "Your growth and success are at the heart of everything we do.",
+      "award": {
+        "title": "Recognized for Excellence in Recruitment",
+        "subtitle": "Best HR Solutions Provider Award 2024",
+        "linkText": "Read Our Story",
+        "link": "/about-us",
+        "image": "/about-trophy.webp"
+      },
+      "features": [
+        {
+          "title": "Experienced Team",
+          "description": "A team of recruitment experts with years of industry experience.",
+          "icon": "users",
+          "highlight": false
+        },
+        {
+          "title": "Customized Solutions",
+          "description": "Tailored hiring strategies to meet your unique business needs.",
+          "icon": "target",
+          "highlight": true
+        },
+        {
+          "title": "Proven Track Record",
+          "description": "A history of successful placements across multiple industries.",
+          "icon": "award",
+          "highlight": false
+        },
+        {
+          "title": "Long-Term Partnerships",
+          "description": "Building lasting relationships through trust, transparency, and results.",
+          "icon": "chart",
+          "highlight": false
+        }
+      ]
+    }
+  },
+  "serviceDetails": {
+    "banner": {
+      "title": "Services Details",
+      "breadcrumb": "Services Details",
+      "image": "/page-banner.webp"
+    },
+    "overview": {
+      "sectionSubtitle": "SERVICE OVERVIEW",
+      "title": "Executive Search for Exceptional Leadership",
+      "description": "Our Executive Search service helps you identify, attract, and secure top leadership talent who can make a meaningful impact on your organization. We combine industry expertise, extensive networks, and a proven assessment process to find leaders who align with your vision, culture, and long-term goals.",
+      "ctaText": "Get Started",
+      "ctaLink": "/contact-us",
+      "image": "/service-detail-main.webp"
+    },
+    "features": [
+      {
+        "title": "Leadership Focus",
+        "description": "Access to high-caliber leadership talent.",
+        "icon": "users"
+      },
+      {
+        "title": "Targeted Approach",
+        "description": "Customized search strategy for your needs.",
+        "icon": "target"
+      },
+      {
+        "title": "Long-Term Fit",
+        "description": "Candidates aligned with your culture and vision.",
+        "icon": "handshake"
+      }
+    ],
+    "process": {
+      "sectionSubtitle": "OUR PROCESS",
+      "title": "How We Work",
+      "description": "Our proven executive search process ensures a seamless and efficient hiring experience, delivering the right leaders for your business.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Understand Your Needs",
+          "description": "We analyze your goals, culture, and leadership requirements."
+        },
+        {
+          "number": "02",
+          "title": "Identify Top Talent",
+          "description": "We leverage our network and market expertise."
+        },
+        {
+          "number": "03",
+          "title": "Screen & Assess",
+          "description": "We conduct in-depth evaluations to ensure the right fit."
+        },
+        {
+          "number": "04",
+          "title": "Deliver & Support",
+          "description": "We help you onboard and integrate leaders for long-term success."
+        }
+      ]
+    },
+    "sidebarServices": [
+      { "name": "Executive Search", "slug": "executive-search" },
+      { "name": "Talent Acquisition", "slug": "talent-acquisition" },
+      { "name": "Temporary Staffing", "slug": "temporary-staffing" },
+      { "name": "Contract Staffing", "slug": "contract-staffing" },
+      { "name": "Recruitment Process Outsourcing", "slug": "rpo" },
+      { "name": "HR Consulting", "slug": "hr-consulting" },
+      { "name": "Training & Development", "slug": "training-development" },
+      { "name": "Workforce Solutions", "slug": "workforce-solutions" }
+    ],
+    "helpBox": {
+      "subtitle": "NEED HELP?",
+      "title": "Talk to Our Experts",
+      "description": "Get personalized guidance for your hiring needs.",
+      "phone": "+91 98765 43210",
+      "email": "info@workora.com",
+      "ctaText": "Request a Consultation",
+      "ctaLink": "/contact-us"
+    }
+  }
+}
