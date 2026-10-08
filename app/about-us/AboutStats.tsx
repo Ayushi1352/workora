@@ -1,11 +1,27 @@
 import Image from "next/image";
+import { Users, FileText, TrendingUp, Handshake } from "lucide-react";
+import HighlightedText from "@/components/HighlightedText";
 import siteData from "../../site.json";
 
 export default function AboutStats() {
   const { stats } = siteData;
 
+  const getStatIcon = (iconName: string) => {
+    switch (iconName) {
+      case "users":
+        return <Users size={22} className="text-white" />;
+      case "file-text":
+        return <FileText size={22} className="text-white" />;
+      case "chart":
+        return <TrendingUp size={22} className="text-white" />;
+      case "handshake":
+      default:
+        return <Handshake size={22} className="text-white" />;
+    }
+  };
+
   return (
-    <section className="relative py-20 bg-dark overflow-hidden">
+    <section className="relative overflow-hidden bg-dark py-16 md:py-20">
       <Image 
         src={stats.background} 
         alt="Background" 
@@ -13,31 +29,33 @@ export default function AboutStats() {
         className="object-cover opacity-20" 
       />
       <div className="container-custom relative z-10">
-        <div className="text-center mb-14">
-          <h5 className="text-primary font-semibold text-xs tracking-wider uppercase mb-2 flex items-center justify-center gap-2">
+        <div className="mb-10 grid gap-5 md:grid-cols-2 md:items-end">
+          <div>
+          <h5 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
             <span className="w-6 h-px bg-primary"></span>
-            OUR BEST
-            <span className="w-6 h-px bg-primary"></span>
+            {stats.sectionSubtitle}
           </h5>
-          <h2 className="text-white text-3xl md:text-4xl font-bold heading-font">
-            Creating Opportunities<br />
-            <span className="text-blue-300 font-normal">Building Brighter Futures</span>
+          <h2 className="text-2xl font-bold text-white heading-font md:text-3xl">
+            <HighlightedText
+              text={stats.title}
+              highlight={stats.titleHighlight}
+              className="text-blue-300 font-normal"
+              breakBefore
+            />
           </h2>
+          </div>
+          <p className="max-w-md text-xs leading-relaxed text-blue-100 md:justify-self-end">
+            {stats.description}
+          </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-white/20">
+        <div className="grid grid-cols-2 gap-5 divide-x-0 md:grid-cols-4 md:divide-x md:divide-white/20">
           {stats.items.map((item, i) => (
-            <div key={i} className="flex flex-col items-center text-center px-4">
-              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4">
-                <Image 
-                  src={item.icon} 
-                  alt={item.label} 
-                  width={32} 
-                  height={32} 
-                  className="w-8 h-8 object-contain" 
-                />
+            <div key={i} className="flex flex-col items-start px-3 md:px-6">
+              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
+                {getStatIcon(item.icon)}
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{item.number}</h3>
-              <p className="text-blue-200 text-sm font-medium">{item.label}</p>
+              <h3 className="mb-1 text-3xl font-bold text-white md:text-4xl">{item.number}</h3>
+              <p className="text-xs font-medium text-blue-200">{item.label}</p>
             </div>
           ))}
         </div>

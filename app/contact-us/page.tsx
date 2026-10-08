@@ -2,10 +2,11 @@ import ContactBanner from "./ContactBanner";
 import ContactForm from "./ContactForm";
 import ContactMap from "./ContactMap";
 import ContactInfo from "./ContactInfo";
+import siteData from "../../site.json";
 
 export const metadata = {
-  title: "Contact Us | Workora HR Consultancy",
-  description: "Get in touch with Workora HR Consultancy experts for tailored hiring and HR solutions.",
+  title: siteData.contactUsPage.meta.title,
+  description: siteData.contactUsPage.meta.description,
 };
 
 export default function ContactUsPage() {

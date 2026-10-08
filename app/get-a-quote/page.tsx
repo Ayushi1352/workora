@@ -2,10 +2,11 @@ import QuoteBanner from "./QuoteBanner";
 import QuoteOverview from "./QuoteOverview";
 import QuoteForm from "./QuoteForm";
 import QuoteProcess from "./QuoteProcess";
+import siteData from "../../site.json";
 
 export const metadata = {
-  title: "Get a Quote | Workora HR Consultancy",
-  description: "Request a custom HR solutions quote from Workora experts. Connect with the right talent for your business.",
+  title: siteData.getAQuotePage.meta.title,
+  description: siteData.getAQuotePage.meta.description,
 };
 
 export default function GetAQuotePage() {

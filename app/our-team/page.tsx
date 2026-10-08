@@ -1,9 +1,10 @@
 import TeamBanner from "./TeamBanner";
 import TeamList from "./TeamList";
+import siteData from "../../site.json";
 
 export const metadata = {
-  title: "Our Team | Workora HR Consultancy",
-  description: "Meet the passionate team behind Workora HR Consultancy.",
+  title: siteData.teamPage.meta.title,
+  description: siteData.teamPage.meta.description,
 };
 
 export default function OurTeamPage() {

@@ -1,30 +1,83 @@
 import Image from "next/image";
+import { Users, FileText, TrendingUp, Handshake } from "lucide-react";
+import HighlightedText from "./HighlightedText";
 import siteData from "../site.json";
 
 export default function Stats() {
+  const getStatIcon = (iconName: string) => {
+    switch (iconName) {
+      case "users":
+        return <Users size={22} className="text-white" />;
+      case "file-text":
+        return <FileText size={22} className="text-white" />;
+      case "chart":
+        return <TrendingUp size={22} className="text-white" />;
+      case "handshake":
+      default:
+        return <Handshake size={22} className="text-white" />;
+    }
+  };
+
   return (
-    <section className="relative py-20 bg-dark overflow-hidden">
-      <Image src={siteData.stats.background} alt="Background" fill className="object-cover opacity-20" />
+    <section className="relative overflow-hidden bg-dark py-16 md:py-24 text-white">
+      {/* Background Image with Clear Visibility */}
+      <Image 
+        src={siteData.stats.background || "/stats-bg.webp"} 
+        alt="Workora Impact" 
+        fill 
+        className="object-cover object-center opacity-65" 
+      />
+      <div className="absolute inset-0 bg-linear-to-r from-dark/80 via-dark/70 to-dark/80 z-0" />
+
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
-          <h5 className="text-primary font-semibold text-sm tracking-wider uppercase mb-2 flex items-center justify-center gap-2">
-            <span className="w-6 h-px bg-primary"></span>
-            OUR BEST
-            <span className="w-6 h-px bg-primary"></span>
-          </h5>
-          <h2 className="text-white text-3xl md:text-4xl font-bold heading-font">
-            Creating Opportunities<br />
-            <span className="text-blue-300 font-normal">Building Brighter Futures</span>
-          </h2>
+        {/* Top Header Row */}
+        <div className="mb-12 lg:mb-16 grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+          <div className="md:col-span-7 lg:col-span-8">
+            <div className="flex items-center gap-2.5 text-primary font-semibold text-xs tracking-widest uppercase mb-3">
+              <span className="w-8 h-[2px] bg-primary block"></span>
+              <span>{siteData.stats.sectionSubtitle}</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-[1.18] heading-font tracking-tight">
+              <HighlightedText
+                text={siteData.stats.title}
+                highlight={siteData.stats.titleHighlight}
+                className="text-primary"
+                breakBefore
+              />
+            </h2>
+          </div>
+          
+          <div className="md:col-span-5 lg:col-span-4 flex md:justify-end">
+            <p className="text-gray-300 text-xs sm:text-[13px] leading-relaxed max-w-sm">
+              {siteData.stats.description}
+            </p>
+          </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-white/20">
+
+        {/* Bottom 4 Counters Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 relative">
           {siteData.stats.items.map((item, i) => (
-            <div key={i} className="flex flex-col items-center text-center px-4">
-              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4">
-                <Image src={item.icon} alt={item.label} width={32} height={32} className="w-8 h-8 object-contain" />
+            <div 
+              key={i} 
+              className={`flex flex-col items-start px-2 lg:px-8 relative ${
+                i > 0 ? "md:border-l md:border-white/15" : ""
+              }`}
+            >
+              {/* Circular Badge Icon */}
+              <div className="w-13 h-13 rounded-full border border-white/25 bg-white/10 backdrop-blur-xs flex items-center justify-center mb-4 text-white shadow-xs">
+                {getStatIcon(item.icon)}
               </div>
-              <h3 className="text-4xl font-bold text-white mb-2">{item.number}</h3>
-              <p className="text-blue-200 text-sm font-medium">{item.label}</p>
+
+              {/* Big Bold Stat Counter */}
+              <h3 className="text-4xl sm:text-5xl lg:text-[50px] font-bold text-white mb-2 tracking-tight heading-font leading-none">
+                {item.number}
+              </h3>
+
+              {/* Label with Blue Line */}
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
+                <span className="w-4 h-[1.5px] bg-primary block flex-shrink-0"></span>
+                <span>{item.label}</span>
+              </div>
             </div>
           ))}
         </div>

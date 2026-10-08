@@ -5,12 +5,12 @@ import siteData from "../../site.json";
 
 interface ServiceDetailOverviewProps {
   overview?: {
-    sectionSubtitle?: string;
-    title?: string;
-    description?: string;
-    ctaText?: string;
-    ctaLink?: string;
-    image?: string;
+    sectionSubtitle: string;
+    title: string;
+    description: string;
+    ctaText: string;
+    ctaLink: string;
+    image: string;
   };
 }
 
@@ -31,32 +31,33 @@ export default function ServiceDetailOverview({ overview: customOverview }: Serv
   };
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6">
       {/* Top Overview Split */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-12">
         <div className="md:col-span-7">
           <h5 className="text-primary font-semibold text-xs tracking-wider uppercase mb-3 flex items-center gap-2">
-            <span className="w-6 h-[2px] bg-primary"></span>
-            {overview.sectionSubtitle || "SERVICE OVERVIEW"}
+            <span className="h-0.5 w-6 bg-prima
+            ry"></span>
+            {overview.sectionSubtitle}
           </h5>
           <h2 className="text-2xl md:text-3xl font-bold text-dark mb-4 leading-tight heading-font">
-            {overview.title || "Executive Search for Exceptional Leadership"}
+            {overview.title}
           </h2>
           <p className="text-gray-600 text-sm leading-relaxed mb-6">
             {overview.description}
           </p>
           <Link
-            href={overview.ctaLink || "/contact-us"}
+            href={overview.ctaLink}
             className="inline-flex items-center gap-2 bg-primary text-white text-xs font-semibold px-5 py-3 rounded-md hover:bg-blue-700 transition-colors shadow-sm"
           >
-            {overview.ctaText || "Get Started"} <ArrowRight size={14} />
+            {overview.ctaText} <ArrowRight size={14} />
           </Link>
         </div>
 
-        <div className="md:col-span-5 relative h-[220px] sm:h-[260px] w-full rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative h-55 w-full overflow-hidden rounded-md md:col-span-5">
           <Image
-            src={overview.image || "/service-detail-main.webp"}
-            alt={overview.title || "Service Overview"}
+            src={overview.image}
+            alt={overview.title}
             fill
             priority
             className="object-cover"
@@ -65,10 +66,10 @@ export default function ServiceDetailOverview({ overview: customOverview }: Serv
       </div>
 
       {/* 3 Key Highlights Strip */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-[#f8fafc] p-6 rounded-2xl border border-gray-100">
+      <div className="grid grid-cols-1 gap-3 rounded-md border border-gray-100 bg-[#f8fafc] p-4 sm:grid-cols-3">
         {features.map((item, idx) => (
-          <div key={idx} className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+          <div key={idx} className="flex items-center gap-3">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50">
               {getIcon(item.icon)}
             </div>
             <div>

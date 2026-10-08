@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { Users, Clock, ShieldCheck, Phone, Mail } from "lucide-react";
+import HighlightedText from "@/components/HighlightedText";
 import siteData from "../../site.json";
 
 export default function QuoteOverview() {
   const { overview } = siteData.getAQuotePage;
+  const { company } = siteData;
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -25,8 +27,11 @@ export default function QuoteOverview() {
           {overview.sectionSubtitle}
         </h5>
         <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 leading-tight heading-font">
-          Let's Build the <br className="hidden sm:block" />
-          Right Team <span className="text-primary">Together</span>
+          <HighlightedText
+            text={overview.title}
+            highlight={overview.titleHighlight}
+            className="text-primary"
+          />
         </h2>
         <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
           {overview.description}
@@ -75,22 +80,22 @@ export default function QuoteOverview() {
           </p>
           <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-dark">
             <a
-              href={`tel:${overview.expertBox.phone.replace(/[^0-9+]/g, '')}`}
+              href={`tel:${company.phone.replace(/[^0-9+]/g, '')}`}
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center">
                 <Phone size={12} />
               </div>
-              <span>{overview.expertBox.phone}</span>
+              <span>{company.phone}</span>
             </a>
             <a
-              href={`mailto:${overview.expertBox.email}`}
+              href={`mailto:${company.email}`}
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <div className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center">
                 <Mail size={12} />
               </div>
-              <span>{overview.expertBox.email}</span>
+              <span>{company.email}</span>
             </a>
           </div>
         </div>

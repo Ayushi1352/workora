@@ -19,7 +19,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: `${siteData.company.name} | HR Consultancy`,
-  description: "Strategic HR Solutions for Your Growing Business",
+  description: siteData.company.description,
 };
 
 export default function RootLayout({

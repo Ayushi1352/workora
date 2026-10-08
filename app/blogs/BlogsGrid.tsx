@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import HighlightedText from "@/components/HighlightedText";
 import siteData from "../../site.json";
 
 export default function BlogsGrid() {
@@ -15,7 +16,11 @@ export default function BlogsGrid() {
           <span className="w-6 h-[2px] bg-primary"></span>
         </h5>
         <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 leading-tight heading-font">
-          Latest Insights & <span className="text-primary">HR Trends</span>
+          <HighlightedText
+            text={blogsPage.title}
+            highlight={blogsPage.titleHighlight}
+            className="text-primary"
+          />
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-sm leading-relaxed">
           {blogsPage.description}
@@ -51,7 +56,7 @@ export default function BlogsGrid() {
                 href={blog.link}
                 className="inline-flex items-center gap-2 text-primary font-bold text-xs hover:text-dark transition-colors self-start"
               >
-                Read More <ArrowRight size={14} />
+                {siteData.commonLabels.readMore} <ArrowRight size={14} />
               </Link>
             </div>
           </div>

@@ -3,6 +3,7 @@ import siteData from "../../site.json";
 
 export default function ContactInfo() {
   const { infoCards } = siteData.contactUsPage;
+  const { company } = siteData;
 
   return (
     <div className="space-y-4">
@@ -17,10 +18,10 @@ export default function ContactInfo() {
               Email
             </span>
             <a
-              href={`mailto:${infoCards.email}`}
+              href={`mailto:${company.email}`}
               className="text-dark font-bold text-xs md:text-sm hover:text-primary transition-colors"
             >
-              {infoCards.email}
+              {company.email}
             </a>
           </div>
         </div>
@@ -35,10 +36,10 @@ export default function ContactInfo() {
               Contact
             </span>
             <a
-              href={`tel:${infoCards.phone.replace(/[^0-9+]/g, '')}`}
+              href={`tel:${company.phone.replace(/[^0-9+]/g, '')}`}
               className="text-dark font-bold text-xs md:text-sm hover:text-primary transition-colors"
             >
-              {infoCards.phone}
+              {company.phone}
             </a>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Users, Target, Award, TrendingUp, Trophy, ArrowRight } from "lucide-react";
+import HighlightedText from "@/components/HighlightedText";
 import siteData from "../../site.json";
 
 export default function WhyChooseUs() {
@@ -31,8 +32,12 @@ export default function WhyChooseUs() {
             {whyChooseUs.sectionSubtitle}
           </h5>
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6 leading-tight heading-font">
-            The Foundation of <br />
-            Our <span className="text-primary">Excellence</span>
+            <HighlightedText
+              text={whyChooseUs.title}
+              highlight={whyChooseUs.titleHighlight}
+              className="text-primary"
+              breakBefore
+            />
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8 items-start">
@@ -41,7 +46,7 @@ export default function WhyChooseUs() {
               
               {/* Quote box */}
               <div className="mt-6 border-l-4 border-primary pl-4 py-1 italic text-dark font-medium text-sm">
-                "{whyChooseUs.quote}"
+                &ldquo;{whyChooseUs.quote}&rdquo;
               </div>
             </div>
 
@@ -60,7 +65,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Award Card */}
-          <div className="bg-[#0b1c31] text-white rounded-2xl overflow-hidden shadow-lg grid grid-cols-1 sm:grid-cols-12 items-center">
+          <div className="bg-dark text-white rounded-2xl overflow-hidden shadow-lg grid grid-cols-1 sm:grid-cols-12 items-center">
             <div className="sm:col-span-7 p-6 sm:p-7">
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-4">
                 <Trophy size={20} className="text-primary" />

@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { User, Phone, Mail, MessageSquare, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { User, Phone, Mail, MessageSquare, ArrowRight } from "lucide-react";
+import HighlightedText from "@/components/HighlightedText";
 import siteData from "../../site.json";
 
 export default function ContactForm() {
   const { formSection } = siteData.contactUsPage;
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    router.push("/thank-you");
   };
 
   return (
@@ -21,25 +22,18 @@ export default function ContactForm() {
           {formSection.sectionSubtitle}
         </h5>
         <h2 className="text-3xl md:text-4xl font-bold text-dark mb-3 leading-tight heading-font">
-          Let's Start a <span className="text-primary">Conversation</span>
+          <HighlightedText
+            text={formSection.title}
+            highlight={formSection.titleHighlight}
+            className="text-primary"
+          />
         </h2>
         <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
           {formSection.description}
         </p>
       </div>
 
-      {submitted ? (
-        <div className="py-12 text-center space-y-3 bg-white rounded-2xl border border-gray-100 p-6">
-          <div className="w-14 h-14 rounded-full bg-green-50 text-green-600 flex items-center justify-center mx-auto">
-            <CheckCircle2 size={32} />
-          </div>
-          <h4 className="text-lg font-bold text-dark heading-font">Message Sent!</h4>
-          <p className="text-gray-600 text-xs max-w-xs mx-auto">
-            Thank you for reaching out to Workora. Our team will review your message and reply promptly.
-          </p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
@@ -48,7 +42,7 @@ export default function ContactForm() {
               <input
                 type="text"
                 required
-                placeholder="First Name"
+                placeholder={formSection.fields.firstNamePlaceholder}
                 className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
               />
             </div>
@@ -60,7 +54,7 @@ export default function ContactForm() {
               <input
                 type="text"
                 required
-                placeholder="Last Name"
+                placeholder={formSection.fields.lastNamePlaceholder}
                 className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
               />
             </div>
@@ -74,7 +68,7 @@ export default function ContactForm() {
               <input
                 type="tel"
                 required
-                placeholder="Phone Number"
+                placeholder={formSection.fields.phonePlaceholder}
                 className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
               />
             </div>
@@ -86,7 +80,7 @@ export default function ContactForm() {
               <input
                 type="email"
                 required
-                placeholder="Email Address"
+                placeholder={formSection.fields.emailPlaceholder}
                 className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
               />
             </div>
@@ -99,7 +93,7 @@ export default function ContactForm() {
             <textarea
               rows={4}
               required
-              placeholder="Write Message..."
+              placeholder={formSection.fields.messagePlaceholder}
               className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors resize-none"
             ></textarea>
           </div>
@@ -110,8 +104,7 @@ export default function ContactForm() {
           >
             {formSection.submitText} <ArrowRight size={14} />
           </button>
-        </form>
-      )}
+      </form>
     </div>
   );
 }

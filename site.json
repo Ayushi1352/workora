@@ -1,13 +1,19 @@
 {
+  "commonLabels": {
+    "readMore": "Read More",
+    "mainPages": "Main Pages",
+    "services": "Our Services",
+    "usefulLinks": "Useful Links"
+  },
   "company": {
     "name": "Workora",
-    "logo": "/workora-logo.webp",
-    "helpLine": "+1 234 567 8900",
+    "logo": "/workora-logo.png",
+    "helpLine": "+1 (555) 234-8900",
     "openHours": "Mon - Fri 9:00 am - 6:00 pm",
-    "headerAddress": "123 Business Avenue, New York, NY 10001, USA",
-    "footerAddress": "123 Business Avenue, New Delhi, India 110001",
-    "phone": "+91 98765 43210",
-    "email": "info@workora.com",
+    "headerAddress": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA",
+    "footerAddress": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA",
+    "phone": "+1 (555) 234-8901",
+    "email": "xyz@workora.com",
     "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
     "workingHoursClosed": "Sunday: Closed",
     "socials": {
@@ -15,19 +21,39 @@
       "linkedin": "#",
       "instagram": "#",
       "youtube": "#"
-    }
+    },
+    "description": "Connecting the right talent with the right opportunities. We help businesses build stronger teams and empower professionals to achieve their career goals.",
+    "helpLineLabel": "HELP LINE:",
+    "openHoursLabel": "Open Hours:",
+    "footerLogo": "/workora-logo-white.webp"
   },
   "navigation": [
-    { "label": "Home", "href": "/" },
-    { "label": "About Us", "href": "/about-us" },
-    { "label": "Services", "href": "/services" },
-    { "label": "Blogs", "href": "/blogs" },
-    { "label": "Contact Us", "href": "/contact-us" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about-us"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Blogs",
+      "href": "/blogs"
+    },
+    {
+      "label": "Contact Us",
+      "href": "/contact-us"
+    }
   ],
   "hero": {
-    "subtitle": "People Today, Stronger Business Tomorrow",
+    "subtitle": "People Today. Stronger Businesses Tomorrow.",
     "title": "Strategic HR Solutions for Your Growing Business",
-    "description": "We help businesses attract, develop, and retain the right talent with tailored HR strategies that drive long-term success.",
+    "titleHighlight": "HR Solutions",
+    "description": "We help businesses attract, develop and retain the right talent with tailored HR strategies that drive long-term success.",
     "ctaText": "Get a Quote",
     "ctaLink": "/get-a-quote",
     "image": "/hero-main.webp",
@@ -38,52 +64,80 @@
   "about": {
     "sectionSubtitle": "ABOUT US",
     "title": "Empowering Careers Building Stronger Businesses",
-    "description": "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and empowers professionals to achieve their career goals.",
+    "titleHighlight": "Building Stronger Businesses",
+    "description": "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
     "features": [
       {
-        "icon": "/icon-connecting.webp",
+        "icon": "users",
         "title": "Connecting Talent with Opportunity",
-        "description": "We bridge the gap between highly skilled professionals and forward-thinking companies, creating the right fit for long-term success."
+        "description": "We bridge the gap between skilled professionals and forward-thinking companies, ensuring the right fit for long-term success."
       },
       {
-        "icon": "/icon-partner.webp",
+        "icon": "chart",
         "title": "Your Partner in Workforce Success",
-        "description": "We provide strategic HR solutions that help businesses grow, manage workforce performance, and retain top talent."
+        "description": "We provide strategic HR solutions that help businesses grow, improve workforce performance, and create lasting impact."
       }
     ],
     "ctaText": "More About Us",
-    "ctaLink": "/about-us"
+    "ctaLink": "/about-us",
+    "experienceYears": "25",
+    "experienceText": "Years of Experience",
+    "images": {
+      "meeting1": "/about-meeting-1.webp",
+      "meeting2": "/about-meeting-2.webp",
+      "woman": "/about-woman.webp"
+    }
   },
   "stats": {
     "background": "/stats-bg.webp",
     "title": "Creating Opportunities Building Brighter Futures",
+    "titleHighlight": "Building Brighter Futures",
+    "description": "Our numbers reflect the trust businesses and professionals place in us, and the positive impact we create together.",
     "items": [
-      { "number": "500+", "label": "Happy Clients", "icon": "/icon-clients.webp" },
-      { "number": "12K+", "label": "Candidates Placed", "icon": "/icon-candidates.webp" },
-      { "number": "25+", "label": "Years Experience", "icon": "/icon-experience.webp" },
-      { "number": "98%", "label": "Client Retention", "icon": "/icon-retention.webp" }
-    ]
+      {
+        "number": "500+",
+        "label": "Happy Clients",
+        "icon": "users"
+      },
+      {
+        "number": "12K+",
+        "label": "Candidates Placed",
+        "icon": "file-text"
+      },
+      {
+        "number": "25+",
+        "label": "Years of Experience",
+        "icon": "chart"
+      },
+      {
+        "number": "98%",
+        "label": "Client Satisfaction",
+        "icon": "handshake"
+      }
+    ],
+    "sectionSubtitle": "AUR IMPACT"
   },
   "services": {
     "sectionSubtitle": "OUR SERVICES",
     "title": "Comprehensive HR Solutions for a Stronger Tomorrow",
-    "description": "We provide tailored HR strategies to help businesses thrive, manage their workforce, and drive long-term growth and achieve their goals.",
+    "titleHighlight": "for a Stronger Tomorrow",
+    "description": "We provide end-to-end HR services designed to help businesses attract, develop and retain the right talent while empowering professionals to achieve their career goals.",
     "items": [
       {
         "title": "Talent Acquisition",
-        "description": "Helping businesses find the right talent with a strategic recruitment and hiring approach.",
+        "description": "Helping businesses find the right talent with a strategic and streamlined hiring approach.",
         "image": "/service-talent.webp",
         "link": "/services/talent-acquisition"
       },
       {
         "title": "Executive Search",
-        "description": "Identifying and placing top-tier leaders to drive business growth and long-term success.",
+        "description": "Identifying and placing leadership talent to drive business growth and long-term success.",
         "image": "/service-executive.webp",
         "link": "/services/executive-search"
       },
       {
         "title": "Training & Development",
-        "description": "Building and elevating abilities through tailored training and development programs.",
+        "description": "Building skills and capabilities through tailored learning and development programs.",
         "image": "/service-training.webp",
         "link": "/services/training-development"
       },
@@ -115,13 +169,14 @@
         "title": "Recruitment Process Outsourcing",
         "description": "End-to-end recruitment solutions for faster, smarter, and more efficient hiring.",
         "image": "/service-rpo.webp",
-        "link": "/services/rpo"
+        "link": "/services/recruitment-process-outsourcing"
       }
     ]
   },
   "team": {
     "sectionSubtitle": "OUR TEAM",
     "title": "Our People Make the Difference",
+    "titleHighlight": "Make the Difference",
     "description": "A passionate team dedicated to connecting talent with opportunity and driving success for individuals and businesses.",
     "members": [
       {
@@ -131,7 +186,7 @@
       },
       {
         "name": "James Mitchell",
-        "role": "Plant Manager",
+        "role": "Talent Manager",
         "image": "/team-james.webp"
       },
       {
@@ -149,6 +204,7 @@
   "testimonials": {
     "sectionSubtitle": "TESTIMONIALS",
     "title": "Success Stories from Our Clients and Candidates",
+    "titleHighlight": "Clients and Candidates",
     "background": "/testimonials-bg.webp",
     "items": [
       {
@@ -177,50 +233,23 @@
   "blogs": {
     "sectionSubtitle": "OUR BLOGS",
     "title": "Latest Insights & HR Trends",
-    "description": "Explore expert insights, practical tips, and the latest trends to help you build stronger teams and dynamic workplaces.",
-    "items": [
-      {
-        "date": "12 April 2024",
-        "title": "The Future of Employee Engagement - What's Next?",
-        "description": "Discover how evolving workplace trends, technology, and people-first strategies are shaping the future of employee engagement.",
-        "image": "/blog-1.webp",
-        "link": "/blogs/future-of-employee-engagement"
-      },
-      {
-        "date": "08 April 2024",
-        "title": "How to Handle Employee Conflict Effectively",
-        "description": "Learn practical strategies to identify, address, and resolve workplace conflicts for a more positive and productive team.",
-        "image": "/blog-2.webp",
-        "link": "/blogs/handle-employee-conflict"
-      },
-      {
-        "date": "04 April 2024",
-        "title": "Adapting to Remote Work Best Practices for HR",
-        "description": "Explore the latest tools, tools, and strategies for managing a remote workforce and keep your team more connected.",
-        "image": "/blog-3.webp",
-        "link": "/blogs/remote-work-best-practices"
-      }
-    ]
+    "titleHighlight": "HR Trends",
+    "description": "Explore expert insights, practical tips, and the latest trends to help you build stronger teams and dynamic workplaces."
   },
   "aboutPage": {
     "banner": {
       "title": "About Us",
-      "breadcrumb": "About Us",
       "image": "/page-banner.webp"
     },
     "overview": {
       "sectionSubtitle": "ABOUT US",
       "title": "Empowering Careers Building Stronger Businesses",
-      "paragraphs": [
-        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
-        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
-        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
-        "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals."
-      ]
+      "titleHighlight": "Building Stronger Businesses"
     },
     "whyChooseUs": {
       "sectionSubtitle": "WHY CHOOSE US",
       "title": "The Foundation of Our Excellence",
+      "titleHighlight": "Excellence",
       "description": "Our success is built on experience, people, and a commitment to connecting the right talent with the right opportunities. We deliver personalized hiring solutions, industry expertise, and long-term partnerships that drive real results.",
       "since": {
         "badge": "SINCE IN",
@@ -261,12 +290,15 @@
           "highlight": false
         }
       ]
+    },
+    "meta": {
+      "title": "About Us | Workora HR Consultancy",
+      "description": "Learn about Workora, our mission, values, and how we empower careers and build stronger businesses."
     }
   },
   "serviceDetails": {
     "banner": {
       "title": "Services Details",
-      "breadcrumb": "Services Details",
       "image": "/page-banner.webp"
     },
     "overview": {
@@ -321,34 +353,27 @@
         }
       ]
     },
-    "sidebarServices": [
-      { "name": "Executive Search", "slug": "executive-search" },
-      { "name": "Talent Acquisition", "slug": "talent-acquisition" },
-      { "name": "Temporary Staffing", "slug": "temporary-staffing" },
-      { "name": "Contract Staffing", "slug": "contract-staffing" },
-      { "name": "Recruitment Process Outsourcing", "slug": "rpo" },
-      { "name": "HR Consulting", "slug": "hr-consulting" },
-      { "name": "Training & Development", "slug": "training-development" },
-      { "name": "Workforce Solutions", "slug": "workforce-solutions" }
-    ],
     "helpBox": {
       "subtitle": "NEED HELP?",
       "title": "Talk to Our Experts",
       "description": "Get personalized guidance for your hiring needs.",
-      "phone": "+91 98765 43210",
-      "email": "info@workora.com",
       "ctaText": "Request a Consultation",
       "ctaLink": "/contact-us"
+    },
+    "meta": {
+      "title": "Services Details | Workora HR Consultancy",
+      "description": "Executive Search for Exceptional Leadership - Workora HR Services Details"
     }
   },
   "blogsPage": {
     "banner": {
       "title": "Blogs",
-      "breadcrumb": "Blogs",
+      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "sectionSubtitle": "OUR BLOGS",
     "title": "Latest Insights & HR Trends",
+    "titleHighlight": "HR Trends",
     "description": "Explore expert insights, practical tips, and the latest trends to help you build stronger teams and smarter workplaces.",
     "items": [
       {
@@ -371,34 +396,16 @@
         "description": "Explore best practices, tools, and strategies to manage remote teams effectively and keep your workforce connected.",
         "image": "/blog-3.webp",
         "link": "/blogs/remote-work-best-practices"
-      },
-      {
-        "date": "12 AUG 2026",
-        "title": "The Future of Employee Engagement – What's Next?",
-        "description": "Discover how evolving workplace trends, technology, and people-first strategies are shaping the future of employee engagement.",
-        "image": "/blog-1.webp",
-        "link": "/blogs/future-of-employee-engagement"
-      },
-      {
-        "date": "08 AUG 2026",
-        "title": "How to Handle Employee Conflict Effectively",
-        "description": "Learn practical strategies to identify, address, and resolve workplace conflicts for a more positive and productive team.",
-        "image": "/blog-2.webp",
-        "link": "/blogs/handle-employee-conflict"
-      },
-      {
-        "date": "03 AUG 2026",
-        "title": "Adapting to Remote Work Best Practices for HR",
-        "description": "Explore best practices, tools, and strategies to manage remote teams effectively and keep your workforce connected.",
-        "image": "/blog-3.webp",
-        "link": "/blogs/remote-work-best-practices"
       }
-    ]
+    ],
+    "meta": {
+      "title": "Blogs | Workora HR Consultancy",
+      "description": "Latest insights, employee engagement trends, and HR best practices by Workora experts."
+    }
   },
   "blogDetailPage": {
     "banner": {
       "title": "Blogs Detail",
-      "breadcrumb": "Blogs Detail",
       "image": "/page-banner.webp"
     },
     "featuredImage": "/blog-1.webp",
@@ -423,17 +430,22 @@
     "finalThoughts": {
       "title": "Final Thoughts",
       "paragraph": "The future of employee engagement lies in creating work environments where people feel valued, supported, and empowered. By embracing new technologies, flexible work practices, and a people-first culture, organizations can build stronger teams and achieve long-term success."
+    },
+    "meta": {
+      "title": "Blogs Detail | Workora HR Consultancy",
+      "description": "The Future of Employee Engagement - What's Next? Comprehensive HR Blog Detail."
     }
   },
   "getAQuotePage": {
     "banner": {
       "title": "Get a Quote",
-      "breadcrumb": "Get a Quote",
+      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "overview": {
       "sectionSubtitle": "GET A QUOTE",
       "title": "Let's Build the Right Team Together",
+      "titleHighlight": "Together",
       "description": "Share your hiring needs with us and our experts will provide a customized solution with the right candidates for your business.",
       "features": [
         {
@@ -456,15 +468,23 @@
         "image": "/quote-experts.webp",
         "subtitle": "NEED HELP?",
         "title": "Talk to Our Experts",
-        "description": "Have questions or need guidance? Our team is here to help you find the best hiring solution.",
-        "phone": "+91 98765 43210",
-        "email": "info@workora.com"
+        "description": "Have questions or need guidance? Our team is here to help you find the best hiring solution."
       }
     },
     "form": {
       "title": "Request a Quote",
       "subtitle": "Fill out the form below and our team will get in touch with you.",
-      "submitText": "Submit Enquiry"
+      "submitText": "Submit Enquiry",
+      "fields": {
+        "nameLabel": "Name",
+        "namePlaceholder": "Enter your full name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Enter your email address",
+        "phoneLabel": "Phone Number",
+        "phonePlaceholder": "Enter your phone number",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Tell us about your requirements..."
+      }
     },
     "process": {
       "sectionSubtitle": "OUR PROCESS",
@@ -491,24 +511,433 @@
           "description": "Begin the hiring process with the right talent."
         }
       ]
+    },
+    "meta": {
+      "title": "Get a Quote | Workora HR Consultancy",
+      "description": "Request a custom HR solutions quote from Workora experts. Connect with the right talent for your business."
     }
   },
   "contactUsPage": {
     "banner": {
       "title": "Contact Us",
-      "breadcrumb": "Contact Us",
+      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "formSection": {
       "sectionSubtitle": "GET IN TOUCH",
       "title": "Let's Start a Conversation",
+      "titleHighlight": "Conversation",
       "description": "We connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike.",
-      "submitText": "Submit Message"
+      "submitText": "Submit Message",
+      "fields": {
+        "firstNamePlaceholder": "First Name",
+        "lastNamePlaceholder": "Last Name",
+        "phonePlaceholder": "Phone Number",
+        "emailPlaceholder": "Email Address",
+        "messagePlaceholder": "Write Message..."
+      }
     },
     "infoCards": {
-      "email": "info@workora.com",
-      "phone": "+91 98765 43210",
-      "location": "3891 Ranchview, Richardson, California 62639 United States"
+      "location": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA"
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280016462!2d-74.11976373077755!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711100000000!5m2!1sen!2sin",
+    "meta": {
+      "title": "Contact Us | Workora HR Consultancy",
+      "description": "Get in touch with Workora HR Consultancy experts for tailored hiring and HR solutions."
     }
+  },
+  "thankYouPage": {
+    "banner": {
+      "title": "Thank You",
+      "image": "/page-banner.webp"
+    },
+    "meta": {
+      "title": "Thank You | Workora HR Consultancy",
+      "description": "Form submissions on this website are currently demo-only and are not sent or saved."
+    },
+    "headingPrefix": "Thank ",
+    "headingHighlight": "You!",
+    "status": "Form completed in demo mode.",
+    "description": "Your details were not sent or saved. Contact us directly using the information below.",
+    "homeLink": "Back to Home",
+    "contactCards": {
+      "phoneTitle": "Need Immediate Assistance?",
+      "phonePrompt": "Call us at",
+      "emailTitle": "Email Us",
+      "emailPrompt": "Drop us an email at",
+      "officeTitle": "Our Office"
+    }
+  },
+  "servicesPage": {
+    "banner": {
+      "title": "Services",
+      "image": "/page-banner.webp"
+    },
+    "meta": {
+      "title": "Services | Workora HR Consultancy",
+      "description": "Comprehensive HR Solutions for a Stronger Tomorrow. Talent Acquisition, Executive Search, Training & Development, and more."
+    }
+  },
+  "teamPage": {
+    "banner": {
+      "title": "Our Team",
+      "variant": "centered",
+      "image": "/page-banner.webp"
+    },
+    "meta": {
+      "title": "Our Team | Workora HR Consultancy",
+      "description": "Meet the passionate team behind Workora HR Consultancy."
+    }
+  },
+  "faqPage": {
+    "banner": {
+      "title": "FAQs",
+      "image": "/page-banner.webp"
+    },
+    "sectionSubtitle": "HELP CENTER",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers about our hiring solutions, candidate support, and working with Workora.",
+    "support": {
+      "subtitle": "NEED MORE HELP?",
+      "title": "Talk to Our Experts",
+      "description": "Our team can help you find the right next step for your hiring needs.",
+      "ctaText": "Request a Consultation",
+      "ctaLink": "/contact-us"
+    },
+    "categories": [
+      {
+        "id": "hiring-services",
+        "title": "Hiring Services",
+        "items": [
+          {
+            "question": "What HR services does Workora provide?",
+            "answer": "Workora provides talent acquisition, executive search, training and development, HR consulting, staffing solutions, career guidance, HR outsourcing, and recruitment process outsourcing."
+          },
+          {
+            "question": "Can you help with a specific role or hiring need?",
+            "answer": "Yes. Share the role, skills, experience level, and timing you have in mind through our quote form. Our team will review your requirements and discuss a suitable approach."
+          },
+          {
+            "question": "How do you approach executive search?",
+            "answer": "We start by understanding your organization and leadership needs, then identify and assess candidates for their experience and fit with your goals and culture."
+          }
+        ]
+      },
+      {
+        "id": "candidates-careers",
+        "title": "Candidates & Careers",
+        "items": [
+          {
+            "question": "Can Workora help me with career guidance?",
+            "answer": "Our career guidance service offers personalized support to help professionals plan their development and work toward their career goals. Contact our team to discuss what support you need."
+          },
+          {
+            "question": "How can I discuss a career opportunity with your team?",
+            "answer": "Use the Contact Us page to share your background and the type of opportunity you are exploring. Our team can point you toward the most relevant next step."
+          },
+          {
+            "question": "What should I include when I contact Workora?",
+            "answer": "A short summary of your experience, the kind of role you are looking for, and your preferred location helps our team understand how to guide you."
+          }
+        ]
+      },
+      {
+        "id": "working-with-workora",
+        "title": "Working With Workora",
+        "items": [
+          {
+            "question": "How do I request a quote or consultation?",
+            "answer": "Complete the Get a Quote form with your contact details and hiring requirements. You can also contact our team directly by phone or email."
+          },
+          {
+            "question": "What happens after I send an enquiry?",
+            "answer": "Our team reviews the details you provide and follows up to understand your goals, requirements, and the best way to support your organization."
+          },
+          {
+            "question": "How long does it take to fill a role?",
+            "answer": "Timing depends on the role, experience required, and hiring process. After discussing your requirements, our team can provide a more useful estimate for your search."
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "title": "FAQs | Workora HR Consultancy",
+      "description": "Answers to common questions about Workora's HR and recruitment services."
+    }
+  },
+  "galleryPage": {
+    "banner": {
+      "title": "Gallery",
+      "image": "/page-banner.webp"
+    },
+    "sectionSubtitle": "OUR GALLERY",
+    "title": "People, Partnerships & Progress",
+    "description": "A look at the people and workplace moments behind our HR and recruitment services.",
+    "images": [
+      {
+        "src": "/hero-main.webp",
+        "alt": "HR professionals meeting with a business leader",
+        "title": "Building the right teams"
+      },
+      {
+        "src": "/about-meeting-1.webp",
+        "alt": "Colleagues meeting in a modern office",
+        "title": "People working together"
+      },
+      {
+        "src": "/about-meeting-2.webp",
+        "alt": "Team collaborating around a laptop",
+        "title": "Ideas into action"
+      },
+      {
+        "src": "/about-woman.webp",
+        "alt": "HR professional reviewing information on a tablet",
+        "title": "Guidance at every step"
+      },
+      {
+        "src": "/service-talent.webp",
+        "alt": "Talent acquisition consultation",
+        "title": "Talent acquisition"
+      },
+      {
+        "src": "/service-executive.webp",
+        "alt": "Executive search consultation",
+        "title": "Executive search"
+      },
+      {
+        "src": "/service-training.webp",
+        "alt": "Professional training session",
+        "title": "Training and development"
+      },
+      {
+        "src": "/service-consulting.webp",
+        "alt": "HR consulting discussion",
+        "title": "HR consulting"
+      },
+      {
+        "src": "/service-staffing.webp",
+        "alt": "Staffing team discussion",
+        "title": "Staffing solutions"
+      },
+      {
+        "src": "/service-career.webp",
+        "alt": "Career guidance meeting",
+        "title": "Career guidance"
+      },
+      {
+        "src": "/team-ryan.webp",
+        "alt": "Workora HR director",
+        "title": "Our people"
+      },
+      {
+        "src": "/about-trophy.webp",
+        "alt": "Recruitment excellence award",
+        "title": "Recognizing excellence"
+      }
+    ],
+    "meta": {
+      "title": "Gallery | Workora HR Consultancy",
+      "description": "Explore people and workplace moments from Workora's HR and recruitment services."
+    }
+  },
+  "siteMapPage": {
+    "banner": {
+      "title": "Sitemap",
+      "image": "/page-banner.webp"
+    },
+    "sectionSubtitle": "EXPLORE WORKORA",
+    "title": "Find Your Way Around",
+    "description": "Browse Workora's pages, HR services, and helpful information.",
+    "utilityLinks": [
+      {
+        "label": "FAQs",
+        "href": "/faqs"
+      },
+      {
+        "label": "Career",
+        "href": "/career"
+      },
+      {
+        "label": "Gallery",
+        "href": "/gallery"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "label": "Terms & Conditions",
+        "href": "/terms-and-conditions"
+      }
+    ],
+    "meta": {
+      "title": "Sitemap | Workora HR Consultancy",
+      "description": "Browse Workora pages, HR services, and helpful links."
+    }
+  },
+  "careerPage": {
+    "banner": {
+      "title": "Career",
+      "image": "/page-banner.webp"
+    },
+    "sectionSubtitle": "CAREERS AT WORKORA",
+    "title": "Grow Your Career With Us",
+    "description": "Workora connects people with opportunities and helps organizations build stronger teams. Tell us about your experience and the kind of work you want to do.",
+    "image": "/about-meeting-2.webp",
+    "highlights": [
+      {
+        "title": "People-first work",
+        "description": "Help people and organizations find the right opportunities and support."
+      },
+      {
+        "title": "Room to develop",
+        "description": "Build your skills while contributing to meaningful hiring and career outcomes."
+      },
+      {
+        "title": "Work that connects",
+        "description": "Collaborate with professionals and businesses across the world of work."
+      }
+    ],
+    "contactTitle": "Interested in joining Workora?",
+    "contactDescription": "Share a little about your background and the opportunities you are looking for. Our team will help you with the next step.",
+    "ctaText": "Contact Our Team",
+    "ctaLink": "/contact-us",
+    "meta": {
+      "title": "Career | Workora HR Consultancy",
+      "description": "Explore career opportunities and connect with the Workora team."
+    }
+  },
+  "legalPages": {
+    "support": {
+      "title": "Questions about this page?",
+      "description": "Contact our team if you have questions about these terms or how we handle your information.",
+      "ctaText": "Contact Us",
+      "ctaLink": "/contact-us",
+      "badge": "NEED HELP?"
+    },
+    "privacyPolicy": {
+      "banner": {
+        "title": "Privacy Policy",
+        "image": "/page-banner.webp"
+      },
+      "sectionSubtitle": "LEGAL",
+      "title": "Privacy Policy",
+      "lastUpdated": "October 8, 2026",
+      "intro": "The contact and quote forms on this website currently run in demo mode. Submitting either form does not send or save the information entered.",
+      "sections": [
+        {
+          "heading": "Information You Provide",
+          "paragraphs": [
+            "The contact and quote forms currently run only in your browser. Submitting them does not transmit the entered name, email address, phone number, or message to Workora.",
+            "Please do not enter sensitive personal information into these demo forms."
+          ]
+        },
+        {
+          "heading": "How We Use Information",
+          "paragraphs": [
+            "The current form implementation does not process submitted values. After submission, it only displays a confirmation page.",
+            "If these forms are connected to a submission service in the future, this policy should be updated before real enquiries are collected."
+          ]
+        },
+        {
+          "heading": "When Information Is Shared",
+          "paragraphs": [
+            "Information entered in the current contact and quote forms is not transmitted to Workora or shared through those forms.",
+            "If you contact Workora directly by email or phone, your communication will be handled through those respective services."
+          ]
+        },
+        {
+          "heading": "Retention and Security",
+          "paragraphs": [
+            "The current website code does not store values entered into the contact or quote forms. The form values are not persisted when you leave the page.",
+            "This statement describes the forms' current demo behavior and should be reviewed if the website begins collecting enquiries."
+          ]
+        },
+        {
+          "heading": "Your Choices and Contact",
+          "paragraphs": [
+            "Because the current forms do not send or store their values, they do not create an enquiry record for Workora to access, correct, or delete.",
+            "For privacy questions, contact us at xyz@workora.com or call +1 (555) 234-8901."
+          ]
+        },
+        {
+          "heading": "Changes to This Policy",
+          "paragraphs": [
+            "We may update this policy as our website or practices change. The latest revision date will be shown at the top of this page."
+          ]
+        }
+      ],
+      "meta": {
+        "title": "Privacy Policy | Workora HR Consultancy",
+        "description": "Learn how Workora handles information provided through this website."
+      }
+    },
+    "termsAndConditions": {
+      "banner": {
+        "title": "Terms & Conditions",
+        "image": "/page-banner.webp"
+      },
+      "sectionSubtitle": "LEGAL",
+      "title": "Terms & Conditions",
+      "lastUpdated": "October 8, 2026",
+      "intro": "These terms apply to your access to and use of the Workora HR Consultancy website. By using this website, you agree to these terms.",
+      "sections": [
+        {
+          "heading": "Using This Website",
+          "paragraphs": [
+            "You agree to use this website lawfully and not to disrupt its operation, attempt unauthorized access, or misuse its forms or content.",
+            "When submitting an enquiry, you are responsible for providing information that is accurate to the best of your knowledge."
+          ]
+        },
+        {
+          "heading": "Our Services and Enquiries",
+          "paragraphs": [
+            "Information on this website describes Workora's HR and recruitment services in general. Submitting an enquiry or quote request does not create a client, employment, or other contractual relationship.",
+            "Any engagement, scope of work, fees, and service terms will be confirmed separately in writing before services begin. Outcomes and timelines depend on the requirements and circumstances of each engagement."
+          ]
+        },
+        {
+          "heading": "Website Content",
+          "paragraphs": [
+            "Website text, branding, and other materials are provided by Workora or their respective owners. You may view and use them for personal, informational purposes, but may not reproduce or distribute them commercially without permission."
+          ]
+        },
+        {
+          "heading": "Third-Party Links",
+          "paragraphs": [
+            "This website may link to third-party websites for convenience. Workora does not control those sites and is not responsible for their content, availability, or privacy practices."
+          ]
+        },
+        {
+          "heading": "Disclaimer and Liability",
+          "paragraphs": [
+            "Website content is provided for general information and may be changed or updated without notice. To the extent permitted by law, Workora makes no guarantee that the website will always be available or free from errors.",
+            "Nothing in these terms excludes liability that cannot legally be excluded."
+          ]
+        },
+        {
+          "heading": "Changes and Contact",
+          "paragraphs": [
+            "We may revise these terms when our website or services change. Continued use of the website after an update means you accept the revised terms.",
+            "For questions about these terms, email xyz@workora.com or call +1 (555) 234-8901."
+          ]
+        }
+      ],
+      "meta": {
+        "title": "Terms & Conditions | Workora HR Consultancy",
+        "description": "Read the terms that apply to using the Workora website."
+      }
+    }
+  },
+  "navbar": {
+    "allServicesLabel": "All Services",
+    "ctaText": "Get a Quote",
+    "ctaLink": "/get-a-quote"
+  },
+  "footer": {
+    "quickLinksTitle": "Quick Links",
+    "contactTitle": "Get In Touch",
+    "copyright": "All Rights Reserved.",
+    "year": "2026"
   }
 }

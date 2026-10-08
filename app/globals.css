@@ -2,10 +2,10 @@
 
 :root {
   --primary-blue: #3258A3;
-  --dark-blue: #1F3347;
-  --light-blue: #EBF5FF;
-  --accent: #E3F2FD;
-  --text-main: #333333;
+  --dark-blue: #2C313D;
+  --light-blue: #EEF2F8;
+  --accent: #E3E9F3;
+  --text-main: #2C313D;
   --text-muted: #666666;
 }
 
@@ -29,11 +29,11 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 }
 
 .container-custom {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply w-full px-4 lg:px-12;
 }
 
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-14 md:py-20;
 }
 
 .text-subtitle {
@@ -50,5 +50,5 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 }
 
 .btn-primary {
-  @apply bg-primary hover:bg-dark transition-colors duration-300 text-white font-medium py-3 px-6 rounded-md inline-flex items-center gap-2;
+  @apply bg-primary hover:bg-dark transition-colors duration-300 text-white font-medium py-2.5 px-5 rounded-sm inline-flex items-center gap-2;
 }

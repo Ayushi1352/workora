@@ -1,9 +1,10 @@
 import ServicesBanner from "./ServicesBanner";
 import ServicesList from "./ServicesList";
+import siteData from "../../site.json";
 
 export const metadata = {
-  title: "Services | Workora HR Consultancy",
-  description: "Comprehensive HR Solutions for a Stronger Tomorrow. Talent Acquisition, Executive Search, Training & Development, and more.",
+  title: siteData.servicesPage.meta.title,
+  description: siteData.servicesPage.meta.description,
 };
 
 export default function ServicesPage() {

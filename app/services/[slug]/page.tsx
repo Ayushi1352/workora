@@ -2,6 +2,7 @@ import ServiceDetailBanner from "../ServiceDetailBanner";
 import ServiceDetailOverview from "../ServiceDetailOverview";
 import ServiceDetailProcess from "../ServiceDetailProcess";
 import ServiceDetailSidebar from "../ServiceDetailSidebar";
+import { notFound } from "next/navigation";
 import siteData from "../../../site.json";
 
 interface PageProps {
@@ -9,57 +10,55 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return [
-    { slug: "executive-search" },
-    { slug: "talent-acquisition" },
-    { slug: "temporary-staffing" },
-    { slug: "contract-staffing" },
-    { slug: "rpo" },
-    { slug: "hr-consulting" },
-    { slug: "training-development" },
-    { slug: "workforce-solutions" },
-    { slug: "career-guidance" },
-    { slug: "hr-outsourcing" }
-  ];
+  return siteData.services.items.map(s => ({
+    slug: s.link.replace("/services/", "")
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const service = siteData.services.items.find(s => s.link.includes(slug));
-  const title = service ? `${service.title} | Workora` : "Services Details | Workora";
-  return { title };
+  const service = siteData.services.items.find(s => s.link === `/services/${slug}`);
+  return {
+    title: service ? `${service.title} | ${siteData.company.name}` : siteData.serviceDetails.meta.title,
+    description: service?.description ?? siteData.serviceDetails.meta.description,
+  };
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const service = siteData.services.items.find(s => s.link.includes(slug));
+  const service = siteData.services.items.find(s => s.link === `/services/${slug}`);
 
-  const overviewData = service ? {
-    sectionSubtitle: "SERVICE OVERVIEW",
-    title: `${service.title} for Exceptional Leadership`,
-    description: service.description + " We combine industry expertise, extensive networks, and a proven assessment process to find leaders who align with your vision, culture, and long-term goals.",
-    ctaText: "Get Started",
-    ctaLink: "/contact-us",
-    image: service.image || "/service-detail-main.webp"
-  } : undefined;
+  if (!service) {
+    notFound();
+  }
+
+  const overviewData = {
+    sectionSubtitle: siteData.serviceDetails.overview.sectionSubtitle,
+    title: service.title,
+    description: `${service.description} ${siteData.serviceDetails.overview.description}`,
+    ctaText: siteData.serviceDetails.overview.ctaText,
+    ctaLink: siteData.serviceDetails.overview.ctaLink,
+    image: service.image
+  };
 
   return (
     <div>
       <ServiceDetailBanner 
-        title={service ? service.title : "Services Details"} 
-        breadcrumb={service ? service.title : "Services Details"} 
+        title={service.title}
+        parentTitle={siteData.servicesPage.banner.title}
+        parentHref="/services"
       />
 
       <section className="section-padding bg-white">
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="container-custom grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
           {/* Main Content Area - 8 cols */}
-          <div className="lg:col-span-8 space-y-12">
+          <div className="space-y-8 lg:col-span-9">
             <ServiceDetailOverview overview={overviewData} />
             <ServiceDetailProcess />
           </div>
 
           {/* Sidebar Area - 4 cols */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <ServiceDetailSidebar currentSlug={slug} />
           </div>
         </div>

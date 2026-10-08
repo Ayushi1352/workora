@@ -1,9 +1,10 @@
 import BlogsBanner from "./BlogsBanner";
 import BlogsGrid from "./BlogsGrid";
+import siteData from "../../site.json";
 
 export const metadata = {
-  title: "Blogs | Workora HR Consultancy",
-  description: "Latest insights, employee engagement trends, and HR best practices by Workora experts.",
+  title: siteData.blogsPage.meta.title,
+  description: siteData.blogsPage.meta.description,
 };
 
 export default function BlogsPage() {
