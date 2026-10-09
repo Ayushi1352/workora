@@ -9,7 +9,7 @@ const hero = siteData.hero;
 export default function Hero() {
   return (
     <section className="fluid relative isolate overflow-hidden bg-white">
-      {/* Desktop: the photo is the section background, washed out on the left by the image itself */}
+      {/* Desktop: clean, natural photo in background */}
       <Image
         src={hero.image}
         alt=""
@@ -17,16 +17,26 @@ export default function Hero() {
         preload
         unoptimized
         sizes="100vw"
-        className="-z-10 hidden object-cover object-right lg:block"
+        className="-z-20 hidden object-cover object-[right_65%] lg:block"
       />
 
-      <div className="wrap px-5 pb-10 pt-10 sm:px-8 lg:h-179.5 lg:px-0 lg:pb-0 lg:pl-26.25 lg:pt-18.75">
+      {/* CSS gradient overlay: provides smooth fade for text contrast purely via CSS without altering the image file */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 hidden lg:block"
+        style={{
+          background:
+            "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.96) 22%, rgba(255,255,255,0.82) 36%, rgba(255,255,255,0.45) 47%, rgba(255,255,255,0) 58%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="wrap px-5 py-14 md:py-18 sm:px-8 lg:h-179.5 lg:px-0 lg:pb-0 lg:pl-26.25 lg:pt-18.75">
         <div className="flex items-center gap-3 font-pop text-[13px] font-medium text-[#2b5797] sm:text-sm lg:gap-4.75 lg:fs-20">
           <span className="h-0.5 w-8 shrink-0 bg-[#2b5797] lg:h-0.75 lg:w-10.5" />
           <span>{hero.subtitle}</span>
         </div>
 
-        <h1 className="mt-4 font-noto text-[40px] font-bold leading-[1.08] tracking-[-0.015em] whitespace-pre-line text-ink sm:text-[54px] lg:mt-6.5 lg:fs-79 lg:leading-[0.975]">
+        <h1 className="mt-4 font-noto text-[40px] font-bold leading-[1.08] tracking-[-0.015em] whitespace-pre-line text-ink sm:text-[54px] lg:mt-6.5 lg:fs-76 lg:leading-[1.013]">
           <HighlightedText
             text={hero.title}
             highlight={hero.titleHighlight}
@@ -49,9 +59,11 @@ export default function Hero() {
         </Link>
       </div>
 
-      {/* Phones and tablets: photo sits under the text */}
-      <div className="relative aspect-[16/10] w-full lg:hidden">
-        <Image src={hero.image} alt="" fill unoptimized sizes="100vw" className="object-cover object-[78%_center]" />
+      {/* Phones and tablets: clean photo sits under the text in a framed container */}
+      <div className="relative aspect-[16/10] w-full px-5 sm:px-8 lg:hidden">
+        <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-sm">
+          <Image src={hero.image} alt={hero.imageAlt} fill unoptimized sizes="100vw" className="object-cover object-center" />
+        </div>
       </div>
     </section>
   );

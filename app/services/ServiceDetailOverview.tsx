@@ -32,7 +32,7 @@ export default function ServiceDetailOverview({ overview: customOverview }: Serv
             <span className="h-0.5 w-8 shrink-0 bg-[#1d4fd8] lg:h-0.75 lg:w-9.25" />
             {overview.sectionSubtitle}
           </div>
-          <h2 className="mt-3 font-exo text-[30px] font-bold leading-[1.15] text-[#070a1d] sm:text-4xl lg:mt-4.5 lg:whitespace-pre-line lg:fs-42 lg:leading-[1.12]">
+          <h2 className="mt-3 font-exo text-[30px] font-bold leading-[1.15] text-[#070a1d] sm:text-4xl lg:mt-4.5 lg:whitespace-pre-line lg:fs-41 lg:leading-[1.146]">
             {overview.title}
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-[#6b7386] lg:mt-3.5 lg:w-140 lg:whitespace-pre-line lg:fs-19.25 lg:leading-[1.418]">

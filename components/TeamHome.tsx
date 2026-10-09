@@ -7,7 +7,7 @@ const team = siteData.team;
 export default function TeamHome() {
   return (
     <section className="fluid bg-white font-pop">
-      <div className="wrap px-5 py-14 sm:px-8 lg:px-13 lg:pb-23 lg:pt-14.5">
+      <div className="wrap px-5 py-14 sm:px-8 md:py-18 lg:pb-23 lg:pt-14.5 lg:px-13">
         <div className="text-center">
           <div className="flex items-center justify-center gap-4 font-figtree text-[13px] font-bold uppercase tracking-[0.04em] text-[#1f4fae] lg:gap-4.25 lg:fs-18 lg:leading-none">
             <span className="h-0.5 w-8 bg-[#1f4fae] lg:w-11" />
@@ -39,9 +39,9 @@ export default function TeamHome() {
                 />
               </div>
               <div className="px-6 pb-5 pt-4 lg:px-7.5 lg:pb-5.5 lg:pt-4.75">
-                <h3 className="font-pop text-xl font-semibold text-[#06072c] lg:fs-22.5 lg:leading-[1.3]">{member.name}</h3>
+                <h3 className="font-lexend text-xl font-semibold text-[#06072c] lg:fs-24 lg:leading-[1.22]">{member.name}</h3>
                 <span className="mt-2 block h-0.75 w-11.5 bg-[#2456c8] lg:mt-2.75" />
-                <p className="mt-3 text-[15px] text-[#646d84] lg:mt-4 lg:fs-17.5 lg:leading-[1.3]">{member.role}</p>
+                <p className="mt-3 font-lexend text-[15px] font-light text-[#646d84] lg:mt-4 lg:fs-18.75 lg:leading-[1.21]">{member.role}</p>
               </div>
             </article>
           ))}

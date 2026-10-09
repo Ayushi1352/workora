@@ -14,7 +14,7 @@ interface ServicesHomeProps {
 export default function ServicesHome({ page = false }: ServicesHomeProps) {
   return (
     <section className="fluid bg-white font-figtree">
-      <div className={`wrap px-5 py-14 sm:px-8 lg:px-17 ${page ? "lg:pb-36 lg:pt-24.25" : "lg:pb-14 lg:pt-27.5"}`}>
+      <div className={`wrap px-5 py-14 sm:px-8 md:py-18 lg:px-17 ${page ? "lg:pb-36 lg:pt-24.25" : "lg:pb-14 lg:pt-27.5"}`}>
         <div className="text-center">
           <div className="flex items-center justify-center gap-4 text-[13px] font-bold uppercase tracking-[0.16em] text-[#2d55a0] lg:gap-4.5 lg:fs-16 lg:leading-none">
             <span className="h-0.5 w-8 bg-[#2d55a0] lg:w-10.5" />
@@ -50,7 +50,7 @@ export default function ServicesHome({ page = false }: ServicesHomeProps) {
               </div>
               <div className="flex grow flex-col items-start px-5 pb-5 pt-4 lg:px-5.75 lg:pb-3.5 lg:pt-3.75">
                 <h3
-                  className={`font-figtree text-xl font-bold text-[#0b0d23] lg:whitespace-nowrap lg:fs-23.5 lg:leading-[1.22] ${
+                  className={`font-figtree text-xl font-semibold text-[#0b0d23] lg:whitespace-nowrap lg:fs-24 lg:leading-[1.22] ${
                     service.title.length > 24 ? "lg:tracking-[-0.045em]" : ""
                   }`}
                 >

@@ -10,7 +10,7 @@ export default function AboutOverview() {
     <section className="fluid relative overflow-hidden bg-white font-figtree">
       <div className="absolute bottom-24.75 left-0 hidden h-34.25 w-33.25 bg-[#cbd6ec] [clip-path:polygon(0_0,0_100%,100%_100%)] lg:block" />
 
-      <div className="wrap flex flex-col gap-10 px-5 py-14 sm:px-8 lg:flex-row lg:items-start lg:gap-0 lg:px-0 lg:pb-32 lg:pl-15.5 lg:pt-20.5">
+      <div className="wrap flex flex-col gap-10 px-5 py-14 sm:px-8 md:py-18 lg:pb-32 lg:pt-20.5 lg:flex-row lg:items-start lg:gap-0 lg:px-0 lg:pl-15.5">
         <div className="mx-auto w-full max-w-xl shrink-0 lg:mx-0 lg:w-194.5 lg:max-w-none">
           <AboutCollage />
         </div>

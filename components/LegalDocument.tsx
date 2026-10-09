@@ -36,7 +36,7 @@ export default function LegalDocument({ page }: LegalDocumentProps) {
             <h2 className="text-subtitle">{page.sectionSubtitle}</h2>
             <h2 className="section-title mb-3">{page.title}</h2>
             <p className="mb-2 text-xs font-medium text-gray-500">
-              Last updated: {page.lastUpdated}
+              {siteData.legalPages.lastUpdatedLabel} {page.lastUpdated}
             </p>
             <p className="mb-8 max-w-4xl text-sm leading-relaxed text-gray-600">
               {page.intro}
@@ -51,7 +51,9 @@ export default function LegalDocument({ page }: LegalDocumentProps) {
                   </h3>
                   <div className="space-y-3 text-sm leading-relaxed text-gray-600">
                     {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                      <p key={paragraph}>
+                        {paragraph.replaceAll("{email}", company.email).replaceAll("{phone}", company.phone)}
+                      </p>
                     ))}
                   </div>
                 </section>

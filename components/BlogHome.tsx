@@ -17,7 +17,7 @@ export default function BlogHome({ all = false }: BlogHomeProps) {
 
   return (
     <section className="fluid bg-white font-figtree">
-      <div className={`wrap px-5 py-14 sm:px-8 ${all ? "lg:pb-28.25 lg:pl-19.25 lg:pr-17 lg:pt-25.5" : "lg:px-19 lg:pb-24.75 lg:pt-16.5"}`}>
+      <div className={`wrap px-5 py-14 sm:px-8 md:py-18 ${all ? "lg:pb-28.25 lg:pl-19.25 lg:pr-17 lg:pt-25.5" : "lg:px-19 lg:pb-24.75 lg:pt-16.5"}`}>
         <div className="text-center">
           <div className="flex items-center justify-center gap-5 text-[13px] font-bold uppercase text-[#1f4fae] lg:gap-7.25 lg:fs-19.25 lg:leading-none">
             <span className="h-0.5 w-10 bg-[#1f4fae] lg:w-18" />

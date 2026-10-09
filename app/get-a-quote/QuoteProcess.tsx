@@ -10,7 +10,7 @@ const arrowLeft = ["lg:left-46.5", "lg:left-59.5", "lg:left-56.5"];
 export default function QuoteProcess() {
   return (
     <section className="fluid bg-[#f3f7fd] font-sans">
-      <div className="wrap px-5 py-10 sm:px-8 lg:px-0 lg:py-0 lg:pl-36">
+      <div className="wrap px-5 py-14 sm:px-8 md:py-18 lg:py-0 lg:px-0 lg:pl-36">
         <div className="relative flex flex-col gap-8 lg:block lg:h-44.75">
           <div className="lg:pt-7.25">
             <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.03em] text-[#4a5370] lg:fs-13 lg:leading-[1.15]">

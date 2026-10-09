@@ -30,7 +30,7 @@ export default function ThankYouContent() {
       <div className={`pointer-events-none absolute left-0 top-79.5 ${dots}`} />
       <div className={`pointer-events-none absolute -right-6 top-63.5 ${dots}`} />
 
-      <div className="wrap relative px-5 py-14 text-center sm:px-8 lg:pb-24.5 lg:pl-18.5 lg:pr-20.75 lg:pt-22.5">
+      <div className="wrap relative px-5 py-14 text-center sm:px-8 md:py-18 lg:pb-24.5 lg:pt-22.5 lg:pl-18.5 lg:pr-20.75">
         <div className="relative mx-auto flex size-36 items-center justify-center rounded-full bg-[#e9f1fd] lg:size-54">
           {rays.map((ray) => (
             <span key={ray} className={`absolute h-1 w-[12%] rounded-full ${ray}`} />
@@ -87,7 +87,7 @@ export default function ThankYouContent() {
             <span className="ml-5 min-w-0 lg:ml-9.75">
               <span className={title}>{cards.officeTitle}</span>
               <span className="mt-1 block whitespace-pre-line text-[15px] text-[#5b647e] lg:mt-1.5 lg:fs-18.5 lg:leading-[1.51]">
-                {siteData.contactUsPage.infoCards.location}
+                {company.headerAddress}
               </span>
             </span>
           </div>

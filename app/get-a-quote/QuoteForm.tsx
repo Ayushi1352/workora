@@ -13,7 +13,7 @@ const fields = [
 ];
 
 const control =
-  "w-full rounded-md border border-[#dfe4ec] bg-white text-[15px] text-[#0b1230] outline-none transition-colors placeholder:text-[#5b647e] focus:border-[#0f52d9] lg:r-5 lg:fs-15";
+  "w-full rounded-md border border-[#dfe4ec] bg-white text-[15px] text-[#0b1230] outline-none transition-colors placeholder:text-[13px] placeholder:text-[#5b647e] focus:border-[#0f52d9] lg:r-5 lg:fs-15 lg:placeholder:text-[15px]";
 const labelClass = "block text-[15px] font-medium text-[#0b1230] lg:fs-16 lg:leading-[1.125]";
 
 export default function QuoteForm() {

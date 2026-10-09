@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
@@ -19,12 +19,44 @@ const socials = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(108);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header id="top" className="fluid sticky top-0 z-50 w-full font-figtree bg-white shadow-sm">
+    <header ref={headerRef} id="top" className="fluid sticky top-0 z-50 w-full font-figtree bg-white shadow-sm">
       {/* Top bar: the two colours meet 90 design-px right of centre, as in the design */}
       <div
         className="hidden text-white lg:block"
@@ -51,9 +83,16 @@ export default function Navbar() {
             <span className="ml-auto h-7 w-px shrink-0 bg-white/35" />
             <div className="ml-8.5 flex shrink-0 items-center gap-6">
               {socials.map(({ href, label, Icon }) => (
-                <Link key={label} href={href} aria-label={label} className="transition-opacity hover:opacity-75">
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="transition-opacity hover:opacity-75"
+                >
                   <Icon className="size-5.5" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -61,19 +100,18 @@ export default function Navbar() {
       </div>
 
       {/* Compact top bar for phones and tablets */}
-      <div className="flex items-center justify-between gap-3 bg-[#375ca0] px-4 py-2 text-[13px] font-medium text-white lg:hidden">
+      <div className="flex items-center justify-between gap-3 bg-[#375ca0] px-4 py-2 text-[12.5px] font-medium text-white sm:text-[13px] lg:hidden">
         <a href={`tel:${company.helpLine.replace(/[^+\d]/g, "")}`} className="flex min-w-0 items-center gap-2">
-          <FaPhoneAlt className="size-3.5 shrink-0" />
+          <FaPhoneAlt className="size-3 shrink-0" />
           <span className="truncate">
             {company.helpLineLabel} {company.helpLine}
           </span>
         </a>
-        <div className="flex shrink-0 items-center gap-3.5">
-          {socials.map(({ href, label, Icon }) => (
-            <Link key={label} href={href} aria-label={label}>
-              <Icon className="size-3.5" />
-            </Link>
-          ))}
+        <div className="flex shrink-0 items-center gap-2 text-white/90">
+          <FaEnvelope className="size-3 shrink-0" />
+          <a href={`mailto:${company.email}`} className="truncate transition-colors hover:text-white">
+            {company.email}
+          </a>
         </div>
       </div>
 
@@ -126,17 +164,20 @@ export default function Navbar() {
           </nav>
 
           <Link
-            href={siteData.hero.ctaLink}
+            href={siteData.navbar.ctaLink}
             className="ml-auto hidden h-18 items-center gap-3 r-6 bg-brand px-9 fs-21 font-bold text-white transition-colors hover:bg-[#2c4c8a] lg:flex"
           >
-            {siteData.hero.ctaText}
+            {siteData.navbar.ctaText}
             <ArrowRight className="size-5.5" strokeWidth={2.25} />
           </Link>
 
           <button
             type="button"
             className="p-2 text-[#0b193f] lg:hidden"
-            onClick={() => setIsOpen((open) => !open)}
+            onClick={() => {
+              setIsServicesOpen(false);
+              setIsOpen((open) => !open);
+            }}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -146,24 +187,97 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="absolute inset-x-0 top-full flex flex-col border-t border-gray-100 bg-white px-4 pb-5 pt-2 shadow-xl lg:hidden">
-          {siteData.navigation.map((item) => (
+        <div
+          style={{ top: `${headerHeight}px` }}
+          className="fixed inset-x-0 bottom-0 z-50 flex flex-col justify-between overflow-y-auto border-t border-gray-100 bg-white px-5 pb-6 pt-1 shadow-2xl lg:hidden"
+        >
+          <div className="flex flex-col">
+            {siteData.navigation.map((item) => {
+              const hasMenu = item.href === "/services";
+              const active = isActive(item.href);
+
+              if (hasMenu) {
+                return (
+                  <div key={item.href} className="border-b border-gray-100">
+                    <button
+                      type="button"
+                      onClick={() => setIsServicesOpen((open) => !open)}
+                      aria-expanded={isServicesOpen}
+                      aria-controls="mobile-services-menu"
+                      className={`flex w-full items-center justify-between py-2.5 text-left text-[15px] font-semibold transition-colors sm:py-3 sm:text-base ${
+                        active ? "text-[#2f55a4]" : "text-[#0b193f] hover:text-[#2f55a4]"
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`size-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </button>
+                    {isServicesOpen && (
+                      <div id="mobile-services-menu" className="flex flex-col pb-2 pl-4">
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="py-2 text-sm font-semibold text-[#2f55a4]"
+                        >
+                          {siteData.navbar.allServicesLabel}
+                        </Link>
+                        {siteData.services.items.map((service) => (
+                          <Link
+                            key={service.link}
+                            href={service.link}
+                            onClick={() => setIsOpen(false)}
+                            className="py-2 text-sm font-medium text-[#0b193f] transition-colors hover:text-[#2f55a4]"
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`border-b border-gray-100 py-2.5 text-[15px] font-semibold transition-colors sm:py-3 sm:text-base ${
+                    active ? "text-[#2f55a4]" : "text-[#0b193f] hover:text-[#2f55a4]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
             <Link
-              key={item.href}
-              href={item.href}
+              href={siteData.navbar.ctaLink}
               onClick={() => setIsOpen(false)}
-              className={`border-b border-gray-100 py-3.5 text-base font-semibold ${isActive(item.href) ? "text-[#2f55a4]" : "text-[#0b193f]"}`}
+              className="mt-3.5 flex items-center justify-center gap-2 rounded-md bg-brand py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#2c4c8a] sm:mt-4 sm:py-3 sm:text-base"
             >
-              {item.label}
+              {siteData.navbar.ctaText} <ArrowRight size={16} />
             </Link>
-          ))}
-          <Link
-            href={siteData.hero.ctaLink}
-            onClick={() => setIsOpen(false)}
-            className="mt-4 flex items-center justify-center gap-2 rounded-md bg-brand py-3.5 text-base font-semibold text-white"
-          >
-            {siteData.hero.ctaText} <ArrowRight size={18} />
-          </Link>
+          </div>
+
+          <div className="mt-3 border-t border-gray-100 pt-3">
+            <div className="flex items-center justify-center gap-4">
+              {socials.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex size-9 items-center justify-center rounded-full bg-[#eef3fb] text-[#2f55a4] transition-colors hover:bg-[#2f55a4] hover:text-white sm:size-10"
+                >
+                  <Icon className="size-4 sm:size-4.5" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </header>

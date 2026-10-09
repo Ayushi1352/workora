@@ -3,10 +3,7 @@
 :root {
   --primary-blue: #3258A3;
   --dark-blue: #2C313D;
-  --light-blue: #EEF2F8;
-  --accent: #E3E9F3;
   --text-main: #2C313D;
-  --text-muted: #666666;
 }
 
 @theme inline {
@@ -15,8 +12,6 @@
   
   --color-primary: var(--primary-blue);
   --color-dark: var(--dark-blue);
-  --color-light: var(--light-blue);
-  --color-accent: var(--accent);
 }
 
 body {
@@ -66,11 +61,9 @@ body {
    desktop layout keeps the design's exact proportions on every laptop width. */
 :root {
   --u: 1px;
-  --navy: #0b1638;
   --ink: #0e1627;
   --body: #5d6574;
   --brand: #3a5ea1;
-  --brand-bright: #1d4fd8;
 }
 
 @media (min-width: 1024px) {
@@ -89,11 +82,9 @@ body {
   --font-exo: var(--ff-exo);
   --font-lexend: var(--ff-lexend);
   --font-pop: var(--font-poppins);
-  --color-navy: var(--navy);
   --color-ink: var(--ink);
   --color-body: var(--body);
   --color-brand: var(--brand);
-  --color-brand-bright: var(--brand-bright);
 }
 
 @utility fs-* {
@@ -108,5 +99,17 @@ body {
   width: 100%;
   max-width: 1686px;
   margin-inline: auto;
+}
+
+.testimonial-track {
+  --slide-shift: calc(var(--active-idx, 0) * 100%);
+  gap: 0px;
+}
+
+@media (min-width: 1024px) {
+  .testimonial-track {
+    --slide-shift: calc(var(--active-idx, 0) * ((100% + 5 * var(--spacing, 0.25rem)) / 3));
+    gap: calc(5 * var(--spacing, 0.25rem));
+  }
 }
 

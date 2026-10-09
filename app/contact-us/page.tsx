@@ -15,7 +15,7 @@ export default function ContactUsPage() {
       <PageBanner {...siteData.contactUsPage.banner} />
 
       <section className="fluid bg-white">
-        <div className="wrap flex flex-col gap-8 px-5 py-12 sm:px-8 lg:flex-row lg:items-start lg:gap-7 lg:px-0 lg:pb-29.25 lg:pl-33.75 lg:pt-24.25">
+        <div className="wrap flex flex-col gap-8 px-5 py-14 sm:px-8 md:py-18 lg:pb-29.25 lg:pt-24.25 lg:flex-row lg:items-start lg:gap-7 lg:px-0 lg:pl-33.75">
           <div className="lg:w-175.5 lg:shrink-0">
             <ContactForm />
           </div>

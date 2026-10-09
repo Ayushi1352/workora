@@ -2,15 +2,25 @@ import Image from "next/image";
 import { FaQuoteLeft, FaCheckCircle } from "react-icons/fa";
 import siteData from "@/data";
 
-const post = siteData.blogDetailPage;
+interface BlogDetailContentProps {
+  post?: {
+    featuredImage?: string;
+    intro?: string;
+  };
+}
 
 const heading = "font-exo text-2xl font-bold text-[#0b1030] lg:fs-30 lg:leading-[1.167]";
 const body = "text-[15px] leading-relaxed text-[#4c5470] sm:text-base lg:whitespace-pre-line lg:fs-22.5 lg:leading-[1.29]";
 
-export default function BlogDetailContent() {
+export default function BlogDetailContent({ post: customPost }: BlogDetailContentProps = {}) {
+  const post = {
+    ...siteData.blogDetailPage,
+    ...(customPost?.featuredImage ? { featuredImage: customPost.featuredImage } : {}),
+    ...(customPost?.intro ? { intro: customPost.intro } : {}),
+  };
   return (
     <section className="fluid bg-white font-lexend font-light">
-      <article className="wrap px-5 py-12 sm:px-8 lg:px-0 lg:pb-23.5 lg:pl-59 lg:pr-61.75 lg:pt-26.75">
+      <article className="wrap px-5 py-14 sm:px-8 md:py-18 lg:pb-23.5 lg:pt-26.75 lg:px-0 lg:pl-59 lg:pr-61.75">
         <div className="relative aspect-[1203/385] w-full overflow-hidden rounded-xl lg:r-12">
           <Image src={post.featuredImage} alt="" fill preload unoptimized sizes="(min-width:1024px) 72vw, 100vw" className="object-cover" />
         </div>

@@ -13,17 +13,11 @@ const socials = [
   { href: company.socials.youtube, label: "YouTube", Icon: FaYoutube },
 ];
 
-const usefulLinks = siteData.footer.usefulLinks;
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
-  { label: "Sitemap", href: "/sitemap" },
-];
+const legalLinks = siteData.footer.legalLinks;
 
 function ColumnTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="font-figtree text-lg font-bold text-white lg:fs-21 lg:leading-[1.2]">
+    <h3 className="font-figtree text-base font-bold text-white lg:fs-21 lg:leading-[1.2]">
       {children}
       <span className="mt-2.5 block h-0.75 w-11 bg-[#1f6bf3] lg:mt-3.5" />
     </h3>
@@ -32,11 +26,11 @@ function ColumnTitle({ children }: { children: React.ReactNode }) {
 
 function LinkList({ items, rowClass }: { items: { label: string; href: string }[]; rowClass: string }) {
   return (
-    <ul className={`mt-5 flex flex-col gap-3 lg:mt-5.75 lg:gap-0 ${rowClass}`}>
+    <ul className={`mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 md:mt-5 md:flex md:flex-col md:gap-3 lg:mt-4.75 lg:gap-0 ${rowClass}`}>
       {items.map((item) => (
         <li key={`${item.href}-${item.label}`}>
-          <Link href={item.href} className="flex items-center gap-2.5 text-[15px] text-[#c9ced8] transition-colors hover:text-white lg:gap-3 lg:fs-17">
-            <ChevronRight className="size-4 shrink-0 lg:size-4.5" strokeWidth={2.5} />
+          <Link href={item.href} className="flex items-start gap-1.5 text-[13px] text-[#c9ced8] transition-colors hover:text-white md:items-center md:gap-2.5 lg:gap-3 lg:fs-17">
+            <ChevronRight className="mt-0.5 size-4 shrink-0 md:mt-0 lg:size-4.5" strokeWidth={2.5} />
             {item.label}
           </Link>
         </li>
@@ -50,15 +44,21 @@ const divider = "lg:before:absolute lg:before:-left-10.5 lg:before:top-0 lg:befo
 export default function Footer() {
   return (
     <footer id="footer" className="fluid relative isolate overflow-hidden bg-[#0a1832] font-figtree text-[#d5d9e2]">
-      <Image src="/footer-bg.webp" alt="" fill unoptimized sizes="100vw" className="-z-20 object-cover" />
+      <Image src={siteData.footer.background} alt="" fill unoptimized sizes="100vw" className="-z-20 object-cover object-[center_30%]" />
+      {/* dark tint over the photo */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-20 backdrop-blur-[2px]"
+        style={{ background: "linear-gradient(90deg, rgba(5,17,40,0.96) 0%, rgba(5,17,40,0.94) 40%, rgba(5,17,40,0.85) 100%)" }}
+        aria-hidden="true"
+      />
 
-      <div className="wrap relative overflow-hidden px-5 pb-10 pt-12 sm:px-8 lg:h-107.25 lg:px-0 lg:pb-0 lg:pt-0">
+      <div className="wrap relative overflow-hidden px-5 py-10 sm:px-8 md:py-18 lg:h-107.25 lg:px-0 lg:pb-0 lg:pt-0">
         {/* blue arcs in the bottom-left corner */}
         <div className="pointer-events-none absolute -bottom-57 -left-37.5 -z-10 hidden size-75 rounded-full bg-[#164398] lg:block" />
         <div className="pointer-events-none absolute -bottom-26.75 -left-18.5 -z-10 hidden size-37 rounded-full bg-[#1f6afb] lg:block" />
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:block">
-          <div className="sm:col-span-2 lg:absolute lg:left-22 lg:top-13.25 lg:w-92">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:block">
+          <div className="lg:absolute lg:left-22 lg:top-13.25 lg:w-92">
             <Link href="/" className="inline-block">
               <Image
                 src={company.footerLogo || company.logo}
@@ -66,32 +66,34 @@ export default function Footer() {
                 width={320}
                 height={80}
                 unoptimized
-                className="h-14 w-auto lg:h-20"
+                className="h-12 w-auto md:h-14 lg:h-20"
               />
             </Link>
-            <p className="mt-4 max-w-md text-[15px] leading-relaxed lg:ml-3.5 lg:mt-6.5 lg:max-w-none lg:fs-17.5 lg:leading-[1.47]">
+            <p className="mt-3 max-w-md text-[13px] leading-relaxed md:mt-4 lg:ml-3.5 lg:mt-4.5 lg:max-w-none lg:fs-17.5 lg:leading-[1.47]">
               {company.description}
             </p>
-            <div className="mt-5 flex gap-4 lg:ml-3.5 lg:mt-7.25">
+            <div className="mt-4 flex gap-3 md:mt-5 md:gap-4 lg:ml-3.5 lg:mt-7.25">
               {socials.map(({ href, label, Icon }) => (
-                <Link
+                <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex size-11 items-center justify-center rounded-full bg-[#16284f] text-white transition-colors hover:bg-[#1f6bf3] lg:size-12"
+                  className="flex size-10 items-center justify-center rounded-full bg-[#16284f] text-white transition-colors hover:bg-[#1f6bf3] md:size-11 lg:size-12"
                 >
                   <Icon className="size-4.5 lg:size-5" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>
 
-          <div className={`relative lg:absolute lg:left-131.25 lg:top-16.25 ${divider}`}>
+          <div className={`relative lg:absolute lg:left-140 lg:top-15.75 ${divider}`}>
             <ColumnTitle>{siteData.footer.quickLinksTitle}</ColumnTitle>
-            <LinkList items={siteData.footer.quickLinks} rowClass="lg:*:h-9" />
+            <LinkList items={siteData.footer.quickLinks} rowClass="lg:*:h-8" />
           </div>
 
-          <div className={`relative lg:absolute lg:left-188.25 lg:top-16.25 ${divider}`}>
+          <div className={`relative lg:absolute lg:left-212 lg:top-15.75 ${divider}`}>
             <ColumnTitle>{siteData.commonLabels.services}</ColumnTitle>
             <LinkList
               items={siteData.services.items.map((service) => ({ label: service.title, href: service.link }))}
@@ -99,25 +101,48 @@ export default function Footer() {
             />
           </div>
 
-          <div className={`relative lg:absolute lg:left-273 lg:top-16.25 ${divider}`}>
-            <ColumnTitle>{siteData.commonLabels.usefulLinks}</ColumnTitle>
-            <LinkList items={usefulLinks} rowClass="lg:*:h-9" />
-          </div>
-
-          <div className={`relative lg:absolute lg:left-334 lg:top-16.25 ${divider}`}>
+          <div className={`relative lg:absolute lg:left-310 lg:top-15.75 ${divider}`}>
             <ColumnTitle>{siteData.footer.contactTitle}</ColumnTitle>
-            <ul className="mt-5 flex flex-col gap-4 text-[15px] text-white lg:mt-4.5 lg:w-80 lg:gap-3.5 lg:fs-16.5 lg:leading-[1.65]">
+            <ul className="mt-4 grid grid-cols-1 gap-3 text-[13px] text-white sm:grid-cols-2 md:mt-5 md:grid-cols-1 md:gap-4 lg:mt-4.5 lg:flex lg:w-80 lg:flex-col lg:gap-3.5 lg:fs-16.5 lg:leading-[1.65]">
               {[
-                { Icon: FaMapMarkerAlt, text: company.footerAddress, wide: true },
-                { Icon: FaPhoneAlt, text: company.phone },
-                { Icon: FaEnvelope, text: company.email },
-                { Icon: Clock, text: `${company.workingHours}\n${company.workingHoursClosed}`, wide: true },
-              ].map(({ Icon, text, wide }) => (
-                <li key={text} className={`flex gap-4 lg:gap-4.25 ${wide ? "items-start" : "items-center"}`}>
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#2563eb] text-white lg:size-11.5">
-                    <Icon className="size-4 lg:size-5" />
-                  </span>
-                  <span className={`whitespace-pre-line ${wide ? "lg:-mt-1.5" : ""}`}>{text}</span>
+                {
+                  Icon: FaMapMarkerAlt,
+                  text: company.footerAddress,
+                  wide: true,
+                  href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.footerAddress)}`,
+                  target: "_blank",
+                },
+                {
+                  Icon: FaPhoneAlt,
+                  text: company.phone,
+                  href: `tel:${company.phone.replace(/[^0-9+]/g, "")}`,
+                },
+                {
+                  Icon: FaEnvelope,
+                  text: company.email,
+                  href: `mailto:${company.email}`,
+                },
+                {
+                  Icon: Clock,
+                  text: `${company.workingHours}\n${company.workingHoursClosed}`,
+                  wide: true,
+                  href: "/contact-us",
+                },
+              ].map(({ Icon, text, wide, href, target }) => (
+                <li key={text}>
+                  <a
+                    href={href}
+                    target={target}
+                    rel={target ? "noopener noreferrer" : undefined}
+                    className={`group flex cursor-pointer items-start gap-3 transition-colors hover:text-[#8fb2ff] md:gap-2 lg:gap-4.25 ${
+                      wide ? "items-start" : "items-center"
+                    }`}
+                  >
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#2563eb] text-white transition-all duration-200 group-hover:scale-105 group-hover:bg-[#1f6bf3] md:size-10 lg:size-11.5">
+                      <Icon className="size-3.5 md:size-4 lg:size-5" />
+                    </span>
+                    <span className={`min-w-0 break-words whitespace-pre-line ${wide ? "lg:-mt-1.5" : ""}`}>{text}</span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -126,7 +151,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/15">
-        <div className="wrap flex flex-col items-center gap-4 px-5 py-6 text-sm sm:px-8 lg:h-22 lg:flex-row lg:gap-0 lg:px-0 lg:py-0 lg:pl-25.5 lg:pr-10 lg:fs-15.5">
+        <div className="wrap flex flex-col items-center gap-3 px-5 py-4 text-xs sm:px-8 sm:text-sm md:gap-4 md:py-6 lg:h-22 lg:flex-row lg:gap-0 lg:px-0 lg:py-0 lg:pl-25.5 lg:pr-10 lg:fs-15.5">
           <p className="text-center">
             © {siteData.footer.year} <span className="font-semibold text-white">{company.name}.</span> {siteData.footer.copyright}
           </p>

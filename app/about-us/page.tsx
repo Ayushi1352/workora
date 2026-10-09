@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <PageBanner {...siteData.aboutPage.banner} />
       <AboutOverview />
-      <Stats variant="about" />
+      <Stats />
       <WhyChooseUs />
     </>
   );

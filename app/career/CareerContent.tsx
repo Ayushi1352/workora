@@ -15,7 +15,7 @@ export default function CareerContent() {
           <div className="relative aspect-4/3 overflow-hidden rounded-md lg:col-span-5">
             <Image
               src={careerPage.image}
-              alt="Workplace team collaborating around a laptop"
+              alt={careerPage.imageAlt}
               fill
               priority
               sizes="(max-width: 1023px) 100vw, 42vw"
@@ -32,7 +32,7 @@ export default function CareerContent() {
         </div>
       </section>
 
-      <section className="border-y border-gray-100 bg-[#f8fafc] py-14 md:py-16">
+      <section className="section-padding border-y border-gray-100 bg-[#f8fafc]">
         <div className="container-custom grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {careerPage.highlights.map((highlight, index) => {
             const Icon = icons[index % icons.length];

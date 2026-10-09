@@ -23,7 +23,7 @@ const lexend = Lexend({ subsets: ["latin"], variable: "--ff-lexend" });
 const exo2 = Exo_2({ subsets: ["latin"], variable: "--ff-exo" });
 
 export const metadata: Metadata = {
-  title: `${siteData.company.name} | HR Consultancy`,
+  title: `${siteData.company.name} | ${siteData.company.tagline}`,
   description: siteData.company.description,
 };
 

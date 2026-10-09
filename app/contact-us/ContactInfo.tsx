@@ -43,7 +43,7 @@ export default function ContactInfo() {
         </span>
         <div className="ml-5 min-w-0 lg:ml-6.5 lg:pt-1.5">
           <h3 className={title}>{info.locationLabel}</h3>
-          <p className={`${value} whitespace-pre-line lg:max-w-90`}>{info.location}</p>
+          <p className={`${value} whitespace-pre-line lg:max-w-90`}>{info.location ?? company.headerAddress}</p>
         </div>
       </div>
     </div>

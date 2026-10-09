@@ -237,9 +237,9 @@
       "Topbar": {
         "variants": {
           "WorkoraTopbar1": {
-            "location": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA",
+            "location": "123 Workora Avenue, New York, NY 10001, USA",
             "timing": "Mon - Fri 9:00 am - 6:00 pm",
-            "phone": "+1 (555) 234-8900",
+            "phone": "+1 (212) 555-0101",
             "email": "xyz@workora.com",
             "helpLineLabel": "HELP LINE:",
             "openHoursLabel": "Open Hours:",
@@ -525,19 +525,19 @@
             "company": {
               "name": "Workora",
               "logo": "/workora-logo.webp",
-              "helpLine": "+1 (555) 234-8900",
+              "helpLine": "+1 (212) 555-0101",
               "openHours": "Mon - Fri 9:00 am - 6:00 pm",
-              "headerAddress": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA",
-              "footerAddress": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA",
-              "phone": "+1 (555) 234-8901",
+              "headerAddress": "123 Workora Avenue, New York, NY 10001, USA",
+              "footerAddress": "123 Workora Avenue, New York, NY 10001, USA",
+              "phone": "+1 (212) 555-0101",
               "email": "xyz@workora.com",
               "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
               "workingHoursClosed": "Sunday: Closed",
               "socials": {
-                "facebook": "#",
-                "linkedin": "#",
-                "instagram": "#",
-                "youtube": "#"
+                "facebook": "https://www.facebook.com",
+                "linkedin": "https://www.linkedin.com",
+                "instagram": "https://www.instagram.com",
+                "youtube": "https://www.youtube.com"
               },
               "description": "Connecting the right talent with the right opportunities. We help businesses build stronger teams and empower professionals to achieve their career goals.",
               "helpLineLabel": "HELP LINE:",
@@ -953,7 +953,7 @@
               "emailLabel": "Email",
               "phoneLabel": "Contact",
               "locationLabel": "Location",
-              "location": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA"
+              "location": "123 Workora Avenue, New York, NY 10001, USA"
             },
             "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280016462!2d-74.11976373077755!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711100000000!5m2!1sen!2sin",
             "meta": {
@@ -1286,7 +1286,7 @@
                 "heading": "Your Choices and Contact",
                 "paragraphs": [
                   "Because the current forms do not send or store their values, they do not create an enquiry record for Workora to access, correct, or delete.",
-                  "For privacy questions, contact us at xyz@workora.com or call +1 (555) 234-8901."
+                  "For privacy questions, contact us at {email} or call {phone}."
                 ]
               },
               {
@@ -1352,7 +1352,7 @@
                 "heading": "Changes and Contact",
                 "paragraphs": [
                   "We may revise these terms when our website or services change. Continued use of the website after an update means you accept the revised terms.",
-                  "For questions about these terms, email xyz@workora.com or call +1 (555) 234-8901."
+                  "For questions about these terms, email {email} or call {phone}."
                 ]
               }
             ],
@@ -1449,24 +1449,25 @@
   "company": {
     "name": "Workora",
     "logo": "/workora-logo.webp",
-    "helpLine": "+1 234 567 8900",
+    "helpLine": "+1 (212) 555-0101",
     "openHours": "Mon - Fri 9:00 am - 6:00 pm",
-    "headerAddress": "123 Business Avenue, New York, NY 10001, USA",
-    "footerAddress": "123 Business Avenue,\nNew Delhi, India 110001",
-    "phone": "+91 98765 43210",
-    "email": "info@workora.com",
+    "headerAddress": "123 Workora Avenue, New York, NY 10001, USA",
+    "footerAddress": "123 Workora Avenue, New York, NY 10001, USA",
+    "phone": "+1 (212) 555-0101",
+    "email": "xyz@workora.com",
     "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
     "workingHoursClosed": "Sunday: Closed",
     "socials": {
-      "facebook": "#",
-      "linkedin": "#",
-      "instagram": "#",
-      "youtube": "#"
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "instagram": "https://www.instagram.com",
+      "youtube": "https://www.youtube.com"
     },
     "description": "Connecting the right talent with the right opportunities. We help businesses build stronger teams and empower professionals to achieve their career goals.",
     "helpLineLabel": "HELP LINE:",
     "openHoursLabel": "Open Hours:",
-    "footerLogo": "/workora-logo-white.webp"
+    "footerLogo": "/workora-logo-white.webp",
+    "tagline": "HR Consultancy"
   },
   "navigation": [
     {
@@ -1480,10 +1481,6 @@
     {
       "label": "Services",
       "href": "/services"
-    },
-    {
-      "label": "Our Team",
-      "href": "/our-team"
     },
     {
       "label": "Blogs",
@@ -1504,7 +1501,8 @@
     "image": "/hero-main.webp",
     "image1": "/hero-img-1.webp",
     "image2": "/hero-img-2.webp",
-    "image3": "/hero-img-3.webp"
+    "image3": "/hero-img-3.webp",
+    "imageAlt": "Hero"
   },
   "about": {
     "sectionSubtitle": "ABOUT US",
@@ -1714,7 +1712,8 @@
         "subtitle": "Best HR Solutions Provider\nAward 2024",
         "linkText": "Read Our Story",
         "link": "/about-us",
-        "image": "/about-trophy.webp"
+        "image": "/about-trophy.webp",
+        "imageAlt": "Award Trophy"
       },
       "features": [
         {
@@ -2012,7 +2011,7 @@
       "emailLabel": "Email",
       "phoneLabel": "Contact",
       "locationLabel": "Location",
-      "location": "3891 Ranchview, Richardson,\nCalifornia 62639 United States"
+      "location": "123 Workora Avenue, New York, NY 10001, USA"
     },
     "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280016462!2d-74.11976373077755!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711100000000!5m2!1sen!2sin",
     "meta": {
@@ -2022,7 +2021,7 @@
   },
   "thankYouPage": {
     "banner": {
-      "title": "Thankyou",
+      "title": "Thank You",
       "image": "/page-banner.webp"
     },
     "meta": {
@@ -2148,9 +2147,9 @@
     "description": "A look at the people and workplace moments behind our HR and recruitment services.",
     "images": [
       {
-        "src": "/hero-main.webp",
-        "alt": "HR professionals meeting with a business leader",
-        "title": "Building the right teams"
+        "src": "/hero-img-1.webp",
+        "alt": "HR consultants collaborating with a business leader in a modern office",
+        "title": "Collaborative hiring, stronger teams"
       },
       {
         "src": "/about-meeting-1.webp",
@@ -2203,9 +2202,9 @@
         "title": "Our people"
       },
       {
-        "src": "/about-trophy.webp",
-        "alt": "Recruitment excellence award",
-        "title": "Recognizing excellence"
+        "src": "/hero-img-2.webp",
+        "alt": "Business leaders greeting each other during a hiring partnership",
+        "title": "Partnerships built on trust"
       }
     ],
     "meta": {
@@ -2278,7 +2277,8 @@
     "meta": {
       "title": "Career | Workora HR Consultancy",
       "description": "Explore career opportunities and connect with the Workora team."
-    }
+    },
+    "imageAlt": "Workplace team collaborating around a laptop"
   },
   "legalPages": {
     "support": {
@@ -2330,7 +2330,7 @@
           "heading": "Your Choices and Contact",
           "paragraphs": [
             "Because the current forms do not send or store their values, they do not create an enquiry record for Workora to access, correct, or delete.",
-            "For privacy questions, contact us at xyz@workora.com or call +1 (555) 234-8901."
+            "For privacy questions, contact us at {email} or call {phone}."
           ]
         },
         {
@@ -2392,7 +2392,7 @@
           "heading": "Changes and Contact",
           "paragraphs": [
             "We may revise these terms when our website or services change. Continued use of the website after an update means you accept the revised terms.",
-            "For questions about these terms, email xyz@workora.com or call +1 (555) 234-8901."
+            "For questions about these terms, email {email} or call {phone}."
           ]
         }
       ],
@@ -2400,7 +2400,8 @@
         "title": "Terms & Conditions | Workora HR Consultancy",
         "description": "Read the terms that apply to using the Workora website."
       }
-    }
+    },
+    "lastUpdatedLabel": "Last updated:"
   },
   "navbar": {
     "allServicesLabel": "All Services",
@@ -2426,30 +2427,16 @@
         "href": "/services"
       },
       {
-        "label": "Our Team",
-        "href": "/our-team"
-      },
-      {
         "label": "Blogs",
         "href": "/blogs"
       },
       {
         "label": "Contact Us",
         "href": "/contact-us"
-      }
-    ],
-    "usefulLinks": [
+      },
       {
         "label": "FAQs",
         "href": "/faqs"
-      },
-      {
-        "label": "Privacy Policy",
-        "href": "/privacy-policy"
-      },
-      {
-        "label": "Terms & Conditions",
-        "href": "/terms-and-conditions"
       },
       {
         "label": "Career",
@@ -2458,6 +2445,17 @@
       {
         "label": "Gallery",
         "href": "/gallery"
+      }
+    ],
+    "background": "/footer-bg.webp",
+    "legalLinks": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "label": "Terms & Conditions",
+        "href": "/terms-and-conditions"
       },
       {
         "label": "Sitemap",
