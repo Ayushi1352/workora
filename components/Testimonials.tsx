@@ -1,53 +1,63 @@
 import Image from "next/image";
-import siteData from "../site.json";
+import { FaQuoteRight, FaStar } from "react-icons/fa";
 import HighlightedText from "./HighlightedText";
-import { Star } from "lucide-react";
+import siteData from "@/data";
+
+const testimonials = siteData.testimonials;
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-dark py-16 md:py-20">
-      <Image src={siteData.testimonials.background} alt="Testimonials Background" fill className="object-cover opacity-30 mix-blend-overlay" />
-      <div className="container-custom relative z-10">
-        <div className="mb-10 text-center">
-          <h5 className="mb-3 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
-             <span className="w-8 h-px bg-primary"></span>
-             {siteData.testimonials.sectionSubtitle}
-             <span className="w-8 h-px bg-primary"></span>
-          </h5>
-          <h2 className="mx-auto max-w-2xl text-2xl font-bold text-white heading-font md:text-3xl">
-            <HighlightedText
-              text={siteData.testimonials.title}
-              highlight={siteData.testimonials.titleHighlight}
-              className="text-blue-400"
-            />
+    <section className="fluid relative isolate overflow-hidden bg-[#0d1b33] font-pop text-white">
+      <Image src={testimonials.background} alt="" fill unoptimized sizes="100vw" className="-z-10 object-cover" />
+
+      <div className="wrap px-5 py-14 sm:px-8 lg:h-147 lg:px-58.5 lg:pb-0 lg:pt-12.25">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-4 text-xs font-medium uppercase tracking-[0.1em] lg:gap-4 lg:fs-14 lg:leading-none">
+            <span className="h-px w-8 bg-white/80 lg:w-9.25" />
+            {testimonials.sectionSubtitle}
+            <span className="h-px w-8 bg-white/80 lg:w-9.25" />
+          </div>
+          <h2 className="mt-3 font-pop text-[28px] font-semibold leading-[1.2] sm:text-[38px] lg:mt-4.25 lg:whitespace-pre-line lg:fs-44 lg:leading-[1.205]">
+            <HighlightedText text={testimonials.title} highlight={testimonials.titleHighlight} className="text-[#2f6df6]" />
           </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed lg:mt-1.25 lg:max-w-none lg:whitespace-pre-line lg:fs-15 lg:leading-[1.333]">
+            {testimonials.description}
+          </p>
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {siteData.testimonials.items.map((item, i) => (
-            <div key={i} className="relative rounded-md bg-white p-4 shadow-lg">
-              <div className="text-primary/20 absolute top-4 left-6 text-6xl font-serif">&ldquo;</div>
-              <p className="relative z-10 mb-4 min-h-16 text-xs italic leading-relaxed text-gray-600">
-                &ldquo;{item.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-4">
-                <Image src={item.image} alt={item.name} width={50} height={50} className="rounded-full object-cover w-12 h-12" />
-                <div>
-                  <h4 className="font-bold text-dark text-sm heading-font">{item.name}</h4>
-                  <p className="text-gray-500 text-xs">{item.role}</p>
-                  <div className="flex text-[#FFB800] mt-1 gap-1">
-                    {[...Array(item.rating)].map((_, idx) => (
-                      <Star key={idx} size={12} fill="currentColor" />
+
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:mt-5.75 lg:grid-cols-3">
+          {testimonials.items.map((item) => (
+            <article key={item.name} className="rounded-xl bg-white px-6 pb-5 pt-5 text-[#5c657d] lg:r-10 lg:px-6.25 lg:pb-4.25 lg:pt-4">
+              <FaQuoteRight className="size-6 text-[#c9d6f7] lg:size-6.5" />
+              <p className="mt-3 text-sm leading-relaxed lg:mt-1.75 lg:whitespace-pre-line lg:fs-14.5 lg:leading-[1.31]">{item.quote}</p>
+              <span className="mt-3 block h-0.5 w-5.5 bg-[#2563eb] lg:mt-1.75" />
+              <div className="mt-3 flex items-center lg:mt-0.5">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={80}
+                  height={80}
+                  unoptimized
+                  className="size-16 shrink-0 rounded-full object-cover lg:size-19.5"
+                />
+                <div className="ml-5 lg:ml-6">
+                  <h3 className="font-pop text-[15px] font-semibold text-[#0b1230] lg:fs-15.5 lg:leading-[1.2]">{item.name}</h3>
+                  <p className="mt-0.5 text-xs lg:fs-12.5 lg:leading-[1.4]">{item.role}</p>
+                  <div className="mt-1.5 flex gap-1.25 text-[#2563eb] lg:mt-2">
+                    {Array.from({ length: item.rating }, (_, i) => (
+                      <FaStar key={i} className="size-3.5 lg:size-4" />
                     ))}
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
-        <div className="flex justify-center gap-2 mt-8">
-           <div className="w-2 h-2 rounded-full bg-primary"></div>
-           <div className="w-2 h-2 rounded-full bg-white/30"></div>
-           <div className="w-2 h-2 rounded-full bg-white/30"></div>
+
+        <div className="mt-7 flex items-center justify-center gap-4 lg:mt-8.25">
+          <span className="size-2.75 rounded-full bg-[#2563eb]" />
+          <span className="size-1.5 rounded-full bg-white/45" />
+          <span className="size-1.5 rounded-full bg-white/45" />
         </div>
       </div>
     </section>

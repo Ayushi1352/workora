@@ -1,152 +1,151 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, ChevronRight, ArrowUp } from "lucide-react";
-import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
-import siteData from "../site.json";
+import { ChevronRight, ArrowUp, Clock } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import siteData from "@/data";
+
+const company = siteData.company;
+
+const socials = [
+  { href: company.socials.linkedin, label: "LinkedIn", Icon: FaLinkedinIn },
+  { href: company.socials.facebook, label: "Facebook", Icon: FaFacebookF },
+  { href: company.socials.instagram, label: "Instagram", Icon: FaInstagram },
+  { href: company.socials.youtube, label: "YouTube", Icon: FaYoutube },
+];
+
+const usefulLinks = siteData.footer.usefulLinks;
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Sitemap", href: "/sitemap" },
+];
+
+function ColumnTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="font-figtree text-lg font-bold text-white lg:fs-21 lg:leading-[1.2]">
+      {children}
+      <span className="mt-2.5 block h-0.75 w-11 bg-[#1f6bf3] lg:mt-3.5" />
+    </h3>
+  );
+}
+
+function LinkList({ items, rowClass }: { items: { label: string; href: string }[]; rowClass: string }) {
+  return (
+    <ul className={`mt-5 flex flex-col gap-3 lg:mt-5.75 lg:gap-0 ${rowClass}`}>
+      {items.map((item) => (
+        <li key={`${item.href}-${item.label}`}>
+          <Link href={item.href} className="flex items-center gap-2.5 text-[15px] text-[#c9ced8] transition-colors hover:text-white lg:gap-3 lg:fs-17">
+            <ChevronRight className="size-4 shrink-0 lg:size-4.5" strokeWidth={2.5} />
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const divider = "lg:before:absolute lg:before:-left-10.5 lg:before:top-0 lg:before:h-76 lg:before:border-l lg:before:border-dashed lg:before:border-white/15";
 
 export default function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden border-t-4 border-primary bg-dark pt-12 pb-6 text-gray-300">
-      <Image src={siteData.stats.background} alt="" fill className="-z-10 object-cover opacity-15" />
-      <div className="absolute inset-0 -z-10 bg-dark/90" />
-      <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-12">
-          {/* Column 1 - Brand (spans 1.5 col on desktop) */}
-          <div className="lg:col-span-1.5 pr-2">
-            <Link href="/" className="inline-block mb-5">
-              <Image 
-                src={siteData.company.footerLogo || siteData.company.logo} 
-                alt={siteData.company.name} 
-                width={190} 
-                height={40} 
-                className="w-auto h-9 object-contain" 
+    <footer id="footer" className="fluid relative isolate overflow-hidden bg-[#0a1832] font-figtree text-[#d5d9e2]">
+      <Image src="/footer-bg.webp" alt="" fill unoptimized sizes="100vw" className="-z-20 object-cover" />
+
+      <div className="wrap relative overflow-hidden px-5 pb-10 pt-12 sm:px-8 lg:h-107.25 lg:px-0 lg:pb-0 lg:pt-0">
+        {/* blue arcs in the bottom-left corner */}
+        <div className="pointer-events-none absolute -bottom-57 -left-37.5 -z-10 hidden size-75 rounded-full bg-[#164398] lg:block" />
+        <div className="pointer-events-none absolute -bottom-26.75 -left-18.5 -z-10 hidden size-37 rounded-full bg-[#1f6afb] lg:block" />
+
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:block">
+          <div className="sm:col-span-2 lg:absolute lg:left-22 lg:top-13.25 lg:w-92">
+            <Link href="/" className="inline-block">
+              <Image
+                src={company.footerLogo || company.logo}
+                alt={company.name}
+                width={320}
+                height={80}
+                unoptimized
+                className="h-14 w-auto lg:h-20"
               />
             </Link>
-            <p className="text-[13px] text-gray-400 mb-6 leading-relaxed">
-              {siteData.company.description}
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed lg:ml-3.5 lg:mt-6.5 lg:max-w-none lg:fs-17.5 lg:leading-[1.47]">
+              {company.description}
             </p>
-            <div className="flex gap-2.5">
-              <Link href={siteData.company.socials.linkedin} className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary text-gray-300 hover:text-white transition-colors">
-                <FaLinkedin size={14} />
-              </Link>
-              <Link href={siteData.company.socials.facebook} className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary text-gray-300 hover:text-white transition-colors">
-                <FaFacebook size={14} />
-              </Link>
-              <Link href={siteData.company.socials.instagram} className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary text-gray-300 hover:text-white transition-colors">
-                <FaInstagram size={14} />
-              </Link>
-              <Link href={siteData.company.socials.youtube} className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary text-gray-300 hover:text-white transition-colors">
-                <FaYoutube size={14} />
-              </Link>
+            <div className="mt-5 flex gap-4 lg:ml-3.5 lg:mt-7.25">
+              {socials.map(({ href, label, Icon }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="flex size-11 items-center justify-center rounded-full bg-[#16284f] text-white transition-colors hover:bg-[#1f6bf3] lg:size-12"
+                >
+                  <Icon className="size-4.5 lg:size-5" />
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Column 2 - Quick Links */}
-          <div>
-            <h4 className="text-white text-base font-semibold mb-5 heading-font">
-              {siteData.footer.quickLinksTitle}
-            </h4>
-            <ul className="space-y-2.5">
-              {siteData.navigation.map((item, i) => (
-                <li key={i}>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs">
-                    <ChevronRight size={13} className="text-primary" /> {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className={`relative lg:absolute lg:left-131.25 lg:top-16.25 ${divider}`}>
+            <ColumnTitle>{siteData.footer.quickLinksTitle}</ColumnTitle>
+            <LinkList items={siteData.footer.quickLinks} rowClass="lg:*:h-9" />
           </div>
 
-          {/* Column 3 - Our Services */}
-          <div>
-            <h4 className="text-white text-base font-semibold mb-5 heading-font">
-              {siteData.commonLabels.services}
-            </h4>
-            <ul className="space-y-2.5">
-              {siteData.services.items.map((service, i) => (
-                <li key={i}>
-                  <Link href={service.link} className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs">
-                    <ChevronRight size={13} className="text-primary" /> {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className={`relative lg:absolute lg:left-188.25 lg:top-16.25 ${divider}`}>
+            <ColumnTitle>{siteData.commonLabels.services}</ColumnTitle>
+            <LinkList
+              items={siteData.services.items.map((service) => ({ label: service.title, href: service.link }))}
+              rowClass="lg:*:h-8"
+            />
           </div>
 
-          {/* Column 4 - Useful Links */}
-          <div>
-            <h4 className="text-white text-base font-semibold mb-5 heading-font">
-              {siteData.commonLabels.usefulLinks}
-            </h4>
-            <ul className="space-y-2.5">
-              {siteData.siteMapPage.utilityLinks.map((item, i) => (
-                <li key={i}>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs">
-                    <ChevronRight size={13} className="text-primary" /> {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/sitemap" className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs">
-                  <ChevronRight size={13} className="text-primary" /> Sitemap
-                </Link>
-              </li>
-            </ul>
+          <div className={`relative lg:absolute lg:left-273 lg:top-16.25 ${divider}`}>
+            <ColumnTitle>{siteData.commonLabels.usefulLinks}</ColumnTitle>
+            <LinkList items={usefulLinks} rowClass="lg:*:h-9" />
           </div>
 
-          {/* Column 5 - Get In Touch */}
-          <div>
-            <h4 className="text-white text-base font-semibold mb-5 heading-font">
-              {siteData.footer.contactTitle}
-            </h4>
-            <ul className="space-y-3.5">
-              <li className="flex gap-3 text-xs text-gray-400 items-start">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-white mt-0.5">
-                  <MapPin size={14} />
-                </div>
-                <span>{siteData.company.footerAddress}</span>
-              </li>
-              <li className="flex gap-3 text-xs text-gray-400 items-center">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                  <Phone size={14} />
-                </div>
-                <span>{siteData.company.phone}</span>
-              </li>
-              <li className="flex gap-3 text-xs text-gray-400 items-center">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                  <Mail size={14} />
-                </div>
-                <span>{siteData.company.email}</span>
-              </li>
-              <li className="flex gap-3 text-xs text-gray-400 items-start">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-white mt-0.5">
-                  <Clock size={14} />
-                </div>
-                <div className="flex flex-col">
-                  <span>{siteData.company.workingHours}</span>
-                  <span className="text-gray-500">{siteData.company.workingHoursClosed}</span>
-                </div>
-              </li>
+          <div className={`relative lg:absolute lg:left-334 lg:top-16.25 ${divider}`}>
+            <ColumnTitle>{siteData.footer.contactTitle}</ColumnTitle>
+            <ul className="mt-5 flex flex-col gap-4 text-[15px] text-white lg:mt-4.5 lg:w-80 lg:gap-3.5 lg:fs-16.5 lg:leading-[1.65]">
+              {[
+                { Icon: FaMapMarkerAlt, text: company.footerAddress, wide: true },
+                { Icon: FaPhoneAlt, text: company.phone },
+                { Icon: FaEnvelope, text: company.email },
+                { Icon: Clock, text: `${company.workingHours}\n${company.workingHoursClosed}`, wide: true },
+              ].map(({ Icon, text, wide }) => (
+                <li key={text} className={`flex gap-4 lg:gap-4.25 ${wide ? "items-start" : "items-center"}`}>
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#2563eb] text-white lg:size-11.5">
+                    <Icon className="size-4 lg:size-5" />
+                  </span>
+                  <span className={`whitespace-pre-line ${wide ? "lg:-mt-1.5" : ""}`}>{text}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom copyright row */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
-          <p>© {new Date().getFullYear()} {siteData.company.name}. {siteData.footer.copyright}</p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="text-white/20">|</span>
-            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <span className="text-white/20">|</span>
-            <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
-          </div>
-          <a 
-            href="#top" 
-            className="w-8 h-8 rounded bg-primary text-white flex items-center justify-center hover:bg-blue-700 transition-colors shadow-sm"
+      <div className="border-t border-white/15">
+        <div className="wrap flex flex-col items-center gap-4 px-5 py-6 text-sm sm:px-8 lg:h-22 lg:flex-row lg:gap-0 lg:px-0 lg:py-0 lg:pl-25.5 lg:pr-10 lg:fs-15.5">
+          <p className="text-center">
+            © {siteData.footer.year} <span className="font-semibold text-white">{company.name}.</span> {siteData.footer.copyright}
+          </p>
+          <nav className="flex flex-wrap items-center justify-center lg:ml-auto">
+            {legalLinks.map((link, i) => (
+              <span key={link.href} className="flex items-center">
+                {i > 0 && <span className="mx-4 h-3.5 w-px bg-white/25 lg:mx-5" />}
+                <Link href={link.href} className="text-white transition-colors hover:text-[#8fb2ff]">
+                  {link.label}
+                </Link>
+              </span>
+            ))}
+          </nav>
+          <a
+            href="#top"
             aria-label="Back to top"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2563eb] text-white transition-colors hover:bg-[#1d4fc0] lg:ml-13 lg:size-12"
           >
-            <ArrowUp size={16} />
+            <ArrowUp className="size-5 lg:size-6" strokeWidth={2.5} />
           </a>
         </div>
       </div>

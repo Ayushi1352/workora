@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import CareerContent from "./CareerContent";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export const metadata: Metadata = {
   title: siteData.careerPage.meta.title,

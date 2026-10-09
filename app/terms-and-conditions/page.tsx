@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalDocument from "@/components/LegalDocument";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export const metadata: Metadata = {
   title: siteData.legalPages.termsAndConditions.meta.title,

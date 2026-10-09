@@ -4,196 +4,168 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Phone, Clock, MapPin, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
-import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
-import siteData from "../site.json";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
+import siteData from "@/data";
+
+const company = siteData.company;
+
+const socials = [
+  { href: company.socials.facebook, label: "Facebook", Icon: FaFacebookF },
+  { href: company.socials.linkedin, label: "LinkedIn", Icon: FaLinkedinIn },
+  { href: company.socials.instagram, label: "Instagram", Icon: FaInstagram },
+  { href: company.socials.youtube, label: "YouTube", Icon: FaYoutube },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  return (
-    <>
-      {/* Top Bar - Dual Color */}
-      <div className="w-full text-white text-xs lg:text-[13px] hidden md:block">
-        <div className="flex flex-col md:flex-row w-full">
-          {/* Left Blue Section */}
-          <div className="md:w-1/2 bg-[#3258a3] py-2 px-4 lg:px-12 flex items-center justify-start gap-5 font-sans">
-            <div className="flex items-center gap-2">
-              <Phone size={13} className="text-white" />
-              <span className="font-semibold tracking-wider text-[11px] lg:text-xs">
-                {siteData.company.helpLineLabel} {siteData.company.helpLine}
-              </span>
-            </div>
-            <span className="text-white/40 font-light">|</span>
-            <div className="flex items-center gap-2">
-              <Clock size={13} className="text-white" />
-              <span className="font-medium text-[11px] lg:text-xs text-white/95">
-                {siteData.company.openHoursLabel} {siteData.company.openHours}
-              </span>
-            </div>
-          </div>
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
-          {/* Right Dark Navy Section */}
-          <div className="md:w-1/2 bg-dark py-2 px-4 lg:px-12 flex items-center justify-between gap-4 font-sans">
-            <div className="flex items-center gap-2 truncate">
-              <MapPin size={13} className="text-white flex-shrink-0" />
-              <span className="truncate text-gray-200 text-[11px] lg:text-xs">
-                {siteData.company.headerAddress}
-              </span>
-            </div>
-            <div className="flex items-center gap-3.5 flex-shrink-0">
-              <span className="text-white/30 mr-0.5">|</span>
-              <Link href={siteData.company.socials.facebook} className="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
-                <FaFacebook size={13} />
-              </Link>
-              <Link href={siteData.company.socials.linkedin} className="text-gray-300 hover:text-white transition-colors" aria-label="LinkedIn">
-                <FaLinkedin size={13} />
-              </Link>
-              <Link href={siteData.company.socials.instagram} className="text-gray-300 hover:text-white transition-colors" aria-label="Instagram">
-                <FaInstagram size={13} />
-              </Link>
-              <Link href={siteData.company.socials.youtube} className="text-gray-300 hover:text-white transition-colors" aria-label="YouTube">
-                <FaYoutube size={13} />
-              </Link>
+  return (
+    <header id="top" className="fluid sticky top-0 z-50 w-full font-figtree bg-white shadow-sm">
+      {/* Top bar: the two colours meet 90 design-px right of centre, as in the design */}
+      <div
+        className="hidden text-white lg:block"
+        style={{
+          background:
+            "linear-gradient(90deg,#375ca0 calc(50% + 90 * var(--u)),#142d57 calc(50% + 90 * var(--u)))",
+        }}
+      >
+        <div className="wrap flex h-14.5 items-center fs-19 font-medium">
+          <div className="flex w-233.25 shrink-0 items-center pl-8.5">
+            <FaPhoneAlt className="size-6 shrink-0" />
+            <span className="ml-4.5 whitespace-nowrap">
+              {company.helpLineLabel} {company.helpLine}
+            </span>
+            <span className="mx-8.5 h-7 w-px bg-white/45" />
+            <FaEnvelope className="size-6.5 shrink-0" />
+            <span className="ml-4.5 whitespace-nowrap">
+              {company.openHoursLabel} {company.openHours}
+            </span>
+          </div>
+          <div className="flex min-w-0 flex-1 items-center pl-15 pr-8.5">
+            <FaMapMarkerAlt className="size-6 shrink-0" />
+            <span className="ml-3.5 truncate">{company.headerAddress}</span>
+            <span className="ml-auto h-7 w-px shrink-0 bg-white/35" />
+            <div className="ml-8.5 flex shrink-0 items-center gap-6">
+              {socials.map(({ href, label, Icon }) => (
+                <Link key={label} href={href} aria-label={label} className="transition-opacity hover:opacity-75">
+                  <Icon className="size-5.5" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white shadow-xs">
-        <div className="w-full px-4 lg:px-12 flex justify-between items-center py-3.5">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image 
-              src={siteData.company.logo} 
-              alt={siteData.company.name} 
-              width={200} 
-              height={42} 
-              className="h-9 md:h-11 w-auto object-contain" 
-              priority
+      {/* Compact top bar for phones and tablets */}
+      <div className="flex items-center justify-between gap-3 bg-[#375ca0] px-4 py-2 text-[13px] font-medium text-white lg:hidden">
+        <a href={`tel:${company.helpLine.replace(/[^+\d]/g, "")}`} className="flex min-w-0 items-center gap-2">
+          <FaPhoneAlt className="size-3.5 shrink-0" />
+          <span className="truncate">
+            {company.helpLineLabel} {company.helpLine}
+          </span>
+        </a>
+        <div className="flex shrink-0 items-center gap-3.5">
+          {socials.map(({ href, label, Icon }) => (
+            <Link key={label} href={href} aria-label={label}>
+              <Icon className="size-3.5" />
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Main navigation */}
+      <div className="bg-white shadow-[0_1px_0_rgba(15,23,42,0.06)]">
+        <div className="wrap flex h-18 items-center justify-between px-4 lg:h-31.25 lg:justify-start lg:pl-7.75 lg:pr-9.25">
+          <Link href="/" className="shrink-0">
+            <Image
+              src={company.logo}
+              alt={company.name}
+              width={356}
+              height={82}
+              preload
+              unoptimized
+              className="h-11 w-auto lg:h-20.5"
             />
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {siteData.navigation.map((item, index) => {
-              const isHome = item.href === "/" && pathname === "/";
-              const isCurrent = item.href !== "/" && pathname.startsWith(item.href);
-              const isActive = isHome || isCurrent;
+          <nav className="hidden h-full items-center gap-14 fs-21 font-bold text-[#0b193f] lg:ml-27.5 lg:flex">
+            {siteData.navigation.map((item) => {
+              const active = isActive(item.href);
+              const hasMenu = item.href === "/services";
+              return (
+                <div key={item.href} className="group relative flex h-full items-center">
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-2.5 whitespace-nowrap transition-colors hover:text-[#2f55a4] ${active ? "text-[#2f55a4]" : ""}`}
+                  >
+                    {item.label}
+                    {hasMenu && <ChevronDown className="size-5 transition-transform group-hover:rotate-180" strokeWidth={2.75} />}
+                  </Link>
+                  {active && <span className="absolute -inset-x-1.75 bottom-5.5 h-0.75 rounded-full bg-[#2f55a4]" />}
 
-              if (item.label === "Services") {
-                return (
-                  <div key={index} className="relative group py-2">
-                    <Link
-                      href="/services"
-                      className={`font-semibold text-sm xl:text-[15px] transition-colors flex items-center gap-1.5 ${
-                        isActive ? "text-[#3258a3]" : "text-[#1e293b] hover:text-[#3258a3]"
-                      }`}
-                    >
-                      {item.label}
-                      <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
-                    </Link>
-
-                    {/* Active Bottom Indicator */}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#3258a3] rounded-full" />
-                    )}
-
-                    {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 w-60 bg-white shadow-xl rounded-xl border border-gray-100 py-2 hidden group-hover:block z-50 transition-all">
-                      <Link 
-                        href="/services" 
-                        className="block px-4 py-2.5 text-xs font-bold text-gray-800 hover:bg-blue-50 hover:text-[#3258a3]"
-                      >
-                        {siteData.navbar.allServicesLabel}
-                      </Link>
-                      {siteData.services.items.map((srv, idx) => (
+                  {hasMenu && (
+                    <div className="invisible absolute left-0 top-full z-50 w-72 rounded-b-lg border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
+                      {siteData.services.items.map((service) => (
                         <Link
-                          key={idx}
-                          href={srv.link}
-                          className="block px-4 py-2 text-xs text-gray-600 hover:bg-blue-50 hover:text-[#3258a3] transition-colors"
+                          key={service.link}
+                          href={service.link}
+                          className="block px-5 py-2.5 fs-17 font-medium text-[#0b193f] transition-colors hover:bg-[#eef2f8] hover:text-[#2f55a4]"
                         >
-                          {srv.title}
+                          {service.title}
                         </Link>
                       ))}
                     </div>
-                  </div>
-                );
-              }
-
-              return (
-                <div key={index} className="relative py-2">
-                  <Link 
-                    href={item.href}
-                    className={`font-semibold text-sm xl:text-[15px] transition-colors ${
-                      isActive ? "text-[#3258a3]" : "text-[#1e293b] hover:text-[#3258a3]"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-
-                  {/* Active Bottom Indicator */}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#3258a3] rounded-full" />
                   )}
                 </div>
               );
             })}
           </nav>
 
-          {/* Right CTA Button */}
-          <div className="hidden lg:block">
-            <Link 
-              href={siteData.navbar?.ctaLink || "/get-a-quote"} 
-              className="bg-[#3258a3] text-white hover:bg-[#254483] transition-colors py-2.5 px-5 lg:px-6 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-xs"
-            >
-              {siteData.navbar.ctaText} <ArrowRight size={15} />
-            </Link>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button 
-            className="lg:hidden text-gray-800 p-2 rounded-lg hover:bg-gray-100 transition-colors" 
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
+          <Link
+            href={siteData.hero.ctaLink}
+            className="ml-auto hidden h-18 items-center gap-3 r-6 bg-brand px-9 fs-21 font-bold text-white transition-colors hover:bg-[#2c4c8a] lg:flex"
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {siteData.hero.ctaText}
+            <ArrowRight className="size-5.5" strokeWidth={2.25} />
+          </Link>
+
+          <button
+            type="button"
+            className="p-2 text-[#0b193f] lg:hidden"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+      </div>
 
-      {/* Mobile Nav */}
       {isOpen && (
-        <div className="lg:hidden bg-white shadow-2xl border-t py-4 px-6 flex flex-col gap-3 transition-all">
-          {siteData.navigation.map((item, index) => {
-            const isHome = item.href === "/" && pathname === "/";
-            const isCurrent = item.href !== "/" && pathname.startsWith(item.href);
-            const isActive = isHome || isCurrent;
-
-            return (
-              <Link 
-                key={index} 
-                href={item.href}
-                className={`font-semibold py-2.5 border-b border-gray-100 text-sm ${
-                  isActive ? "text-[#3258a3]" : "text-gray-800 hover:text-[#3258a3]"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <Link 
-            href={siteData.navbar?.ctaLink || "/get-a-quote"} 
-            className="bg-[#3258a3] text-white text-center py-3 rounded-lg font-semibold text-sm mt-2 flex items-center justify-center gap-2 shadow-xs" 
+        <div className="absolute inset-x-0 top-full flex flex-col border-t border-gray-100 bg-white px-4 pb-5 pt-2 shadow-xl lg:hidden">
+          {siteData.navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className={`border-b border-gray-100 py-3.5 text-base font-semibold ${isActive(item.href) ? "text-[#2f55a4]" : "text-[#0b193f]"}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            href={siteData.hero.ctaLink}
             onClick={() => setIsOpen(false)}
+            className="mt-4 flex items-center justify-center gap-2 rounded-md bg-brand py-3.5 text-base font-semibold text-white"
           >
-            {siteData.navbar.ctaText} <ArrowRight size={15} />
+            {siteData.hero.ctaText} <ArrowRight size={18} />
           </Link>
         </div>
       )}
-      </header>
-    </>
+    </header>
   );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export default function GalleryGrid() {
   const { galleryPage } = siteData;
@@ -15,7 +15,7 @@ export default function GalleryGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {galleryPage.images.map((image) => (
             <figure key={image.src} className="group overflow-hidden rounded-md border border-gray-100 bg-white shadow-sm">
               <div className="relative aspect-4/3 overflow-hidden bg-gray-100">

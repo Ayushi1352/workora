@@ -1,6 +1,6 @@
-import BlogsBanner from "./BlogsBanner";
+import PageBanner from "@/components/PageBanner";
 import BlogsGrid from "./BlogsGrid";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export const metadata = {
   title: siteData.blogsPage.meta.title,
@@ -10,8 +10,9 @@ export const metadata = {
 export default function BlogsPage() {
   return (
     <div>
-      <BlogsBanner />
+      <PageBanner {...siteData.blogsPage.banner} />
       <BlogsGrid />
     </div>
   );
 }
+

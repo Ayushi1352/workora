@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Mail, Phone, Plus } from "lucide-react";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export default function FAQList() {
   const { faqPage, company } = siteData;

@@ -1,130 +1,75 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Users, BarChart3 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaUsers } from "react-icons/fa";
+import { FaChartSimple } from "react-icons/fa6";
+import AboutCollage from "./AboutCollage";
 import HighlightedText from "./HighlightedText";
-import siteData from "../site.json";
+import siteData from "@/data";
+
+const about = siteData.about;
+
+const featureIcons: Record<string, typeof FaUsers> = {
+  users: FaUsers,
+  chart: FaChartSimple,
+};
 
 export default function AboutHome() {
-  const getFeatureIcon = (iconName: string) => {
-    if (iconName === "chart" || iconName === "partner") {
-      return <BarChart3 size={22} className="text-[#3258a3]" />;
-    }
-    return <Users size={22} className="text-[#3258a3]" />;
-  };
-
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
-      <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-        {/* Left Side: 3-Image Collage + Experience Badge */}
-        <div className="lg:col-span-6 relative">
-          {/* Decorative Dot Grid */}
-          <div className="absolute -top-7 -left-7 w-28 h-28 -z-10 bg-[radial-gradient(#94a3b8_2px,transparent_2px)] [background-size:14px_14px] opacity-40"></div>
-          
-          {/* Subtle Abstract Bottom Left Shape */}
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-50/60 rounded-3xl -z-10 transform -rotate-6"></div>
+    <section className="fluid relative overflow-hidden bg-white font-figtree">
+      {/* corner triangle from the design */}
+      <div className="absolute bottom-9.75 left-0 hidden h-34.25 w-33.25 bg-[#cbd6ec] [clip-path:polygon(0_0,0_100%,100%_100%)] lg:block" />
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-5 items-end">
-            {/* Left Column: 2 meeting images */}
-            <div className="flex flex-col gap-4 sm:gap-5">
-              <div className="relative h-[180px] sm:h-[220px] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
-                <Image 
-                  src={siteData.about.images.meeting1} 
-                  alt="Team Meeting" 
-                  fill 
-                  className="object-cover" 
-                />
-              </div>
-              <div className="relative h-[180px] sm:h-[220px] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
-                <Image 
-                  src={siteData.about.images.meeting2} 
-                  alt="Workforce Collaboration" 
-                  fill 
-                  className="object-cover" 
-                />
-              </div>
-            </div>
-
-            {/* Right Column: Tall Woman Image + 25 Years Badge */}
-            <div className="flex flex-col gap-4 sm:gap-5 relative">
-              <div className="relative h-[260px] sm:h-[310px] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
-                <Image 
-                  src={siteData.about.images.woman} 
-                  alt="HR Executive" 
-                  fill 
-                  priority 
-                  className="object-cover object-top" 
-                />
-              </div>
-              
-              {/* Experience Badge */}
-              <div className="relative">
-                <div className="bg-[#3258a3] text-white p-5 sm:p-6 rounded-2xl shadow-sm flex items-center justify-center gap-4 h-[105px] sm:h-[115px]">
-                  <span className="text-4xl sm:text-5xl font-bold tracking-tight">
-                    {siteData.about.experienceYears}
-                  </span>
-                  <span className="text-xs sm:text-sm font-semibold leading-snug">
-                    {siteData.about.experienceText.split(" ").slice(0, 2).join(" ")}<br />
-                    {siteData.about.experienceText.split(" ").slice(2).join(" ")}
-                  </span>
-                </div>
-                {/* Decorative circle behind badge */}
-                <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full bg-blue-50/80 -z-10"></div>
-              </div>
-            </div>
-          </div>
+      <div className="wrap flex flex-col gap-10 px-5 py-14 sm:px-8 lg:flex-row lg:items-start lg:gap-0 lg:px-0 lg:pb-24 lg:pl-15.5 lg:pt-12">
+        <div className="mx-auto w-full max-w-xl shrink-0 lg:mx-0 lg:w-194.5 lg:max-w-none">
+          <AboutCollage />
         </div>
 
-        {/* Right Side: Content */}
-        <div className="lg:col-span-6">
-          {/* Subtitle */}
-          <div className="flex items-center gap-2.5 text-[#3258a3] font-semibold text-xs tracking-widest uppercase mb-3.5">
-            <span className="w-8 h-[2px] bg-[#3258a3] block"></span>
-            <span>{siteData.about.sectionSubtitle}</span>
+        <div className="lg:ml-16.5 lg:w-185 lg:pt-15.5">
+          <div className="flex items-center gap-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-brand lg:gap-5.75 lg:fs-16 lg:leading-none">
+            <span className="h-0.5 w-8 shrink-0 bg-brand lg:h-0.75 lg:w-10" />
+            {about.sectionSubtitle}
           </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f172a] mb-5 leading-[1.18] heading-font tracking-tight">
+          <h2 className="mt-3 font-figtree text-[32px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#081328] sm:text-[42px] lg:mt-4.5 lg:fs-60 lg:leading-[1.133]">
             <HighlightedText
-              text={siteData.about.title}
-              highlight={siteData.about.titleHighlight}
-              className="text-[#3258a3]"
-              breakBefore
+              text={about.title}
+              highlight={about.titleHighlight}
+              className="block text-[#2d55a0] lg:fs-55 lg:leading-[1.2]"
             />
           </h2>
 
-          {/* Paragraph */}
-          <p className="text-[#475569] text-sm sm:text-[15px] leading-relaxed mb-7 max-w-xl">
-            {siteData.about.description}
+          <p className="mt-4 text-[15px] leading-relaxed text-body sm:text-base lg:mt-5.75 lg:whitespace-pre-line lg:fs-20.25 lg:leading-[1.482]">
+            {about.description}
           </p>
 
-          {/* Features */}
-          <div className="space-y-6 mb-8">
-            {siteData.about.features.map((feature, i) => (
-              <div key={i} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#eef4fc] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
-                  {getFeatureIcon(feature.icon)}
+          <div className="mt-7 flex flex-col gap-6 lg:mt-9.25 lg:gap-9.75">
+            {about.features.map((feature) => {
+              const Icon = featureIcons[feature.icon] ?? FaUsers;
+              return (
+                <div key={feature.title} className="flex items-start">
+                  <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-[#eef1f8] text-brand lg:size-20.5">
+                    <Icon className="size-6 lg:size-10.5" />
+                  </span>
+                  <div className="ml-4 lg:ml-7 lg:pt-0.75">
+                    <h3 className="font-figtree text-lg font-semibold leading-snug text-[#090d1f] lg:fs-23.5 lg:leading-[1.2]">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-[#626a79] lg:mt-1.5 lg:fs-18.75 lg:leading-[1.4]">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-[#0f172a] text-base mb-1 heading-font">
-                    {feature.title}
-                  </h4>
-                  <p className="text-[#64748b] text-xs sm:text-sm leading-relaxed max-w-lg">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* CTA Button */}
-          <div>
-            <Link 
-              href={siteData.about.ctaLink} 
-              className="bg-[#3258a3] hover:bg-[#254483] text-white font-semibold py-3.5 px-7 rounded-lg text-sm inline-flex items-center gap-2 shadow-xs transition-all duration-300"
-            >
-              {siteData.about.ctaText} <ArrowRight size={16} />
-            </Link>
-          </div>
+          <Link
+            href={about.ctaLink}
+            className="mt-7 inline-flex h-13 items-center gap-3 rounded bg-[#355b9e] px-7 text-base font-semibold text-white transition-colors hover:bg-[#2b4b85] lg:mt-7 lg:h-17.75 lg:gap-5 lg:r-5 lg:px-8.5 lg:fs-21.5"
+          >
+            {about.ctaText}
+            <ArrowRight className="size-5 lg:size-6.5" strokeWidth={2.25} />
+          </Link>
         </div>
       </div>
     </section>

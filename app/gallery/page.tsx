@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import GalleryGrid from "./GalleryGrid";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export const metadata: Metadata = {
   title: siteData.galleryPage.meta.title,

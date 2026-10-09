@@ -7,7 +7,7 @@
   },
   "company": {
     "name": "Workora",
-    "logo": "/workora-logo.png",
+    "logo": "/workora-logo.webp",
     "helpLine": "+1 (555) 234-8900",
     "openHours": "Mon - Fri 9:00 am - 6:00 pm",
     "headerAddress": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA",
@@ -51,9 +51,9 @@
   ],
   "hero": {
     "subtitle": "People Today. Stronger Businesses Tomorrow.",
-    "title": "Strategic HR Solutions for Your Growing Business",
+    "title": "Strategic HR Solutions for Your\nGrowing Business",
     "titleHighlight": "HR Solutions",
-    "description": "We help businesses attract, develop and retain the right talent with tailored HR strategies that drive long-term success.",
+    "description": "We help businesses attract, develop and retain the right\ntalent with tailored HR strategies that drive long-term success.",
     "ctaText": "Get a Quote",
     "ctaLink": "/get-a-quote",
     "image": "/hero-main.webp",
@@ -65,7 +65,7 @@
     "sectionSubtitle": "ABOUT US",
     "title": "Empowering Careers Building Stronger Businesses",
     "titleHighlight": "Building Stronger Businesses",
-    "description": "At Workora, we connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike. Our people-first approach helps organizations build high-performing teams and enables professionals to achieve their career goals.",
+    "description": "At Workora, we connect talent with opportunity, fostering growth, success, and\na brighter future for individuals and businesses alike. Our people-first approach\nhelps organizations build high-performing teams and enables professionals\nto achieve their career goals.",
     "features": [
       {
         "icon": "users",
@@ -121,53 +121,53 @@
     "sectionSubtitle": "OUR SERVICES",
     "title": "Comprehensive HR Solutions for a Stronger Tomorrow",
     "titleHighlight": "for a Stronger Tomorrow",
-    "description": "We provide end-to-end HR services designed to help businesses attract, develop and retain the right talent while empowering professionals to achieve their career goals.",
+    "description": "We provide end-to-end HR services designed to help businesses attract, develop and retain the right talent\nwhile empowering professionals to achieve their career goals.",
     "items": [
       {
         "title": "Talent Acquisition",
-        "description": "Helping businesses find the right talent with a strategic and streamlined hiring approach.",
+        "description": "Helping businesses find the right\ntalent with a strategic and streamlined\nhiring approach.",
         "image": "/service-talent.webp",
         "link": "/services/talent-acquisition"
       },
       {
         "title": "Executive Search",
-        "description": "Identifying and placing leadership talent to drive business growth and long-term success.",
+        "description": "Identifying and placing leadership\ntalent to drive business growth\nand long-term success.",
         "image": "/service-executive.webp",
         "link": "/services/executive-search"
       },
       {
         "title": "Training & Development",
-        "description": "Building skills and capabilities through tailored learning and development programs.",
+        "description": "Building skills and capabilities\nthrough tailored learning and\ndevelopment programs.",
         "image": "/service-training.webp",
         "link": "/services/training-development"
       },
       {
         "title": "HR Consulting",
-        "description": "Strategic HR solutions to improve organizational performance and build stronger teams.",
+        "description": "Strategic HR solutions to improve\norganizational performance and\nbuild stronger teams.",
         "image": "/service-consulting.webp",
         "link": "/services/hr-consulting"
       },
       {
         "title": "Staffing Solutions",
-        "description": "Flexible staffing solutions to meet your business needs across various industries.",
+        "description": "Flexible staffing solutions to meet\nyour business needs across various\nindustries.",
         "image": "/service-staffing.webp",
         "link": "/services/staffing-solutions"
       },
       {
         "title": "Career Guidance",
-        "description": "Personalized support to help professionals achieve growth and reach their career goals.",
+        "description": "Personalized support to help\nprofessionals explore opportunities\nand achieve their career goals.",
         "image": "/service-career.webp",
         "link": "/services/career-guidance"
       },
       {
         "title": "HR Outsourcing",
-        "description": "Streamlined HR operations so you can focus on what matters most — your core business.",
+        "description": "Streamlined HR operations so you\ncan focus on what matters most —\nyour core business.",
         "image": "/service-outsourcing.webp",
         "link": "/services/hr-outsourcing"
       },
       {
         "title": "Recruitment Process Outsourcing",
-        "description": "End-to-end recruitment solutions for faster, smarter, and more efficient hiring.",
+        "description": "End-to-end recruitment solutions\nfor faster, smarter, and more efficient\nhiring.",
         "image": "/service-rpo.webp",
         "link": "/services/recruitment-process-outsourcing"
       }
@@ -177,7 +177,7 @@
     "sectionSubtitle": "OUR TEAM",
     "title": "Our People Make the Difference",
     "titleHighlight": "Make the Difference",
-    "description": "A passionate team dedicated to connecting talent with opportunity and driving success for individuals and businesses.",
+    "description": "A passionate team of experts dedicated to connecting talent with opportunity\nand driving success for individuals and businesses.",
     "members": [
       {
         "name": "Ryan Carter",
@@ -203,38 +203,39 @@
   },
   "testimonials": {
     "sectionSubtitle": "TESTIMONIALS",
-    "title": "Success Stories from Our Clients and Candidates",
+    "title": "Success Stories from\nOur Clients and Candidates",
     "titleHighlight": "Clients and Candidates",
     "background": "/testimonials-bg.webp",
     "items": [
       {
-        "quote": "Workora helped us find the right talent quickly and efficiently. Their professional approach understanding of our core values made the process smooth and easy.",
-        "name": "Tyler Blake",
-        "role": "HR Director, Tech Solutions",
+        "quote": "Workora helped us find the right talent quickly\nand efficiently. Their professionalism and\nunderstanding of our requirements made the\nentire hiring process seamless.",
+        "name": "Arjun Mehta",
+        "role": "HR Manager, TechNova Solutions",
         "image": "/testim-tyler.webp",
         "rating": 5
       },
       {
-        "quote": "The recruitment process was seamless and efficient. They provided us with top talent that perfectly matched our company culture and requirements.",
-        "name": "Lilya Rose",
-        "role": "CEO, Global Tech",
+        "quote": "The team at Workora truly understands\ncareer goals. They guided me at every step\nand helped me secure a role that perfectly\nmatches my skills and aspirations.",
+        "name": "Priya Sharma",
+        "role": "Marketing Executive",
         "image": "/testim-lilya.webp",
         "rating": 5
       },
       {
-        "quote": "Workora has been a great partner for our staffing needs. They understand our requirements and consistently provide high-quality candidates.",
-        "name": "Steve Johnson",
-        "role": "Operations Manager",
+        "quote": "We have been working with Workora for\nover 3 years. Their commitment, speed,\nand quality of candidates have been\nexceptional. Highly recommended!",
+        "name": "Karan Malhotra",
+        "role": "Director, GrowthEdge Media",
         "image": "/testim-steve.webp",
         "rating": 5
       }
-    ]
+    ],
+    "description": "Trusted by businesses and professionals, our services have made\nmeaningful impact on careers and organizations."
   },
   "blogs": {
     "sectionSubtitle": "OUR BLOGS",
     "title": "Latest Insights & HR Trends",
     "titleHighlight": "HR Trends",
-    "description": "Explore expert insights, practical tips, and the latest trends to help you build stronger teams and dynamic workplaces."
+    "description": "Explore expert insights, practical tips, and the latest trends to help you build\nstronger teams and smarter workplaces."
   },
   "aboutPage": {
     "banner": {
@@ -244,22 +245,28 @@
     "overview": {
       "sectionSubtitle": "ABOUT US",
       "title": "Empowering Careers Building Stronger Businesses",
-      "titleHighlight": "Building Stronger Businesses"
+      "titleHighlight": "Building Stronger Businesses",
+      "paragraphs": [
+        "At Workora, we connect talent with opportunity, fostering growth, success, and\na brighter future for individuals and businesses alike. Our people-first approach\nhelps organizations build high-performing teams and enables professionals\nto achieve their career goals.",
+        "At Workora, we connect talent with opportunity, fostering growth, success, and\na brighter future for individuals and businesses alike. Our people-first approach\nhelps organizations build high-performing teams and enables professionals\nto achieve their career goals.",
+        "At Workora, we connect talent with opportunity, fostering growth, success, and\na brighter future for individuals and businesses alike. Our people-first approach\nhelps organizations build high-performing teams and enables professionals\nto achieve their career goals.",
+        "At Workora, we connect talent with opportunity, fostering growth, success, and\na brighter future for individuals and businesses alike. Our people-first approach\nhelps organizations build high-performing teams and enables professionals\nto achieve their career goals."
+      ]
     },
     "whyChooseUs": {
       "sectionSubtitle": "WHY CHOOSE US",
-      "title": "The Foundation of Our Excellence",
+      "title": "The Foundation of\nOur Excellence",
       "titleHighlight": "Excellence",
-      "description": "Our success is built on experience, people, and a commitment to connecting the right talent with the right opportunities. We deliver personalized hiring solutions, industry expertise, and long-term partnerships that drive real results.",
+      "description": "Our success is built on experience,\npeople, and a commitment to\nconnecting the right talent with\nthe right opportunities. We deliver\npersonalized hiring solutions,\nindustry expertise, and long-term\npartnerships that drive real results.",
       "since": {
         "badge": "SINCE IN",
         "year": "2015",
-        "text": "Delivering trusted HR and recruitment solutions since 2015, empowering businesses and professionals worldwide."
+        "text": "Delivering trusted HR and\nrecruitment solutions since 2015,\nempowering businesses and\nprofessionals worldwide."
       },
-      "quote": "Your growth and success are at the heart of everything we do.",
+      "quote": "Your growth and success\nare at the heart of everything\nwe do.",
       "award": {
-        "title": "Recognized for Excellence in Recruitment",
-        "subtitle": "Best HR Solutions Provider Award 2024",
+        "title": "Recognized for\nExcellence in Recruitment",
+        "subtitle": "Best HR Solutions Provider\nAward 2024",
         "linkText": "Read Our Story",
         "link": "/about-us",
         "image": "/about-trophy.webp"
@@ -267,25 +274,25 @@
       "features": [
         {
           "title": "Experienced Team",
-          "description": "A team of recruitment experts with years of industry experience.",
+          "description": "A team of recruitment experts with\nyears of industry experience.",
           "icon": "users",
           "highlight": false
         },
         {
           "title": "Customized Solutions",
-          "description": "Tailored hiring strategies to meet your unique business needs.",
+          "description": "Tailored hiring strategies to meet\nyour unique business needs.",
           "icon": "target",
           "highlight": true
         },
         {
           "title": "Proven Track Record",
-          "description": "A history of successful placements across multiple industries.",
+          "description": "A history of successful placements\nacross multiple industries.",
           "icon": "award",
           "highlight": false
         },
         {
           "title": "Long-Term Partnerships",
-          "description": "Building lasting relationships through trust, transparency, and results.",
+          "description": "Building lasting relationships through\ntrust, transparency, and results.",
           "icon": "chart",
           "highlight": false
         }
@@ -302,9 +309,10 @@
       "image": "/page-banner.webp"
     },
     "overview": {
+      "slug": "executive-search",
       "sectionSubtitle": "SERVICE OVERVIEW",
-      "title": "Executive Search for Exceptional Leadership",
-      "description": "Our Executive Search service helps you identify, attract, and secure top leadership talent who can make a meaningful impact on your organization. We combine industry expertise, extensive networks, and a proven assessment process to find leaders who align with your vision, culture, and long-term goals.",
+      "title": "Executive Search for\nExceptional Leadership",
+      "description": "Our Executive Search service helps you identify, attract, and\nsecure top leadership talent who can make a meaningful impact\non your organization. We combine industry expertise, extensive\nnetworks, and a proven assessment process to find leaders who\nalign with your vision, culture, and long-term goals.",
       "ctaText": "Get Started",
       "ctaLink": "/contact-us",
       "image": "/service-detail-main.webp"
@@ -312,51 +320,51 @@
     "features": [
       {
         "title": "Leadership Focus",
-        "description": "Access to high-caliber leadership talent.",
+        "description": "Access to high-caliber\nleadership talent.",
         "icon": "users"
       },
       {
         "title": "Targeted Approach",
-        "description": "Customized search strategy for your needs.",
+        "description": "Customized search\nstrategy for your needs.",
         "icon": "target"
       },
       {
         "title": "Long-Term Fit",
-        "description": "Candidates aligned with your culture and vision.",
+        "description": "Candidates aligned with\nyour culture and vision.",
         "icon": "handshake"
       }
     ],
     "process": {
       "sectionSubtitle": "OUR PROCESS",
       "title": "How We Work",
-      "description": "Our proven executive search process ensures a seamless and efficient hiring experience, delivering the right leaders for your business.",
+      "description": "Our proven executive search process ensures a seamless and\nefficient hiring experience, delivering the right leaders for your\nbusiness.",
       "steps": [
         {
           "number": "01",
-          "title": "Understand Your Needs",
-          "description": "We analyze your goals, culture, and leadership requirements."
+          "title": "Understand\nYour Needs",
+          "description": "We analyze your goals,\nculture, and leadership\nrequirements."
         },
         {
           "number": "02",
-          "title": "Identify Top Talent",
-          "description": "We leverage our network and market expertise."
+          "title": "Identify\nTop Talent",
+          "description": "We leverage our\nnetwork and market\nexpertise."
         },
         {
           "number": "03",
           "title": "Screen & Assess",
-          "description": "We conduct in-depth evaluations to ensure the right fit."
+          "description": "We conduct in-depth\nevaluations to ensure\nthe right fit."
         },
         {
           "number": "04",
           "title": "Deliver & Support",
-          "description": "We help you onboard and integrate leaders for long-term success."
+          "description": "We help you onboard\nand integrate leaders\nfor long-term success."
         }
       ]
     },
     "helpBox": {
       "subtitle": "NEED HELP?",
       "title": "Talk to Our Experts",
-      "description": "Get personalized guidance for your hiring needs.",
+      "description": "Get personalized guidance\nfor your hiring needs.",
       "ctaText": "Request a Consultation",
       "ctaLink": "/contact-us"
     },
@@ -368,7 +376,6 @@
   "blogsPage": {
     "banner": {
       "title": "Blogs",
-      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "sectionSubtitle": "OUR BLOGS",
@@ -378,22 +385,22 @@
     "items": [
       {
         "date": "12 AUG 2026",
-        "title": "The Future of Employee Engagement – What's Next?",
-        "description": "Discover how evolving workplace trends, technology, and people-first strategies are shaping the future of employee engagement.",
+        "title": "The Future of Employee\nEngagement – What's Next?",
+        "description": "Discover how evolving workplace trends,\ntechnology, and people-first strategies are\nshaping the future of employee engagement.",
         "image": "/blog-1.webp",
         "link": "/blogs/future-of-employee-engagement"
       },
       {
         "date": "08 AUG 2026",
-        "title": "How to Handle Employee Conflict Effectively",
-        "description": "Learn practical strategies to identify, address, and resolve workplace conflicts for a more positive and productive team.",
+        "title": "How to Handle Employee\nConflict Effectively",
+        "description": "Learn practical strategies to identify,\naddress, and resolve workplace conflicts\nfor a more positive and productive team.",
         "image": "/blog-2.webp",
         "link": "/blogs/handle-employee-conflict"
       },
       {
         "date": "03 AUG 2026",
-        "title": "Adapting to Remote Work Best Practices for HR",
-        "description": "Explore best practices, tools, and strategies to manage remote teams effectively and keep your workforce connected.",
+        "title": "Adapting to Remote Work\nBest Practices for HR",
+        "description": "Explore best practices, tools, and strategies\nto manage remote teams effectively and\nkeep your workforce connected.",
         "image": "/blog-3.webp",
         "link": "/blogs/remote-work-best-practices"
       }
@@ -408,16 +415,16 @@
       "title": "Blogs Detail",
       "image": "/page-banner.webp"
     },
-    "featuredImage": "/blog-1.webp",
-    "intro": "Employee engagement has become a critical priority for organizations worldwide. In today's fast-changing work environment, engaged employees are more productive, innovative, and committed to long-term success. But as workplace dynamics evolve, so do the strategies and tools needed to keep employees motivated and connected.",
+    "featuredImage": "/blog-detail-main.webp",
+    "intro": "Employee engagement has become a critical priority for organizations worldwide. In today’s fast-changing\nwork environment, engaged employees are more productive, innovative, and committed to long-term success.\nBut as workplace dynamics evolve, so do the strategies and tools needed to keep employees motivated and\nconnected.",
     "whyMatters": {
       "title": "Why Employee Engagement Matters",
-      "paragraph": "Engaged employees contribute more than just their skills — they bring ideas, passion, and a sense of ownership to their work. Studies show that organizations with high employee engagement experience lower turnover rates, stronger performance, and a more positive workplace culture."
+      "paragraph": "Engaged employees contribute more than just their skills — they bring ideas, passion, and a sense of ownership\nto their work. Studies show that organizations with high employee engagement experience lower turnover\nrates, stronger performance, and a more positive workplace culture."
     },
-    "quote": "“A highly engaged workforce is not just a competitive advantage — it's a foundation for sustainable growth.”",
+    "quote": "“A highly engaged workforce is not just a competitive advantage —\nit’s a foundation for sustainable growth.”",
     "keyTrends": {
       "title": "Key Trends Shaping the Future",
-      "intro": "As we look ahead, several trends are expected to play a major role in shaping employee engagement:",
+      "intro": "As we look ahead, several trends are expected to play a major\nrole in shaping employee engagement:",
       "points": [
         "Flexible and hybrid work models",
         "Greater focus on employee well-being",
@@ -425,11 +432,11 @@
         "Personalized learning and development",
         "Stronger emphasis on diversity, equity, and inclusion"
       ],
-      "sideImage": "/about-meeting-2.webp"
+      "sideImage": "/blog-detail-side.webp"
     },
     "finalThoughts": {
       "title": "Final Thoughts",
-      "paragraph": "The future of employee engagement lies in creating work environments where people feel valued, supported, and empowered. By embracing new technologies, flexible work practices, and a people-first culture, organizations can build stronger teams and achieve long-term success."
+      "paragraph": "The future of employee engagement lies in creating work environments where people feel valued, supported, and empowered.\nBy embracing new technologies, flexible work practices, and a people-first culture, organizations can build stronger teams and\nachieve long-term success."
     },
     "meta": {
       "title": "Blogs Detail | Workora HR Consultancy",
@@ -439,28 +446,27 @@
   "getAQuotePage": {
     "banner": {
       "title": "Get a Quote",
-      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "overview": {
       "sectionSubtitle": "GET A QUOTE",
-      "title": "Let's Build the Right Team Together",
+      "title": "Let’s Build the\nRight Team Together",
       "titleHighlight": "Together",
-      "description": "Share your hiring needs with us and our experts will provide a customized solution with the right candidates for your business.",
+      "description": "Share your hiring needs with us and our experts will provide\na customized solution with the right candidates for your business.",
       "features": [
         {
           "title": "Right Talent",
-          "description": "Connect with pre-screened and qualified professionals.",
+          "description": "Connect with pre-screened\nand qualified professionals.",
           "icon": "users"
         },
         {
           "title": "Quick Response",
-          "description": "Our team will get back to you within 24 hours.",
+          "description": "Our team will get back\nto you within 24 hours.",
           "icon": "clock"
         },
         {
           "title": "No Obligation",
-          "description": "Get expert advice with no commitment.",
+          "description": "Get expert advice\nwith no commitment.",
           "icon": "shield"
         }
       ],
@@ -468,7 +474,7 @@
         "image": "/quote-experts.webp",
         "subtitle": "NEED HELP?",
         "title": "Talk to Our Experts",
-        "description": "Have questions or need guidance? Our team is here to help you find the best hiring solution."
+        "description": "Have questions or need guidance?\nOur team is here to help you find\nthe best hiring solution."
       }
     },
     "form": {
@@ -488,27 +494,27 @@
     },
     "process": {
       "sectionSubtitle": "OUR PROCESS",
-      "title": "From Enquiry to Results",
+      "title": "From Enquiry\nto Results",
       "steps": [
         {
           "number": "01",
           "title": "Submit Enquiry",
-          "description": "Fill out the form with your requirements."
+          "description": "Fill out the form with\nyour requirements."
         },
         {
           "number": "02",
           "title": "Our Consultation",
-          "description": "Our experts will understand your hiring needs."
+          "description": "Our experts will understand\nyour hiring needs."
         },
         {
           "number": "03",
           "title": "Get a Custom Quote",
-          "description": "Receive a tailored solution within 24 hours."
+          "description": "Receive a tailored solution\nwithin 24 hours."
         },
         {
           "number": "04",
           "title": "Start Hiring",
-          "description": "Begin the hiring process with the right talent."
+          "description": "Begin the hiring process\nwith the right talent."
         }
       ]
     },
@@ -520,14 +526,13 @@
   "contactUsPage": {
     "banner": {
       "title": "Contact Us",
-      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "formSection": {
       "sectionSubtitle": "GET IN TOUCH",
-      "title": "Let's Start a Conversation",
+      "title": "Let’s Start\na Conversation",
       "titleHighlight": "Conversation",
-      "description": "We connect talent with opportunity, fostering growth, success, and a brighter future for individuals and businesses alike.",
+      "description": "We connect talent with opportunity, fostering growth,\nsuccess, and a brighter future for individuals and businesses alike.",
       "submitText": "Submit Message",
       "fields": {
         "firstNamePlaceholder": "First Name",
@@ -538,6 +543,9 @@
       }
     },
     "infoCards": {
+      "emailLabel": "Email",
+      "phoneLabel": "Contact",
+      "locationLabel": "Location",
       "location": "450 Lexington Ave, Suite 1400, New York, NY 10017, USA"
     },
     "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280016462!2d-74.11976373077755!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711100000000!5m2!1sen!2sin",
@@ -581,7 +589,6 @@
   "teamPage": {
     "banner": {
       "title": "Our Team",
-      "variant": "centered",
       "image": "/page-banner.webp"
     },
     "meta": {

@@ -2,72 +2,56 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import HighlightedText from "./HighlightedText";
-import siteData from "../site.json";
+import siteData from "@/data";
+
+const hero = siteData.hero;
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-white min-h-[520px] md:min-h-[580px] lg:min-h-[640px] flex items-center">
-      {/* Background image on Desktop */}
-      <div className="absolute inset-0 hidden lg:block">
-        <Image
-          src={siteData.hero.image || "/hero-main.webp"}
-          alt="Strategic HR Solutions"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-right"
-        />
-        {/* Subtle left gradient overlay to ensure perfect contrast for text */}
-        <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-white via-white/95 to-transparent" />
-      </div>
+    <section className="fluid relative isolate overflow-hidden bg-white">
+      {/* Desktop: the photo is the section background, washed out on the left by the image itself */}
+      <Image
+        src={hero.image}
+        alt=""
+        fill
+        preload
+        unoptimized
+        sizes="100vw"
+        className="-z-10 hidden object-cover object-right lg:block"
+      />
 
-      <div className="container-custom relative z-10 w-full py-12 md:py-16 lg:py-20">
-        <div className="max-w-xl">
-          {/* Subtitle with line */}
-          <div className="flex items-center gap-2.5 text-primary font-semibold mb-4 text-sm tracking-wide">
-            <span className="w-8 h-[2px] bg-primary block"></span>
-            <span>{siteData.hero.subtitle}</span>
-          </div>
-
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] mb-5 leading-[1.12] heading-font tracking-tight">
-            <HighlightedText
-              text={siteData.hero.title}
-              highlight={siteData.hero.titleHighlight}
-              className="text-primary"
-              breakBefore
-              breakAfter
-            />
-          </h1>
-
-          {/* Description */}
-          <p className="text-[#475569] text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
-            {siteData.hero.description}
-          </p>
-
-          {/* CTA Button */}
-          <div>
-            <Link
-              href={siteData.hero.ctaLink}
-              className="bg-primary hover:bg-blue-700 text-white font-semibold py-3.5 px-7 rounded-lg text-sm inline-flex items-center gap-2 shadow-sm transition-all duration-300"
-            >
-              {siteData.hero.ctaText} <ArrowRight size={16} />
-            </Link>
-          </div>
+      <div className="wrap px-5 pb-10 pt-10 sm:px-8 lg:h-179.5 lg:px-0 lg:pb-0 lg:pl-26.25 lg:pt-18.75">
+        <div className="flex items-center gap-3 font-pop text-[13px] font-medium text-[#2b5797] sm:text-sm lg:gap-4.75 lg:fs-20">
+          <span className="h-0.5 w-8 shrink-0 bg-[#2b5797] lg:h-0.75 lg:w-10.5" />
+          <span>{hero.subtitle}</span>
         </div>
-      </div>
 
-      {/* Mobile Image */}
-      <div className="container-custom mb-8 lg:hidden">
-        <div className="relative h-64 sm:h-80 w-full overflow-hidden rounded-xl">
-          <Image
-            src={siteData.hero.image || "/hero-main.webp"}
-            alt="Strategic HR Solutions"
-            fill
-            sizes="100vw"
-            className="object-cover object-right rounded-xl"
+        <h1 className="mt-4 font-noto text-[40px] font-bold leading-[1.08] tracking-[-0.015em] whitespace-pre-line text-ink sm:text-[54px] lg:mt-6.5 lg:fs-79 lg:leading-[0.975]">
+          <HighlightedText
+            text={hero.title}
+            highlight={hero.titleHighlight}
+            className="text-[#3a62a0]"
+            breakBefore
+            breakAfter
           />
-        </div>
+        </h1>
+
+        <p className="mt-5 max-w-xl font-pop text-[15px] leading-relaxed text-[#5c5f6a] sm:text-base lg:mt-5 lg:max-w-175 lg:whitespace-pre-line lg:fs-20.75 lg:leading-[1.5]">
+          {hero.description}
+        </p>
+
+        <Link
+          href={hero.ctaLink}
+          className="mt-7 inline-flex h-13 items-center gap-3 rounded bg-[#3d649b] px-7 font-pop text-base font-semibold text-white transition-colors hover:bg-[#2f4f80] lg:mt-9.25 lg:h-18.25 lg:gap-5 lg:r-4 lg:pl-9 lg:pr-9.5 lg:fs-22.5"
+        >
+          {hero.ctaText}
+          <ArrowRight className="size-5 lg:size-6.5" strokeWidth={2.5} />
+        </Link>
+      </div>
+
+      {/* Phones and tablets: photo sits under the text */}
+      <div className="relative aspect-[16/10] w-full lg:hidden">
+        <Image src={hero.image} alt="" fill unoptimized sizes="100vw" className="object-cover object-[78%_center]" />
       </div>
     </section>
   );

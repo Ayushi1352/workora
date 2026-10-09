@@ -1,6 +1,6 @@
-import ServicesBanner from "./ServicesBanner";
-import ServicesList from "./ServicesList";
-import siteData from "../../site.json";
+import PageBanner from "@/components/PageBanner";
+import ServicesHome from "@/components/ServicesHome";
+import siteData from "@/data";
 
 export const metadata = {
   title: siteData.servicesPage.meta.title,
@@ -10,8 +10,9 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <ServicesBanner />
-      <ServicesList />
+      <PageBanner {...siteData.servicesPage.banner} />
+      <ServicesHome page />
     </>
   );
 }
+

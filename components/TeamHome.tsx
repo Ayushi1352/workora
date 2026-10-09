@@ -1,39 +1,51 @@
 import Image from "next/image";
 import HighlightedText from "./HighlightedText";
-import siteData from "../site.json";
+import siteData from "@/data";
+
+const team = siteData.team;
 
 export default function TeamHome() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom mb-10 text-center">
-        <h5 className="text-primary font-semibold text-sm tracking-wider uppercase mb-3 flex items-center justify-center gap-2">
-           <span className="w-8 h-px bg-primary"></span>
-           {siteData.team.sectionSubtitle}
-           <span className="w-8 h-px bg-primary"></span>
-        </h5>
-        <h2 className="section-title max-w-2xl mx-auto">
-          <HighlightedText
-            text={siteData.team.title}
-            highlight={siteData.team.titleHighlight}
-            className="text-primary"
-          />
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto text-sm">
-          {siteData.team.description}
-        </p>
-      </div>
-      <div className="container-custom grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {siteData.team.members.map((member, i) => (
-          <div key={i} className="group overflow-hidden rounded-md border border-gray-100 bg-white shadow-sm">
-            <div className="relative h-[260px] w-full">
-               <Image src={member.image} alt={member.name} fill className="object-cover" />
-            </div>
-            <div className="border-t border-gray-100 px-4 py-3 text-left">
-              <h4 className="text-sm font-bold text-dark heading-font">{member.name}</h4>
-              <p className="mt-1 text-xs font-medium text-gray-500">{member.role}</p>
-            </div>
+    <section className="fluid bg-white font-pop">
+      <div className="wrap px-5 py-14 sm:px-8 lg:px-13 lg:pb-23 lg:pt-14.5">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-4 font-figtree text-[13px] font-bold uppercase tracking-[0.04em] text-[#1f4fae] lg:gap-4.25 lg:fs-18 lg:leading-none">
+            <span className="h-0.5 w-8 bg-[#1f4fae] lg:w-11" />
+            {team.sectionSubtitle}
+            <span className="h-0.5 w-8 bg-[#1f4fae] lg:w-11" />
           </div>
-        ))}
+          <h2 className="mt-3 font-figtree text-[30px] font-bold leading-[1.15] text-[#050833] sm:text-[40px] lg:mt-4.5 lg:fs-55.75 lg:leading-[1.14]">
+            <HighlightedText text={team.title} highlight={team.titleHighlight} className="text-[#2456c8]" />
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[#5d6880] lg:mt-3.25 lg:max-w-180 lg:whitespace-pre-line lg:fs-17.75 lg:leading-[1.52]">
+            {team.description}
+          </p>
+        </div>
+
+        <div className="mt-9 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:mt-7 lg:grid-cols-4 lg:gap-8">
+          {team.members.map((member) => (
+            <article
+              key={member.name}
+              className="overflow-hidden rounded-lg bg-white shadow-[0_3px_16px_rgba(15,30,70,0.08)] lg:r-8"
+            >
+              <div className="relative aspect-[372/353] w-full">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  unoptimized
+                  sizes="(min-width:1024px) 23vw, (min-width:640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="px-6 pb-5 pt-4 lg:px-7.5 lg:pb-5.5 lg:pt-4.75">
+                <h3 className="font-pop text-xl font-semibold text-[#06072c] lg:fs-22.5 lg:leading-[1.3]">{member.name}</h3>
+                <span className="mt-2 block h-0.75 w-11.5 bg-[#2456c8] lg:mt-2.75" />
+                <p className="mt-3 text-[15px] text-[#646d84] lg:mt-4 lg:fs-17.5 lg:leading-[1.3]">{member.role}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

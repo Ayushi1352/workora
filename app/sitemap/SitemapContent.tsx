@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export default function SitemapContent() {
   const { siteMapPage } = siteData;

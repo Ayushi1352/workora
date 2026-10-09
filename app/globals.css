@@ -24,7 +24,14 @@ body {
   color: var(--text-main);
 }
 
-h1, h2, h3, h4, h5, h6, .heading-font {
+/* In the base layer so font utilities (font-noto, font-exo, …) can override it */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
+  }
+}
+
+.heading-font {
   font-family: var(--font-heading), sans-serif;
 }
 
@@ -33,7 +40,7 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 }
 
 .section-padding {
-  @apply py-14 md:py-20;
+  @apply py-14 md:py-18 lg:py-22;
 }
 
 .text-subtitle {
@@ -52,3 +59,54 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 .btn-primary {
   @apply bg-primary hover:bg-dark transition-colors duration-300 text-white font-medium py-2.5 px-5 rounded-sm inline-flex items-center gap-2;
 }
+
+/* ---- Design-scale system ----
+   Sections marked `.fluid` are built on a 1686px-wide design. `--u` is one design
+   pixel: 1px on phones/tablets, and from 1024px up it scales with the viewport so the
+   desktop layout keeps the design's exact proportions on every laptop width. */
+:root {
+  --u: 1px;
+  --navy: #0b1638;
+  --ink: #0e1627;
+  --body: #5d6574;
+  --brand: #3a5ea1;
+  --brand-bright: #1d4fd8;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --u: min(calc(100vw / 1686), 1px);
+  }
+}
+
+.fluid {
+  --spacing: calc(var(--u) * 4);
+}
+
+@theme inline {
+  --font-figtree: var(--ff-figtree);
+  --font-noto: var(--ff-noto);
+  --font-exo: var(--ff-exo);
+  --font-lexend: var(--ff-lexend);
+  --font-pop: var(--font-poppins);
+  --color-navy: var(--navy);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-brand: var(--brand);
+  --color-brand-bright: var(--brand-bright);
+}
+
+@utility fs-* {
+  font-size: calc(--value(number) * var(--u));
+}
+
+@utility r-* {
+  border-radius: calc(--value(number) * var(--u));
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1686px;
+  margin-inline: auto;
+}
+

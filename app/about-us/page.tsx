@@ -1,8 +1,8 @@
-import AboutBanner from "./AboutBanner";
+import PageBanner from "@/components/PageBanner";
 import AboutOverview from "./AboutOverview";
-import AboutStats from "./AboutStats";
+import Stats from "@/components/Stats";
 import WhyChooseUs from "./WhyChooseUs";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export const metadata = {
   title: siteData.aboutPage.meta.title,
@@ -12,10 +12,11 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <AboutBanner />
+      <PageBanner {...siteData.aboutPage.banner} />
       <AboutOverview />
-      <AboutStats />
+      <Stats variant="about" />
       <WhyChooseUs />
     </>
   );
 }
+

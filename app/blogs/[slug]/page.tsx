@@ -1,30 +1,29 @@
-import BlogDetailBanner from "../BlogDetailBanner";
+import PageBanner from "@/components/PageBanner";
 import BlogDetailContent from "../BlogDetailContent";
 import { notFound } from "next/navigation";
-import siteData from "../../../site.json";
+import siteData from "@/data";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
-  return siteData.blogsPage.items.map(b => ({
-    slug: b.link.replace("/blogs/", "")
-  }));
+  const slugs = new Set(siteData.blogsPage.items.map((b) => b.link.replace("/blogs/", "")));
+  return [...slugs].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const blog = siteData.blogsPage.items.find(b => b.link === `/blogs/${slug}`);
+  const blog = siteData.blogsPage.items.find((b) => b.link === `/blogs/${slug}`);
   return {
-    title: blog ? `${blog.title} | ${siteData.company.name}` : siteData.blogDetailPage.meta.title,
-    description: blog?.description ?? siteData.blogDetailPage.meta.description,
+    title: blog ? `${blog.title.replace(/\n/g, " ")} | ${siteData.company.name}` : siteData.blogDetailPage.meta.title,
+    description: blog?.description.replace(/\n/g, " ") ?? siteData.blogDetailPage.meta.description,
   };
 }
 
-export default async function DynamicBlogDetailPage({ params }: PageProps) {
+export default async function BlogDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const blog = siteData.blogsPage.items.find(b => b.link === `/blogs/${slug}`);
+  const blog = siteData.blogsPage.items.find((b) => b.link === `/blogs/${slug}`);
 
   if (!blog) {
     notFound();
@@ -32,17 +31,8 @@ export default async function DynamicBlogDetailPage({ params }: PageProps) {
 
   return (
     <div>
-      <BlogDetailBanner
-        title={blog.title}
-        parentTitle={siteData.blogsPage.banner.title}
-        parentHref="/blogs"
-      />
-
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <BlogDetailContent />
-        </div>
-      </section>
+      <PageBanner {...siteData.blogDetailPage.banner} />
+      <BlogDetailContent />
     </div>
   );
 }

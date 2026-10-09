@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import SitemapContent from "./SitemapContent";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export const metadata: Metadata = {
   title: siteData.siteMapPage.meta.title,

@@ -1,11 +1,22 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FileText, User, Mail, Phone, ArrowRight } from "lucide-react";
-import siteData from "../../site.json";
+import { ArrowRight, FileText, Mail, Phone, UserRound } from "lucide-react";
+import siteData from "@/data";
+
+const form = siteData.getAQuotePage.form;
+
+const fields = [
+  { type: "text", label: form.fields.nameLabel, placeholder: form.fields.namePlaceholder, Icon: UserRound },
+  { type: "email", label: form.fields.emailLabel, placeholder: form.fields.emailPlaceholder, Icon: Mail },
+  { type: "tel", label: form.fields.phoneLabel, placeholder: form.fields.phonePlaceholder, Icon: Phone },
+];
+
+const control =
+  "w-full rounded-md border border-[#dfe4ec] bg-white text-[15px] text-[#0b1230] outline-none transition-colors placeholder:text-[#5b647e] focus:border-[#0f52d9] lg:r-5 lg:fs-15";
+const labelClass = "block text-[15px] font-medium text-[#0b1230] lg:fs-16 lg:leading-[1.125]";
 
 export default function QuoteForm() {
-  const { form } = siteData.getAQuotePage;
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -14,94 +25,41 @@ export default function QuoteForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
-      {/* Top Navy Header Banner */}
-      <div className="bg-dark text-white p-6 sm:p-7 flex items-center gap-4 border-b-4 border-primary">
-        <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-          <FileText size={24} className="text-white" />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold heading-font">{form.title}</h3>
-          <p className="text-gray-300 text-xs mt-1 leading-relaxed">
-            {form.subtitle}
-          </p>
+    <div className="overflow-hidden rounded-xl bg-white font-sans shadow-[0_4px_24px_rgba(15,30,70,0.1)] lg:r-12">
+      <div className="flex items-start bg-linear-to-r from-[#0b3aa0] to-[#0a2f86] px-5 py-6 text-white lg:h-26.25 lg:px-0 lg:py-0 lg:pl-7.75 lg:pt-7">
+        <FileText className="size-10 shrink-0 lg:size-11.5" strokeWidth={1.25} />
+        <div className="ml-5 lg:-mt-1 lg:ml-7.5">
+          <h2 className="font-exo text-2xl font-bold lg:fs-25 lg:leading-[1.2]">{form.title}</h2>
+          <p className="mt-1 text-sm lg:mt-1.5 lg:fs-15.5 lg:leading-[1.3]">{form.subtitle}</p>
         </div>
       </div>
 
-      {/* Form Content */}
-      <div className="p-6 sm:p-8">
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                {form.fields.nameLabel} <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                  <User size={15} />
-                </div>
-                <input
-                  type="text"
-                  required
-                  placeholder={form.fields.namePlaceholder}
-                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                {form.fields.emailLabel} <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                  <Mail size={15} />
-                </div>
-                <input
-                  type="email"
-                  required
-                  placeholder={form.fields.emailPlaceholder}
-                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                {form.fields.phoneLabel} <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                  <Phone size={15} />
-                </div>
-                <input
-                  type="tel"
-                  required
-                  placeholder={form.fields.phonePlaceholder}
-                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                {form.fields.messageLabel} <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                rows={4}
-                required
-                placeholder={form.fields.messagePlaceholder}
-                className="w-full px-3.5 py-2.5 bg-white border border-gray-200 rounded-lg text-xs text-dark focus:outline-none focus:border-primary transition-colors resize-none"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-xs transition-colors flex items-center justify-center gap-2 shadow-sm"
-            >
-              {form.submitText} <ArrowRight size={14} />
-            </button>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-5 px-5 pb-8 pt-5 lg:px-8 lg:pb-9.75 lg:pt-5">
+        {fields.map(({ type, label, placeholder, Icon }) => (
+          <label key={label} className={labelClass}>
+            {label} <span className="text-[#e11d48]">*</span>
+            <span className="relative mt-1.5 block font-normal">
+              <Icon className="pointer-events-none absolute left-4.5 top-1/2 size-5 -translate-y-1/2 text-[#5b647e]" strokeWidth={1.75} />
+              <input type={type} required placeholder={placeholder} className={`${control} h-11 pl-12.75 pr-4`} />
+            </span>
+          </label>
+        ))}
+        <label className={labelClass}>
+          {form.fields.messageLabel} <span className="text-[#e11d48]">*</span>
+          <textarea
+            required
+            placeholder={form.fields.messagePlaceholder}
+            className={`${control} mt-1.5 block h-30.5 resize-y px-4 py-3 font-normal`}
+          />
+        </label>
+        <button
+          type="submit"
+          className="mt-1 flex h-13.5 w-full items-center justify-center gap-4 rounded-md bg-[#0f52d9] text-base font-semibold text-white transition-colors hover:bg-[#0c43b3] lg:r-5 lg:fs-17"
+        >
+          {form.submitText}
+          <ArrowRight className="size-5.5" strokeWidth={2} />
+        </button>
+      </form>
     </div>
   );
 }

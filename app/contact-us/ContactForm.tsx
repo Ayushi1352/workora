@@ -1,12 +1,23 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { User, Phone, Mail, MessageSquare, ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, MessageSquareMore, Phone, UserRound } from "lucide-react";
 import HighlightedText from "@/components/HighlightedText";
-import siteData from "../../site.json";
+import siteData from "@/data";
+
+const form = siteData.contactUsPage.formSection;
+
+const fields = [
+  { type: "text", placeholder: form.fields.firstNamePlaceholder, Icon: UserRound },
+  { type: "text", placeholder: form.fields.lastNamePlaceholder, Icon: UserRound },
+  { type: "tel", placeholder: form.fields.phonePlaceholder, Icon: Phone },
+  { type: "email", placeholder: form.fields.emailPlaceholder, Icon: Mail },
+];
+
+const control =
+  "w-full rounded-lg border border-[#e3e8f0] bg-white text-base text-[#0b1230] outline-none transition-colors placeholder:text-[#5b647e] focus:border-[#0f52d9] lg:r-8 lg:fs-17";
 
 export default function ContactForm() {
-  const { formSection } = siteData.contactUsPage;
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -15,95 +26,43 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-[#f8fafc] p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
-      <div className="mb-6">
-        <h5 className="text-primary font-semibold text-xs tracking-wider uppercase mb-2 flex items-center gap-2">
-          <span className="w-6 h-[2px] bg-primary"></span>
-          {formSection.sectionSubtitle}
-        </h5>
-        <h2 className="text-3xl md:text-4xl font-bold text-dark mb-3 leading-tight heading-font">
-          <HighlightedText
-            text={formSection.title}
-            highlight={formSection.titleHighlight}
-            className="text-primary"
-          />
-        </h2>
-        <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
-          {formSection.description}
-        </p>
+    <div className="rounded-3xl bg-[#f5f8fd] px-5 pb-8 pt-7 font-sans sm:px-8 lg:h-188 lg:r-22 lg:px-0 lg:pb-0 lg:pl-10.25 lg:pr-10 lg:pt-8">
+      <div className="flex items-center gap-4 text-sm font-medium uppercase tracking-[0.1em] text-[#3b7be8] lg:fs-16 lg:leading-none">
+        <span className="h-0.5 w-7 shrink-0 bg-[#3b7be8]" />
+        {form.sectionSubtitle}
       </div>
+      <h2 className="mt-3 whitespace-pre-line font-sans text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-[#0b1230] lg:mt-4.5 lg:fs-50 lg:leading-[1.1]">
+        <HighlightedText text={form.title} highlight={form.titleHighlight} className="text-[#0f52d9]" />
+      </h2>
+      <p className="mt-3 text-base leading-relaxed text-[#5b647e] lg:mt-2.75 lg:whitespace-pre-line lg:fs-19.5 lg:leading-[1.487]">
+        {form.description}
+      </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                <User size={15} />
-              </div>
-              <input
-                type="text"
-                required
-                placeholder={formSection.fields.firstNamePlaceholder}
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-              />
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                <User size={15} />
-              </div>
-              <input
-                type="text"
-                required
-                placeholder={formSection.fields.lastNamePlaceholder}
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                <Phone size={15} />
-              </div>
-              <input
-                type="tel"
-                required
-                placeholder={formSection.fields.phonePlaceholder}
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-              />
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
-                <Mail size={15} />
-              </div>
-              <input
-                type="email"
-                required
-                placeholder={formSection.fields.emailPlaceholder}
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors"
-              />
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute top-3.5 left-3.5 pointer-events-none text-gray-400">
-              <MessageSquare size={15} />
-            </div>
-            <textarea
-              rows={4}
-              required
-              placeholder={formSection.fields.messagePlaceholder}
-              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-xs text-dark focus:outline-none focus:border-primary transition-colors resize-none"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="bg-primary hover:bg-blue-700 text-white font-semibold py-3.5 px-7 rounded-xl text-xs transition-colors inline-flex items-center gap-2 shadow-sm"
-          >
-            {formSection.submitText} <ArrowRight size={14} />
-          </button>
+      <form onSubmit={handleSubmit} className="mt-6 lg:mt-8.25">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-x-6.25 lg:gap-y-5.75">
+          {fields.map(({ type, placeholder, Icon }) => (
+            <label key={placeholder} className="relative block">
+              <Icon className="pointer-events-none absolute left-5 top-1/2 size-5.5 -translate-y-1/2 text-[#5b647e] lg:left-5.5 lg:size-6" strokeWidth={1.75} />
+              <input type={type} required placeholder={placeholder} aria-label={placeholder} className={`${control} h-14 pl-14 pr-4 lg:h-16.25 lg:pl-16.5`} />
+            </label>
+          ))}
+        </div>
+        <label className="relative mt-4 block lg:mt-6.75">
+          <MessageSquareMore className="pointer-events-none absolute left-5 top-4.5 size-5.5 text-[#5b647e] lg:left-5.5 lg:top-5 lg:size-6.5" strokeWidth={1.75} />
+          <textarea
+            required
+            placeholder={form.fields.messagePlaceholder}
+            aria-label={form.fields.messagePlaceholder}
+            className={`${control} block h-36 resize-y py-4 pl-14 pr-4 lg:h-36.75 lg:pl-17.75 lg:pt-5`}
+          />
+        </label>
+        <button
+          type="submit"
+          className="mt-6 inline-flex h-14 w-full items-center justify-center gap-6 rounded-lg bg-[#0f52d9] text-lg font-semibold text-white transition-colors hover:bg-[#0c43b3] sm:w-auto sm:px-16 lg:mt-7.25 lg:h-16 lg:w-83 lg:gap-8 lg:r-8 lg:px-0 lg:fs-19"
+        >
+          {form.submitText}
+          <ArrowRight className="size-6 lg:size-7" strokeWidth={2} />
+        </button>
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import FAQBanner from "../faq/FAQBanner";
-import FAQList from "../faq/FAQList";
-import siteData from "../../site.json";
+import PageBanner from "@/components/PageBanner";
+import FAQList from "@/components/FAQList";
+import siteData from "@/data";
 
 export const metadata: Metadata = {
   title: siteData.faqPage.meta.title,
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function FAQsPage() {
   return (
     <>
-      <FAQBanner />
+      <PageBanner {...siteData.faqPage.banner} />
       <FAQList />
     </>
   );
-}
+}

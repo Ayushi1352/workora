@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 import PageBanner from "./PageBanner";
-import siteData from "../site.json";
+import siteData from "@/data";
 
 type LegalPageData = {
   banner: {

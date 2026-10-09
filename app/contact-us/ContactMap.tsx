@@ -1,21 +1,15 @@
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 export default function ContactMap() {
-  const mapUrl = siteData.contactUsPage.mapEmbedUrl;
-
   return (
-    <div className="w-full h-[260px] sm:h-[280px] rounded-3xl overflow-hidden shadow-sm border border-gray-100 relative">
+    <div className="h-72 w-full overflow-hidden rounded-3xl sm:h-96 lg:h-112.5 lg:r-22">
       <iframe
         title="Google Map Location"
-        src={mapUrl}
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen={false}
+        src={siteData.contactUsPage.mapEmbedUrl}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="w-full h-full"
-      ></iframe>
+        className="size-full border-0"
+      />
     </div>
   );
 }

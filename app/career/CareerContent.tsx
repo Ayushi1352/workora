@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BriefcaseBusiness, Handshake, TrendingUp } from "lucide-react";
-import siteData from "../../site.json";
+import siteData from "@/data";
 
 const icons = [BriefcaseBusiness, TrendingUp, Handshake];
 
@@ -33,7 +33,7 @@ export default function CareerContent() {
       </section>
 
       <section className="border-y border-gray-100 bg-[#f8fafc] py-14 md:py-16">
-        <div className="container-custom grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="container-custom grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {careerPage.highlights.map((highlight, index) => {
             const Icon = icons[index % icons.length];
 

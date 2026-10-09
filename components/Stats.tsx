@@ -1,85 +1,65 @@
 import Image from "next/image";
-import { Users, FileText, TrendingUp, Handshake } from "lucide-react";
+import { FaUsers, FaHandshake } from "react-icons/fa";
+import { FaChartSimple, FaFileLines } from "react-icons/fa6";
 import HighlightedText from "./HighlightedText";
-import siteData from "../site.json";
+import siteData from "@/data";
 
-export default function Stats() {
-  const getStatIcon = (iconName: string) => {
-    switch (iconName) {
-      case "users":
-        return <Users size={22} className="text-white" />;
-      case "file-text":
-        return <FileText size={22} className="text-white" />;
-      case "chart":
-        return <TrendingUp size={22} className="text-white" />;
-      case "handshake":
-      default:
-        return <Handshake size={22} className="text-white" />;
-    }
-  };
+const stats = siteData.stats;
 
+const icons: Record<string, typeof FaUsers> = {
+  users: FaUsers,
+  "file-text": FaFileLines,
+  chart: FaChartSimple,
+  handshake: FaHandshake,
+};
+
+/* Column start positions follow the design: 168 / 540 / 917 / 1309 px on a 1686px page */
+const columnWidths = ["lg:w-93", "lg:w-94.25", "lg:w-98", "lg:flex-1"];
+
+interface StatsProps {
+  /** Kept for existing callers; the design is identical on Home and About. */
+  variant?: "home" | "about";
+}
+
+export default function Stats(_props: StatsProps) {
   return (
-    <section className="relative overflow-hidden bg-dark py-16 md:py-24 text-white">
-      {/* Background Image with Clear Visibility */}
-      <Image 
-        src={siteData.stats.background || "/stats-bg.webp"} 
-        alt="Workora Impact" 
-        fill 
-        className="object-cover object-center opacity-65" 
-      />
-      <div className="absolute inset-0 bg-linear-to-r from-dark/80 via-dark/70 to-dark/80 z-0" />
+    <section className="fluid relative isolate overflow-hidden bg-[#0f1b2d] font-figtree text-white">
+      <Image src={stats.background} alt="" fill unoptimized sizes="100vw" className="-z-10 object-cover" />
 
-      <div className="container-custom relative z-10">
-        {/* Top Header Row */}
-        <div className="mb-12 lg:mb-16 grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
-          <div className="md:col-span-7 lg:col-span-8">
-            <div className="flex items-center gap-2.5 text-primary font-semibold text-xs tracking-widest uppercase mb-3">
-              <span className="w-8 h-[2px] bg-primary block"></span>
-              <span>{siteData.stats.sectionSubtitle}</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-[1.18] heading-font tracking-tight">
-              <HighlightedText
-                text={siteData.stats.title}
-                highlight={siteData.stats.titleHighlight}
-                className="text-primary"
-                breakBefore
-              />
-            </h2>
+      <div className="wrap relative px-5 py-14 sm:px-8 lg:h-140.75 lg:px-0 lg:py-0 lg:pl-42">
+        <div className="lg:absolute lg:left-42 lg:top-20.5">
+          <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/90 lg:gap-4.25 lg:fs-11.5 lg:leading-none">
+            <span className="h-0.5 w-7 shrink-0 bg-[#6f9bf0] lg:w-8" />
+            {stats.sectionSubtitle}
           </div>
-          
-          <div className="md:col-span-5 lg:col-span-4 flex md:justify-end">
-            <p className="text-gray-300 text-xs sm:text-[13px] leading-relaxed max-w-sm">
-              {siteData.stats.description}
-            </p>
-          </div>
+          <h2 className="mt-3 font-figtree text-[30px] font-medium leading-[1.15] tracking-[-0.01em] sm:text-[40px] lg:mt-4.5 lg:fs-51 lg:leading-[1.12]">
+            <HighlightedText text={stats.title} highlight={stats.titleHighlight} className="block text-[#6f9bf0]" />
+          </h2>
         </div>
 
-        {/* Bottom 4 Counters Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 relative">
-          {siteData.stats.items.map((item, i) => (
-            <div 
-              key={i} 
-              className={`flex flex-col items-start px-2 lg:px-8 relative ${
-                i > 0 ? "md:border-l md:border-white/15" : ""
-              }`}
-            >
-              {/* Circular Badge Icon */}
-              <div className="w-13 h-13 rounded-full border border-white/25 bg-white/10 backdrop-blur-xs flex items-center justify-center mb-4 text-white shadow-xs">
-                {getStatIcon(item.icon)}
-              </div>
+        <p className="mt-4 max-w-md text-sm leading-relaxed text-white/90 lg:absolute lg:left-290 lg:top-37.5 lg:mt-0 lg:w-95 lg:max-w-none lg:fs-13.5 lg:leading-[1.93]">
+          {stats.description}
+        </p>
 
-              {/* Big Bold Stat Counter */}
-              <h3 className="text-4xl sm:text-5xl lg:text-[50px] font-bold text-white mb-2 tracking-tight heading-font leading-none">
-                {item.number}
-              </h3>
-
-              {/* Label with Blue Line */}
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
-                <span className="w-4 h-[1.5px] bg-primary block flex-shrink-0"></span>
-                <span>{item.label}</span>
+        <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-9 lg:absolute lg:left-42 lg:right-0 lg:top-63.5 lg:mt-0 lg:flex lg:gap-0">
+          {stats.items.map((item, i) => {
+            const Icon = icons[item.icon] ?? FaUsers;
+            return (
+              <div key={item.label} className={`relative ${columnWidths[i] ?? "lg:flex-1"}`}>
+                {i > 0 && <span className="absolute -left-21.75 top-3.5 hidden h-49.25 w-px bg-white/25 lg:block" />}
+                <span className="flex size-14 items-center justify-center rounded-full border border-white/30 bg-white/10 text-[#c5d5fb] lg:ml-1.5 lg:size-21">
+                  <Icon className="size-6 lg:size-9.5" />
+                </span>
+                <div className="mt-3 text-[40px] font-bold leading-none tracking-[-0.01em] sm:text-5xl lg:mt-4 lg:fs-70">
+                  {item.number}
+                </div>
+                <div className="mt-2 flex items-center gap-3 text-sm lg:mt-2.5 lg:gap-5 lg:fs-20 lg:leading-[1.4]">
+                  <span className="h-0.5 w-5 shrink-0 bg-[#6f9bf0] lg:w-8.75" />
+                  {item.label}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
