@@ -80,9 +80,9 @@ export default function Navbar() {
               </span>
             </a>
           </div>
-          <div className="flex min-w-0 flex-1 items-center pl-15 pr-8.5">
+          <div className="flex min-w-0 flex-1 items-center pl-5 pr-8.5">
             <FaMapMarkerAlt className="size-6 shrink-0" />
-            <span className="ml-3.5 truncate">{company.headerAddress}</span>
+            <span className="ml-3.5 mr-8.5 truncate">{company.headerAddress}</span>
             <span className="ml-auto h-7 w-px shrink-0 bg-white/35" />
             <div className="ml-8.5 flex shrink-0 items-center gap-6">
               {socials.map(({ href, label, Icon }) => (
