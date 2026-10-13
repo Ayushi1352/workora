@@ -84,7 +84,7 @@ async function ServiceDetailContent({ params }: PageProps) {
       />
 
       <section className="fluid bg-white">
-        <div className="wrap flex flex-col gap-10 px-5 py-14 sm:px-8 md:py-18 lg:pb-38.25 lg:pt-29.75 lg:flex-row lg:items-start lg:gap-13.75 lg:px-0 lg:pl-19.25">
+        <div className="wrap flex flex-col gap-10 px-5 py-14 sm:px-8 md:py-18 lg:py-20 lg:flex-row lg:items-start lg:gap-13.75 lg:px-0 lg:pl-19.25">
           <div className="flex flex-col gap-10 lg:w-293.25 lg:shrink-0 lg:gap-9">
             <ServiceDetailOverview overview={overviewData} />
             <ServiceDetailProcess />

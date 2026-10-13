@@ -7,7 +7,7 @@ const team = siteData.team;
 export default function TeamHome() {
   return (
     <section className="fluid bg-white font-pop">
-      <div className="wrap px-5 py-14 sm:px-8 md:py-18 lg:pb-23 lg:pt-14.5 lg:px-13">
+      <div className="wrap px-5 py-14 sm:px-8 md:py-18 lg:py-20 lg:px-13">
         <div className="text-center">
           <div className="flex items-center justify-center gap-4 font-figtree text-[13px] font-bold uppercase tracking-[0.04em] text-[#1f4fae] lg:gap-4.25 lg:fs-18 lg:leading-none">
             <span className="h-0.5 w-8 bg-[#1f4fae] lg:w-11" />

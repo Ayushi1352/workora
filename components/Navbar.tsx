@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
 import siteData from "@/data";
 
@@ -19,7 +19,6 @@ const socials = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const [headerHeight, setHeaderHeight] = useState(108);
@@ -67,15 +66,19 @@ export default function Navbar() {
       >
         <div className="wrap flex h-14.5 items-center fs-19 font-medium">
           <div className="flex w-233.25 shrink-0 items-center pl-8.5">
-            <FaPhoneAlt className="size-6 shrink-0" />
-            <span className="ml-4.5 whitespace-nowrap">
-              {company.helpLineLabel} {company.helpLine}
-            </span>
+            <a href={`tel:${company.helpLine.replace(/[^+\d]/g, "")}`} className="flex items-center transition-opacity hover:opacity-85">
+              <FaPhoneAlt className="size-6 shrink-0" />
+              <span className="ml-4.5 whitespace-nowrap">
+                {company.helpLineLabel} {company.helpLine}
+              </span>
+            </a>
             <span className="mx-8.5 h-7 w-px bg-white/45" />
-            <FaEnvelope className="size-6.5 shrink-0" />
-            <span className="ml-4.5 whitespace-nowrap">
-              {company.openHoursLabel} {company.openHours}
-            </span>
+            <a href={`mailto:${company.email}`} className="flex items-center transition-opacity hover:opacity-85">
+              <FaEnvelope className="size-6.5 shrink-0" />
+              <span className="ml-4.5 whitespace-nowrap">
+                {company.email}
+              </span>
+            </a>
           </div>
           <div className="flex min-w-0 flex-1 items-center pl-15 pr-8.5">
             <FaMapMarkerAlt className="size-6 shrink-0" />
@@ -133,31 +136,15 @@ export default function Navbar() {
           <nav className="hidden h-full items-center gap-14 fs-21 font-bold text-[#0b193f] lg:ml-27.5 lg:flex">
             {siteData.navigation.map((item) => {
               const active = isActive(item.href);
-              const hasMenu = item.href === "/services";
               return (
-                <div key={item.href} className="group relative flex h-full items-center">
+                <div key={item.href} className="relative flex h-full items-center">
                   <Link
                     href={item.href}
                     className={`flex items-center gap-2.5 whitespace-nowrap transition-colors hover:text-[#2f55a4] ${active ? "text-[#2f55a4]" : ""}`}
                   >
                     {item.label}
-                    {hasMenu && <ChevronDown className="size-5 transition-transform group-hover:rotate-180" strokeWidth={2.75} />}
                   </Link>
                   {active && <span className="absolute -inset-x-1.75 bottom-5.5 h-0.75 rounded-full bg-[#2f55a4]" />}
-
-                  {hasMenu && (
-                    <div className="invisible absolute left-0 top-full z-50 w-72 rounded-b-lg border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
-                      {siteData.services.items.map((service) => (
-                        <Link
-                          key={service.link}
-                          href={service.link}
-                          className="block px-5 py-2.5 fs-17 font-medium text-[#0b193f] transition-colors hover:bg-[#eef2f8] hover:text-[#2f55a4]"
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
               );
             })}
@@ -174,10 +161,7 @@ export default function Navbar() {
           <button
             type="button"
             className="p-2 text-[#0b193f] lg:hidden"
-            onClick={() => {
-              setIsServicesOpen(false);
-              setIsOpen((open) => !open);
-            }}
+            onClick={() => setIsOpen((open) => !open)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -193,52 +177,7 @@ export default function Navbar() {
         >
           <div className="flex flex-col">
             {siteData.navigation.map((item) => {
-              const hasMenu = item.href === "/services";
               const active = isActive(item.href);
-
-              if (hasMenu) {
-                return (
-                  <div key={item.href} className="border-b border-gray-100">
-                    <button
-                      type="button"
-                      onClick={() => setIsServicesOpen((open) => !open)}
-                      aria-expanded={isServicesOpen}
-                      aria-controls="mobile-services-menu"
-                      className={`flex w-full items-center justify-between py-2.5 text-left text-[15px] font-semibold transition-colors sm:py-3 sm:text-base ${
-                        active ? "text-[#2f55a4]" : "text-[#0b193f] hover:text-[#2f55a4]"
-                      }`}
-                    >
-                      {item.label}
-                      <ChevronDown
-                        className={`size-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
-                        aria-hidden="true"
-                      />
-                    </button>
-                    {isServicesOpen && (
-                      <div id="mobile-services-menu" className="flex flex-col pb-2 pl-4">
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="py-2 text-sm font-semibold text-[#2f55a4]"
-                        >
-                          {siteData.navbar.allServicesLabel}
-                        </Link>
-                        {siteData.services.items.map((service) => (
-                          <Link
-                            key={service.link}
-                            href={service.link}
-                            onClick={() => setIsOpen(false)}
-                            className="py-2 text-sm font-medium text-[#0b193f] transition-colors hover:text-[#2f55a4]"
-                          >
-                            {service.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
               return (
                 <Link
                   key={item.href}

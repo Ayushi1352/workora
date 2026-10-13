@@ -14,7 +14,7 @@ interface ServicesHomeProps {
 export default function ServicesHome({ page = false }: ServicesHomeProps) {
   return (
     <section className="fluid bg-white font-figtree">
-      <div className={`wrap px-5 py-14 sm:px-8 md:py-18 lg:px-17 ${page ? "lg:pb-36 lg:pt-24.25" : "lg:pb-14 lg:pt-27.5"}`}>
+      <div className="wrap px-5 py-14 sm:px-8 md:py-18 lg:py-20 lg:px-17">
         <div className="text-center">
           <div className="flex items-center justify-center gap-4 text-[13px] font-bold uppercase tracking-[0.16em] text-[#2d55a0] lg:gap-4.5 lg:fs-16 lg:leading-none">
             <span className="h-0.5 w-8 bg-[#2d55a0] lg:w-10.5" />

@@ -16,14 +16,14 @@ export default function Testimonials() {
   const items = testimonials.items;
   const total = items.length;
 
-  // Auto-play interval: pauses when user hovers or touches
+  // Automatic sliding interval: cycles through testimonials every 3.5 seconds
   useEffect(() => {
-    if (isHovered || total <= 1) return;
+    if (total <= 1) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % total);
-    }, 5000);
+    }, 3500);
     return () => clearInterval(interval);
-  }, [isHovered, total]);
+  }, [total]);
 
   // Touch swipe support for mobile
   const handleTouchStart = (e: React.TouchEvent) => {

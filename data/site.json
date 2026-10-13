@@ -239,8 +239,8 @@
           "WorkoraTopbar1": {
             "location": "123 Workora Avenue, New York, NY 10001, USA",
             "timing": "Mon - Fri 9:00 am - 6:00 pm",
-            "phone": "+1 (212) 555-0101",
-            "email": "xyz@workora.com",
+            "phone": "+1 00000000",
+            "email": "info@xyz.com",
             "helpLineLabel": "HELP LINE:",
             "openHoursLabel": "Open Hours:",
             "social": [
@@ -280,10 +280,6 @@
               {
                 "label": "About Us",
                 "href": "/about-us"
-              },
-              {
-                "label": "Services",
-                "href": "/services"
               },
               {
                 "label": "Blogs",
@@ -525,12 +521,12 @@
             "company": {
               "name": "Workora",
               "logo": "/workora-logo.webp",
-              "helpLine": "+1 (212) 555-0101",
+              "helpLine": "+1 00000000",
               "openHours": "Mon - Fri 9:00 am - 6:00 pm",
               "headerAddress": "123 Workora Avenue, New York, NY 10001, USA",
               "footerAddress": "123 Workora Avenue, New York, NY 10001, USA",
-              "phone": "+1 (212) 555-0101",
-              "email": "xyz@workora.com",
+              "phone": "+1 000000",
+              "email": "info@xyz.com",
               "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
               "workingHoursClosed": "Sunday: Closed",
               "socials": {
@@ -1449,12 +1445,12 @@
   "company": {
     "name": "Workora",
     "logo": "/workora-logo.webp",
-    "helpLine": "+1 (212) 555-0101",
+    "helpLine": "+1 00000000",
     "openHours": "Mon - Fri 9:00 am - 6:00 pm",
     "headerAddress": "123 Workora Avenue, New York, NY 10001, USA",
     "footerAddress": "123 Workora Avenue, New York, NY 10001, USA",
-    "phone": "+1 (212) 555-0101",
-    "email": "xyz@workora.com",
+    "phone": "+1 000000",
+    "email": "info@xyz.com",
     "workingHours": "Mon - Sat: 9:00 AM - 6:00 PM",
     "workingHoursClosed": "Sunday: Closed",
     "socials": {

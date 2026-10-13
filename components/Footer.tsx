@@ -153,7 +153,7 @@ export default function Footer() {
       <div className="border-t border-white/15">
         <div className="wrap flex flex-col items-center gap-3 px-5 py-4 text-xs sm:px-8 sm:text-sm md:gap-4 md:py-6 lg:h-22 lg:flex-row lg:gap-0 lg:px-0 lg:py-0 lg:pl-25.5 lg:pr-10 lg:fs-15.5">
           <p className="text-center">
-            © {siteData.footer.year} <span className="font-semibold text-white">{company.name}.</span> {siteData.footer.copyright}
+            © {siteData.footer.year} {siteData.footer.copyright} Powered by <span className="font-semibold text-white">Lestow.</span>
           </p>
           <nav className="flex flex-wrap items-center justify-center lg:ml-auto">
             {legalLinks.map((link, i) => (

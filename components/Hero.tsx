@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import HighlightedText from "./HighlightedText";
 import siteData from "@/data";
 
@@ -49,14 +47,6 @@ export default function Hero() {
         <p className="mt-5 max-w-xl font-pop text-[15px] leading-relaxed text-[#5c5f6a] sm:text-base lg:mt-5 lg:max-w-175 lg:whitespace-pre-line lg:fs-20.75 lg:leading-[1.5]">
           {hero.description}
         </p>
-
-        <Link
-          href={hero.ctaLink}
-          className="mt-7 inline-flex h-13 items-center gap-3 rounded bg-[#3d649b] px-7 font-pop text-base font-semibold text-white transition-colors hover:bg-[#2f4f80] lg:mt-9.25 lg:h-18.25 lg:gap-5 lg:r-4 lg:pl-9 lg:pr-9.5 lg:fs-22.5"
-        >
-          {hero.ctaText}
-          <ArrowRight className="size-5 lg:size-6.5" strokeWidth={2.5} />
-        </Link>
       </div>
 
       {/* Phones and tablets: clean photo sits under the text in a framed container */}

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import siteData from "@/data";
 
 const inter = Inter({
@@ -33,8 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${figtree.variable} ${notoSans.variable} ${exo2.variable} ${lexend.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} ${figtree.variable} ${notoSans.variable} ${exo2.variable} ${lexend.variable}`}>
       <body className="font-sans antialiased text-gray-800 bg-white flex flex-col min-h-screen">
+        <Suspense fallback={null}>
+          <ScrollToTop />
+        </Suspense>
         <Suspense fallback={null}>
           <Navbar />
         </Suspense>
